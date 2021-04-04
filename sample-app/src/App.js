@@ -2,17 +2,22 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 
-const Button = () => {
+const Button = ({color,increment,underline}) => {
   const [counter,setCounter] = useState(0)
-  return <div onClick={()=>setCounter((c)=>c+1)}>I am a button {counter}</div>
+  return <div style={{color,textDecoration:underline&&'underline'}} onClick={()=>setCounter((c)=>c+increment)}>I am a button {counter}</div>
 }
 
 function App() {
+  const props={
+    increment:2,
+    underline:true
+  };
+
   return (
     <div className="App">
-        <Button color="blue"/> 
-        <Button color="green"/>
-        <Button color="red"/>
+        <Button {...props} color="blue"/> 
+        <Button {...props} color="green"/>
+        <Button {...props} color="red"/>
     </div>
   );
 }
