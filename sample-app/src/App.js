@@ -1,25 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
+import logo from "./logo.svg";
+import "./App.css";
+import { useEffect, useReducer, useState } from "react";
 
-const Button = ({color,increment,underline}) => {
-  const [counter,setCounter] = useState(0)
-  return <div style={{color,textDecoration:underline&&'underline'}} onClick={()=>setCounter((c)=>c+increment)}>I am a button {counter}</div>
-}
+const reducer = ({ state }) => {
+  switch (state) {
+    case "PRESSED_ONCE":
+      return { state: "PRESSED_TWO" };
+    case "PRESSED_TWO":
+      return {
+        state: "PRESSED_THREE",
+      };
+    case "PRESSED_THREE":
+      return {
+        state: "PRESSED_ONCE",
+      };
+  }
+};
 
-function App() {
-  const props={
-    increment:2,
-    underline:true
-  };
-
+const Button = ({ color, increment, underline }) => {
+  const [counter, setCounter] = useState(0);
+  const [state, dispatch] = useReducer(reducer, { state: "PRESSED_ONCE" });
   return (
-    <div className="App">
-        <Button {...props} color="blue"/> 
-        <Button {...props} color="green"/>
-        <Button {...props} color="red"/>
+    <div style={{ color, textDecoration: underline && "underline" }}>
+      <div onClick={() => dispatch()}>I am a button</div>
+      <div>{state.state}</div>
     </div>
   );
+};
+// idle
+// Loading
+// loaded
+// error
+
+function App() {
+  const [state, setState] = useState("idle");
+  const clicked = () => {
+    setState("loading");
+    fetch("/data.json")
+      .then((data) => {
+        try {
+        JSON.parse(data)
+        setState("loaded");
+        } catch(err) {
+          setState('json-error')
+        }
+      })
+      .catch((err) => setState("Network-error"));
+  };
+
+  if(state === "loading"){
+    return <div>Loading...</div>
+  }
+
+  if(state === "Network-error"){
+    return <div>Error fetching in your request</div>
+  }
+
+  if(state === 'req-error') {
+    return <div>Bad server response</div>
+  }
+  return <div className="App" onClick={clicked}>Current state :{state}</div>;
 }
 
 export default App;
