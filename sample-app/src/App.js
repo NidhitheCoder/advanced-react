@@ -1,6 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useReducer, useState } from "react";
+import Navbar from "./components/Navbar";
 
 const reducer = ({ state }) => {
   switch (state) {
@@ -59,7 +59,16 @@ function App() {
   if(state === 'req-error') {
     return <div>Bad server response</div>
   }
-  return <div className="App" onClick={clicked}>Current state :{state}</div>;
+
+  return <div className="App" onClick={clicked}>
+    <Navbar>
+      <div>This is navbar content</div>
+    </Navbar>
+    <div class="container one">One Current state :{state}</div>
+    <div class="container two">Two</div>
+    <div class="container three">Three</div>
+    <div class="container one">Four</div>
+    </div>;
 }
 
 export default App;
