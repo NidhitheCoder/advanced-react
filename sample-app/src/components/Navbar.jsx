@@ -12,7 +12,7 @@ const Navbar = ({children}) => {
   });
 
   return (
-    <div class="navbar" id="nav">{children}</div>
+    <div className="navbar" id="nav">{children}</div>
   )
 };
 

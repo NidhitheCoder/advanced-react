@@ -17,11 +17,11 @@ const reducer = ({ state }) => {
   }
 };
 
-const Button = ({ color, increment, underline }) => {
+const Button = ({ color, increment, underline, background}) => {
   const [counter, setCounter] = useState(0);
   const [state, dispatch] = useReducer(reducer, { state: "PRESSED_ONCE" });
   return (
-    <div style={{ color, textDecoration: underline && "underline" }}>
+    <div style={{ color, background, textDecoration: underline && "underline" }}>
       <div onClick={() => dispatch()}>I am a button</div>
       <div>{state.state}</div>
     </div>
@@ -38,6 +38,7 @@ function App() {
     setState("loading");
     fetch("/data.json")
       .then((data) => {
+        console.log(data);
         try {
         JSON.parse(data)
         setState("loaded");
@@ -64,10 +65,13 @@ function App() {
     <Navbar>
       <div>This is navbar content</div>
     </Navbar>
-    <div class="container one">One Current state :{state}</div>
-    <div class="container two">Two</div>
-    <div class="container three">Three</div>
-    <div class="container one">Four</div>
+    <div className="container one">
+      One Current state :{state}
+    <Button color="orange" background="blue" />
+    </div>
+    <div className="container two">Two</div>
+    <div className="container three">Three</div>
+    <div className="container one">Four</div>
     </div>;
 }
 
