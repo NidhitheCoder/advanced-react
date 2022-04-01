@@ -16,3 +16,7 @@
 - Easy to maintain and building new features in applicaiton.
 - Direct impact on end users and helps to faster and more responsive than ever before.
 - Save on bandwidth and increase memory performance.
+
+# Installation
+- Create a new react app with the command `npx create-react-app react-query-demo`.
+- To install jason-server in your project use `yarn add json-server` command.cd re
