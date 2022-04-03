@@ -22,15 +22,9 @@ function App() {
           </ul>
         </nav>
         <Routes>
-          <Route path="/super-heros">
-            <SuperHerosPage />
-          </Route>
-          <Route path="/rq-super-heros">
-            <RQSuperHerosPage />
-          </Route>
-          <Route path="/">
-            <HomePage />
-          </Route>
+          <Route path="/super-heros" element={<SuperHerosPage />} />
+          <Route path="/rq-super-heros" element={<RQSuperHerosPage />} />
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </div>
     </Router>
