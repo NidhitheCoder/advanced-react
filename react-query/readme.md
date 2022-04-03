@@ -21,3 +21,5 @@
 - Create a new react app with the command `npx create-react-app react-query-demo`.
 - To install jason-server in your project use `yarn add json-server` command.cd re
   - `npm run serve-json` for run json server.
+- To install react query use `yarn add react-query` command.
+  - At the top of component tree(mostly app.js) we need to add react query provider and provide client to the application.
