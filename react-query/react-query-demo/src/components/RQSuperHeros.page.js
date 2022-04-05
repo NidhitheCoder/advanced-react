@@ -12,7 +12,9 @@ export const RQSuperHerosPage = () => {
     return <h2>Loading...</h2>;
   }
 
-  if (isError = ()  => <Flex> Helloeee</Flex>);
+  if (isError) {
+    <p> Helloeee {error.message}</p>
+  }
 
   return (
     <div>
