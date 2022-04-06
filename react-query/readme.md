@@ -23,3 +23,7 @@
   - `npm run serve-json` for run json server.
 - To install react query use `yarn add react-query` command.
   - At the top of component tree(mostly app.js) we need to add react query provider and provide client to the application.
+
+  - StaleTime
+    - The time in milliseconds after data is considered stale. If set to Infinity, the data will never be considered stale.
+      Default stealTime is 0 second.
