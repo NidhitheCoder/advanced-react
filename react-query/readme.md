@@ -27,3 +27,4 @@
   - StaleTime
     - The time in milliseconds after data is considered stale. If set to Infinity, the data will never be considered stale.
       Default stealTime is 0 second.
+  - refetchOnMount hae a string value 'always' and boolean values.
