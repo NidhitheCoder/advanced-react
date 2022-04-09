@@ -2,10 +2,18 @@ import { useQuery } from "react-query";
 import axios from "axios";
 
 const fetchSuperHeros = () => {
-  return axios.get('http://localhost:4000/superheros');
+  return axios.get('http://localhost:4000/superheros1');
 };
 
 export const RQSuperHerosPage = () => {
+  const onSuccess = () => {
+    console.log('Perform sideeffect after data fetching');
+  }
+
+  const onError = () => {
+    console.log('Perform sideeffect after encountoring error');
+  }
+
   const { isLoading, data, error, isError, isFetching, refetch } = useQuery(
     'super-heros',
     fetchSuperHeros,
@@ -17,9 +25,11 @@ export const RQSuperHerosPage = () => {
       // refetchInterval: 2000,
       // refetchIntervalInBackground: true,
       enabled: false,
+      onSuccess,
+      onError,
     }
   );
-  console.log({ isFetching, isLoading });
+  // console.log({ isFetching, isLoading });
 
   if(isLoading || isFetching) {
     return <h2>Loading...</h2>;

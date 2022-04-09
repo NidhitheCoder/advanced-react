@@ -28,3 +28,4 @@
     - The time in milliseconds after data is considered stale. If set to Infinity, the data will never be considered stale.
       Default stealTime is 0 second.
   - refetchOnMount hae a string value 'always' and boolean values.
+  - If any api call getting failed with react query will try 3 times and till it is return error then return error message.
