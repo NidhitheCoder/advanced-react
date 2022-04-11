@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 
 const fetchSuperHeros = () => {
-  return axios.get('http://localhost:4000/superheros1');
+  return axios.get('http://localhost:4000/superheros');
 };
 
 export const RQSuperHerosPage = () => {
@@ -27,6 +27,10 @@ export const RQSuperHerosPage = () => {
       enabled: false,
       onSuccess,
       onError,
+      select: (data) => {
+        const superHeroNames = data.data.map(hero => hero.name);
+        return superHeroNames;
+      }
     }
   );
   // console.log({ isFetching, isLoading });
@@ -44,8 +48,11 @@ export const RQSuperHerosPage = () => {
       <h2>React query Traditional superheros Page</h2>
       <button onClick={refetch}>Fetch heros</button>
       {
-        data?.data?.map(hero => {
-          return <div key={hero.name}>{hero.name}</div>
+        // data?.data?.map(hero => {
+        //   return <div key={hero.name}>{hero.name}</div>
+        // })
+        data.map(heroName => {
+          return <div>{heroName}</div>;
         })
       }
     </div>
