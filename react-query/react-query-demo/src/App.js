@@ -28,7 +28,7 @@ function App() {
             </ul>
           </nav>
           <Routes>
-            <Route path="/rq-super-hero/:heroId" element={<RQSuperHeroPage />} />
+            <Route path="/rq-super-heros/:heroId" element={<RQSuperHeroPage />} />
             <Route path="/super-heros" element={<SuperHerosPage />} />
             <Route path="/rq-super-heros" element={<RQSuperHerosPage />} />
             <Route path="/" element={<HomePage />} />
