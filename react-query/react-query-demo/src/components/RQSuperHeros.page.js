@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 export const RQSuperHerosPage = () => {
   const onSuccess = () => {
-    console.log('Perform sideeffect after data fetching');
+    console.log('Perform side effect after data fetching');
   }
 
   const onError = () => {
-    console.log('Perform sideeffect after encountoring error');
+    console.log('Perform side effect after encountoring error');
   }
 
   const { isLoading, data, error, isError, isFetching, refetch } = useSuperherosData(onSuccess, onError)
