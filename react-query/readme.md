@@ -1,5 +1,7 @@
 # React query
 - React query is a library for fetching data in a react application.
+ - The useQuery hook is a function used to register your data fetching code into React Query library.
+ - It takes an arbitrary key and an asynchronous function for fetching data and return various values that you can use to inform your users about the current application state.
 
 ## client state
 - Client state is persisted in your app memory and accessing or updating it is synchronous.
@@ -29,3 +31,5 @@
       Default stealTime is 0 second.
   - refetchOnMount hae a string value 'always' and boolean values.
   - If any api call getting failed with react query will try 3 times and till it is return error then return error message.
+  
+
