@@ -9,6 +9,6 @@ const fetchSuperHero = (heroId) => {
 export const useSuperheroData = (heroId) => {
   return useQuery(
     ['super-hero', heroId],
-    fetchSuperHero
+    () => fetchSuperHero(heroId)
   );
 }
