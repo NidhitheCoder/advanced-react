@@ -15,5 +15,19 @@
       "name": "Spiderman",
       "colorTheme": "Red"
     }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name":"Ajay"
+    },
+    {
+      "id": 2,
+      "name":"Binu"
+    },
+    {
+      "id": 3,
+      "name": "Clint"
+    }
   ]
 }
