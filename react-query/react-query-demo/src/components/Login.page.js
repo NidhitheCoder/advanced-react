@@ -7,8 +7,10 @@ export const Login = () => {
   const [loginData, setLoginData] = useState();
   const handleSubmit = () => {
     axios.post('/login', {
-      email: 'sample@gmail.com',
-      password: 'samplePassword'
+      "access_token": "sdkfjhskjhksjfksdf",
+      "refresh_token": "dfsdfsjdgfsjfs",
+      "id": 4,
+      "email": "babu"
     }, {
       headers: {
         'Content-Type': 'application/json',
@@ -16,6 +18,9 @@ export const Login = () => {
     })
       .then((response) => { 
         console.log(response);
+        localStorage.setItem("access_token", response.access_token);
+        localStorage.setItem("refresh_token", response.access_token);
+        localStorage.setItem("unser_data", response.email);
         // const decodedUserData = JSON.parse(atob(response.data.access.split(".")[1]));
         // setLoginData(decodedUserData);
         navigate('/');
