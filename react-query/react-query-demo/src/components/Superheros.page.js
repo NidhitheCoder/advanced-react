@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from '../axios';
 
 export const SuperHerosPage = () => {
   const [isloading, setIsloading] = useState(true);
@@ -7,7 +7,7 @@ export const SuperHerosPage = () => {
   const [error, setError] = useState();
 
   useEffect(() => {
-    axios.get('http://localhost:4000/superheros').then((res) => {
+    axios.get('/superheros').then((res) => {
       setHeros(res.data);
       setIsloading(false);
     }).catch(error => {
