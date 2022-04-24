@@ -1,4 +1,8 @@
 {
+  "login": {
+    "email": "sample@gmail.com",
+    "password": "samplePassword"
+  },
   "superheros": [
     {
       "id": 2,
@@ -19,11 +23,11 @@
   "friends": [
     {
       "id": 1,
-      "name":"Ajay"
+      "name": "Ajay"
     },
     {
       "id": 2,
-      "name":"Binu"
+      "name": "Binu"
     },
     {
       "id": 3,
