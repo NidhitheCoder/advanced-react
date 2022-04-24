@@ -6,9 +6,9 @@ export const HomePage = () => {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState();
   const handleSubmit = () => {
-    axios.post('https://school-lorien.herokuapp.com/api/token/', {
-      email: 'admin@gmail.com',
-      password: 'admin1231'
+    axios.post('someAPi', {
+      email: 'sample@gmail.com',
+      password: 'samplePassword'
     }, {
       headers: {
         'Content-Type': 'application/json',
@@ -26,8 +26,8 @@ export const HomePage = () => {
 
   useEffect(() => {
     if(loginData) {
-      loginData.is_admin && navigate('/adminDashboard');
-      !loginData.is_admin && navigate('/teachersDashboard');
+      loginData.is_admin && navigate('/somehwre');
+      !loginData.is_admin && navigate('/somewh');
     }
   }, [loginData, navigate]);
 

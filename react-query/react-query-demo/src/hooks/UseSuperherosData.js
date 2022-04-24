@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from "../axios";
 import { useQuery } from "react-query";
 
 const fetchSuperHeros = () => {
-  return axios.get('http://localhost:4000/superheros');
+  return axios.get('/superheros');
 };
 
 

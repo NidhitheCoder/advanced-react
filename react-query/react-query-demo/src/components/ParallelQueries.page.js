@@ -1,12 +1,12 @@
 import { useQuery } from 'react-query';
-import axios from 'axios';
+import axios from '../axios';
 
 const fetchSuperHeros = () => {
-  return axios.get('http://localhost:4000/superheros');
+  return axios.get('/superheros');
 };
 
 const fetchFriends = () => {
-  return axios.get('http://localhost:4000/friends');
+  return axios.get('/friends');
 };
 
 export const ParallelQueriesPage = () => {
