@@ -1,42 +1,33 @@
-import axios from "../axios";
-import { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import axios from "axios";
+import react from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../auth";
 
 export const Login = () => {
   const navigate = useNavigate();
-  const [loginData, setLoginData] = useState();
+  const auth = useAuth();
   const handleSubmit = () => {
-    axios.post('/login', {
-      "access_token": "sdkfjhskjhksjfksdf",
-      "refresh_token": "dfsdfsjdgfsjfs",
-      "id": 4,
-      "email": "babu"
+    axios.post('abc/api', {
+      "email": "test@gmail.com",
+      "password": "12345",
     }, {
       headers: {
         'Content-Type': 'application/json',
       },
     })
-      .then((response) => { 
-        console.log(response);
-        localStorage.setItem("access_token", response.access_token);
-        localStorage.setItem("refresh_token", response.access_token);
-        localStorage.setItem("unser_data", response.email);
-        // const decodedUserData = JSON.parse(atob(response.data.access.split(".")[1]));
-        // setLoginData(decodedUserData);
-        navigate('/');
+      .then((response) => {
+        localStorage.setItem("access_token", response.data.access);
+        localStorage.setItem("refresh_token", response.data.refresh);
+        const userData = JSON.parse(atob(response.data.access.split(".")[1]));
+        auth.login(userData);
+        userData.is_admin && navigate('/', {replace: true});
+        !userData.is_admin && navigate('/something', {replace: true});
       })
       .catch((err) => {
         // show error message
         console.log('error is', err);
       });
   };
-
-  useEffect(() => {
-    if(loginData) {
-      loginData.is_admin && navigate('/somehwre');
-      !loginData.is_admin && navigate('/somewh');
-    }
-  }, [loginData, navigate]);
 
   return (
     <div>

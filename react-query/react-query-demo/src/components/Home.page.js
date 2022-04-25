@@ -1,45 +1,27 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../auth";
 
 export const HomePage = () => {
   const navigate = useNavigate();
-  const [loginData, setLoginData] = useState();
-  const handleSubmit = () => {
-    axios.post('someAPi', {
-      email: 'sample@gmail.com',
-      password: 'samplePassword'
-    }, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => { 
-        const decodedUserData = JSON.parse(atob(response.data.access.split(".")[1]));
-        setLoginData(decodedUserData);
-      })
-      .catch((err) => {
-        // show error message
-        console.log('error is', err);
-      });
-  };
+  const auth = useAuth();
 
-  useEffect(() => {
-    if(loginData) {
-      loginData.is_admin && navigate('/somehwre');
-      !loginData.is_admin && navigate('/somewh');
-    }
-  }, [loginData, navigate]);
+  const handleLogout = () => {
+    auth.logout();
+    navigate('/login', { replace: true });
+  }
+  console.log(auth?.user);
 
   return (
     <div>
       Homepage
-      <button onClick={handleSubmit}>
+      <button>
         click
       </button>
-      <button onClick={() => navigate('/rq-super-heros') }>
+      <button onClick={() => navigate('/rq-super-heros')}>
         change
       </button>
+      <h2>{auth?.user?.email}</h2>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   )
 }
