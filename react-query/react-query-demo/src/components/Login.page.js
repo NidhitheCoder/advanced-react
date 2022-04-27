@@ -1,10 +1,11 @@
 import axios from "axios";
-import react from "react";
+import react, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth";
 
 export const Login = () => {
   const navigate = useNavigate();
+  const [data, setData] = useState();
   const auth = useAuth();
   const handleSubmit = () => {
     axios.post('abc/api', {
@@ -29,6 +30,7 @@ export const Login = () => {
       });
   };
 
+  const APICall = (setData) => {
     axios.post('abc/api', {
       "email": "test@gmail.com",
       "password": "12345",
@@ -42,6 +44,7 @@ export const Login = () => {
         localStorage.setItem("refresh_token", response.data.refresh);
         const userData = JSON.parse(atob(response.data.access.split(".")[1]));
         auth.login(userData);
+        setData(userData);
         userData.is_admin && navigate('/', {replace: true});
         !userData.is_admin && navigate('/something', {replace: true});
       })
@@ -49,8 +52,11 @@ export const Login = () => {
         // show error message
         console.log('error is', err);
       });
-  
+  }
 
+  const check = () => {
+    APICall(setData);
+  }
 
   return (
     <div>
