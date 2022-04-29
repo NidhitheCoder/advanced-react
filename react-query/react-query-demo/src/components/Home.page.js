@@ -1,45 +1,46 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getData } from "../api";
+import { useAuth } from "../auth";
+import './style.css';
 
 export const HomePage = () => {
   const navigate = useNavigate();
-  const [loginData, setLoginData] = useState();
-  const handleSubmit = () => {
-    axios.post('someAPi', {
-      email: 'sample@gmail.com',
-      password: 'samplePassword'
-    }, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => { 
-        const decodedUserData = JSON.parse(atob(response.data.access.split(".")[1]));
-        setLoginData(decodedUserData);
-      })
-      .catch((err) => {
-        // show error message
-        console.log('error is', err);
-      });
-  };
+  const auth = useAuth();
 
-  useEffect(() => {
-    if(loginData) {
-      loginData.is_admin && navigate('/somehwre');
-      !loginData.is_admin && navigate('/somewh');
-    }
-  }, [loginData, navigate]);
+  const [albumData, setAlbumData] = useState([]);
+
+  const handleLogout = () => {
+    auth.logout();
+    navigate('/login', { replace: true });
+  }
+
+  const check = () => {
+    getData(setAlbumData);
+  }
 
   return (
     <div>
-      Homepage
-      <button onClick={handleSubmit}>
+      <h1>Homepage</h1>
+      <button onClick={handleLogout}>Logout</button>
+      <button onClick={check}>Get values</button>
+      <button>
         click
       </button>
-      <button onClick={() => navigate('/rq-super-heros') }>
+      <button onClick={() => navigate('/rq-super-heros')}>
         change
       </button>
+      <div>
+        {albumData.map(album => {
+          console.log(album)
+          return (
+            <div className="list-item">
+              <h3>{album.title}</h3>
+              <p>{album.id}</p>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
