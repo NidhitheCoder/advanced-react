@@ -16,10 +16,10 @@ export const loginApi = async () => {
 export const getData = (setData) => {
   axios.get('https://jsonplaceholder.typicode.com/albums')
     .then((response) => {
-      localStorage.setItem("access_token", response.data.access);
-      localStorage.setItem("refresh_token", response.data.refresh);
-      const userData = JSON.parse(atob(response.data.access.split(".")[1]));
-      setData(userData);
+      // localStorage.setItem("access_token", response.data.access);
+      // localStorage.setItem("refresh_token", response.data.refresh);
+      // const userData = JSON.parse(atob(response.data.access.split(".")[1]));
+      setData(response.data);
     })
     .catch((err) => {
       // show error message

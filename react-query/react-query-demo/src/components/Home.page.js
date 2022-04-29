@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getData } from "../api";
 import { useAuth } from "../auth";
+import './style.css';
 
 export const HomePage = () => {
   const navigate = useNavigate();
@@ -15,25 +16,31 @@ export const HomePage = () => {
   }
 
   const check = () => {
-    let data = getData();
-    console.log(data);
-    setAlbumData(data);
+    getData(setAlbumData);
   }
 
   return (
     <div>
+      <h1>Homepage</h1>
       <button onClick={handleLogout}>Logout</button>
-      <button onclick={check}>Get values</button>
-      Homepage
+      <button onClick={check}>Get values</button>
       <button>
         click
       </button>
       <button onClick={() => navigate('/rq-super-heros')}>
         change
       </button>
-      <button onClick={() => navigate('/rq-super-heros')}>
-        change
-      </button>
+      <div>
+        {albumData.map(album => {
+          console.log(album)
+          return (
+            <div className="list-item">
+              <h3>{album.title}</h3>
+              <p>{album.id}</p>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
