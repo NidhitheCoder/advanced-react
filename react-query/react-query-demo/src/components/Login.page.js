@@ -29,7 +29,7 @@ export const Login = () => {
   };
 
   return (
-    <div>
+    <div class="login-comp">
       Login
       <button onClick={handleSubmit}>
         click

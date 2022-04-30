@@ -26,3 +26,11 @@ h1 {
   color: gray;
   font-weight: 600;
 }
+
+.login-comp {
+  display: flex;
+  width: 30vw;
+  height: 40vh;
+  background-color: rgba(0, 0, 0, 0.3);
+border: 1px solid gray;
+}
