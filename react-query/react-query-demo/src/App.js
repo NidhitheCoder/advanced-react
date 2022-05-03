@@ -18,7 +18,7 @@ function App() {
     <AuthProvider>
       <QueryClientProvider client={queryClient} >
         <Router>
-          <div class="main-container">
+          <div className="main-container">
             <nav>
               <ul>
                 <li>

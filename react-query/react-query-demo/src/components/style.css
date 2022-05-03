@@ -38,8 +38,11 @@ h1 {
 
 .login-comp {
   display: flex;
+  flex-direction: column;
   width: 30vw;
   height: 40vh;
   background-color: rgba(0, 0, 0, 0.3);
-border: 1px solid gray;
+  border: 1px solid gray;
+  justify-content: center;
+  align-items: center;
 }

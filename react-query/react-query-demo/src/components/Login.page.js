@@ -6,7 +6,7 @@ export const Login = () => {
   const navigate = useNavigate();
   const auth = useAuth();
   const handleSubmit = () => {
-    axios.post('abc/api', {
+    axios.get('http://localhost:4000/login/', {
       "email": "test@gmail.com",
       "password": "12345",
     }, {
@@ -15,9 +15,9 @@ export const Login = () => {
       },
     })
       .then((response) => {
-        localStorage.setItem("access_token", response.data.access);
-        localStorage.setItem("refresh_token", response.data.refresh);
-        const userData = JSON.parse(atob(response.data.access.split(".")[1]));
+        localStorage.setItem("access_token", response.data.access_token);
+        localStorage.setItem("refresh_token", response.data.refresh_token);
+        const userData = JSON.parse(atob(response.data.access_token.split(".")[1]));
         auth.login(userData);
         userData.is_admin && navigate('/', {replace: true});
         !userData.is_admin && navigate('/something', {replace: true});
@@ -29,7 +29,7 @@ export const Login = () => {
   };
 
   return (
-    <div class="login-comp">
+    <div className="login-comp">
       Login
       <button onClick={handleSubmit}>
         click
