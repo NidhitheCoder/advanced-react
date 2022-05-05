@@ -32,7 +32,6 @@ export const HomePage = () => {
       </button>
       <div>
         {albumData.map(album => {
-          console.log(album)
           return (
             <div className="list-item">
               <h3>{album.title}</h3>

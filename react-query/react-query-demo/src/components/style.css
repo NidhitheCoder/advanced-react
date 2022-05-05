@@ -26,3 +26,23 @@ h1 {
   color: gray;
   font-weight: 600;
 }
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.login-comp {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 40vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid gray;
+  justify-content: center;
+  align-items: center;
+}
