@@ -35,5 +35,17 @@
       "id": 3,
       "name": "Clint"
     }
+  ],
+  "users": [
+    {
+      "id": "example@gmail.com",
+      "channelId": "change"
+    }
+  ],
+  "channels": [
+    {
+      "id":"change",
+      "programs": ["fun","music", "documentory"]
+    }
   ]
 }
