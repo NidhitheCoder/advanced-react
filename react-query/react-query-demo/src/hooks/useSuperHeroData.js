@@ -13,7 +13,15 @@ export const useSuperheroData = (heroId) => {
     () => fetchSuperHero(heroId),
     {
       initialData: () => {
-        const hero = queryClient.getQueryData('super-heros')
+        const hero = queryClient.getQueryData('super-heros')?.data?.find(hero=>hero === parseInt(heroId));
+
+        if(hero) {
+          return {
+            data: hero
+          }
+        } else {
+          return undefined;
+        }
       }
     }
   );
