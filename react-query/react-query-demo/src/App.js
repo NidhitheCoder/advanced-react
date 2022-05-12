@@ -39,6 +39,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/rq-parallel" element={<ParallelQueriesPage />} />
               <Route path="/rq-paginated" element={<PaginatedQueries />} />
+              <Route path="/rq-infinitated" element={<PaginatedQueries />} />
               <Route path="/rq-super-heros/:heroId" element={<ProtectedRoute><RQSuperHeroPage /></ProtectedRoute>} />
               <Route path="/super-heros" element={<SuperHerosPage />} />
               <Route path="/rq-super-heros" element={<RQSuperHerosPage />} />
