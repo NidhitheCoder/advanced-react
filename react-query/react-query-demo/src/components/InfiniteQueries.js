@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import { useInfiniteQuery } from "react-query";
 
 const fetchColors = ({ pageParam = 1 }) => {
-  return axios.get(`http://localhost:4000/colors?_limit=10&_page=${pageParam}`);
+  return axios.get(`http://localhost:4000/colors?_limit=2&_page=${pageParam}`);
 }
 
 export const InfinteQueries = () => {

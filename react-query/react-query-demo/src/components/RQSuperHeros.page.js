@@ -2,8 +2,11 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { useSuperherosData } from "../hooks/UseSuperherosData";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const RQSuperHerosPage = () => {
+  const [name, setName] = useState('');
+  const [alterEgo, setAlterEgo] = useState('');
   const onSuccess = () => {
     console.log('Perform side effect after data fetching');
   }
@@ -45,6 +48,19 @@ export const RQSuperHerosPage = () => {
   return (
     <div>
       <h2>React query Traditional superheros Page</h2>
+      <div>
+        <input
+         type="text"
+         value={name}
+         onChange={(e) =>  setName(e.target.value)}
+        />
+        <input
+         type="text"
+         value={alterEgo}
+         onChange={(e) =>  setAlterEgo(e.target.value)}
+        />
+        <button onClick={handleAddHeroClick}>Add hero</button>
+      </div>
       <button onClick={refetch}>Fetch heros</button>
       {
         // data?.data?.map(hero => {
