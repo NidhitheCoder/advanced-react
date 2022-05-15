@@ -11,6 +11,8 @@ export const RQSuperHerosPage = () => {
     console.log('Perform side effect after data fetching');
   }
 
+  const {mutate} = useSuperherosData();
+
   const onError = () => {
     console.log('Perform side effect after encountoring error');
   }
@@ -36,6 +38,12 @@ export const RQSuperHerosPage = () => {
   //   }
   // );
   // console.log({ isFetching, isLoading });
+
+  const handleAddHeroClick = () => {
+    console.log({name, alterEgo});
+    const hero = { name, alterEgo };
+    mutate(hero);
+  }
 
   if(isLoading || isFetching) {
     return <h2>Loading...</h2>;
