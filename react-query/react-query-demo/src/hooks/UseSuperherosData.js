@@ -6,7 +6,7 @@ const fetchSuperHeros = () => {
 };
 
 const addSuperHero = (hero) => {
-  return axios.post('http://localhost:4000/superheros', hero);
+  return axios.post('/superheros', hero);
 }
 
 
@@ -34,6 +34,6 @@ export const useSuperherosData = (onSuccess, onError) => {
 
 }
 
-export const addSuperHeroData = () => {
+export const useAddSuperHeroData = () => {
   return useMutation(addSuperHero)
 }

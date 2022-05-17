@@ -1,6 +1,4 @@
-import { useQuery } from "react-query";
-import axios from "axios";
-import { useSuperherosData } from "../hooks/UseSuperherosData";
+import { useAddSuperHeroData, useSuperherosData } from "../hooks/UseSuperherosData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -11,7 +9,7 @@ export const RQSuperHerosPage = () => {
     console.log('Perform side effect after data fetching');
   }
 
-  const {mutate} = useSuperherosData();
+  const {mutate: addHero, isLoading: isDeleteLoading, error: deleteError, isError: isErrorInDelete } = useAddSuperHeroData();
 
   const onError = () => {
     console.log('Perform side effect after encountoring error');
@@ -40,9 +38,9 @@ export const RQSuperHerosPage = () => {
   // console.log({ isFetching, isLoading });
 
   const handleAddHeroClick = () => {
-    console.log({name, alterEgo});
+    // console.log({name, alterEgo});
     const hero = { name, alterEgo };
-    mutate(hero);
+    addHero(hero);
   }
 
   if(isLoading || isFetching) {
