@@ -11,6 +11,9 @@ import { ParallelQueriesPage } from './components/ParallelQueries.page';
 import { Login } from './components/Login.page';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { DynamicParallelPage } from './components/DynamicParallelQueries.page';
+import { DependentQueriesPage } from './components/DependentQueries.page';
+import { PaginatedQueries } from './components/PaginatedQueries';
+import { InfinteQueries } from './components/InfiniteQueries';
 
 const queryClient = new QueryClient();
 
@@ -36,11 +39,14 @@ function App() {
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/rq-parallel" element={<ParallelQueriesPage />} />
+              <Route path="/rq-paginated" element={<PaginatedQueries />} />
+              <Route path="/rq-infinite" element={<InfinteQueries />} />
               <Route path="/rq-super-heros/:heroId" element={<ProtectedRoute><RQSuperHeroPage /></ProtectedRoute>} />
               <Route path="/super-heros" element={<SuperHerosPage />} />
               <Route path="/rq-super-heros" element={<RQSuperHerosPage />} />
               <Route path="/" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
               <Route path="/rq-dynamic-parallel" element={<DynamicParallelPage heroIds={[1,3,4]} />} />
+              <Route path="/rq-dependent" element={<DependentQueriesPage email="example@gmail.com" />} />
             </Routes>
           </div>
         </Router>

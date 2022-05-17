@@ -1,9 +1,13 @@
 import axios from "../axios";
-import { useQuery } from "react-query";
+import { useMutation, useQuery } from "react-query";
 
 const fetchSuperHeros = () => {
   return axios.get('/superheros');
 };
+
+const addSuperHero = (hero) => {
+  return axios.post('/superheros', hero);
+}
 
 
 export const useSuperherosData = (onSuccess, onError) => {
@@ -28,4 +32,8 @@ export const useSuperherosData = (onSuccess, onError) => {
   );
   // console.log({ isFetching, isLoading });
 
+}
+
+export const useAddSuperHeroData = () => {
+  return useMutation(addSuperHero)
 }
