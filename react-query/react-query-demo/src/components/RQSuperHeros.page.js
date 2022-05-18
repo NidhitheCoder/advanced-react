@@ -15,7 +15,7 @@ export const RQSuperHerosPage = () => {
     console.log('Perform side effect after encountoring error');
   }
 
-  const { isLoading, data, error, isError, isFetching, refetch } = useSuperherosData(onSuccess, onError)
+  const { isLoading, data, error, isError, isFetching, refetch } = useSuperherosData(onSuccess, onError);
   // useQuery(
   //   'super-heros',
   //   fetchSuperHeros,
