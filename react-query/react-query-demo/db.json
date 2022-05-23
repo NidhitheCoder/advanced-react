@@ -45,6 +45,11 @@
       "name": "hey",
       "alterEgo": "dude",
       "id": 7
+    },
+    {
+      "name": "dada",
+      "alterEgo": "sada",
+      "id": 8
     }
   ],
   "friends": [

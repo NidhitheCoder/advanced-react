@@ -46,8 +46,22 @@ export const useAddSuperHeroData = () => {
     //     };
     //   })
     // }
-    onMutate: () => {},
-    onError: () => {},
-    onSettled: () => {},
+    onMutate: async (newHero) => {
+      await queryClient.cancelQueries('super-heros');
+      const previousherosdata = queryClient.getQueryData('super-heros');
+      queryClient.setQueryData('super-heros', (oldQueryData) => {
+        return {
+          ...oldQueryData,
+          data: [...oldQueryData.data, {
+            id: oldQueryData?.data?.length + 1, ...newHero
+          }]
+        }
+      })
+      return {
+        previousherosdata
+      }
+    },
+    onError: () => { },
+    onSettled: () => { },
   })
 }
