@@ -58,10 +58,14 @@ export const useAddSuperHeroData = () => {
         }
       })
       return {
-        previousherosdata
+        previousherosdata,
       }
     },
-    onError: () => { },
-    onSettled: () => { },
+    onError: (_error, _hero, context) => {
+      queryClient.setQueryData('super-heros', context.previousherosdata);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries('super-heros');
+    },
   })
 }
