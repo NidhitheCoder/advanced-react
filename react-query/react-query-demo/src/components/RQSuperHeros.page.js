@@ -1,6 +1,6 @@
 import { useAddSuperHeroData, useSuperherosData } from "../hooks/UseSuperherosData";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const RQSuperHerosPage = () => {
   const [name, setName] = useState('');
@@ -9,13 +9,15 @@ export const RQSuperHerosPage = () => {
     console.log('Perform side effect after data fetching');
   }
 
+  useEffect(() => {refetch();}, [])
+
   const {mutate: addHero, isLoading: isDeleteLoading, error: deleteError, isError: isErrorInDelete } = useAddSuperHeroData();
 
   const onError = () => {
     console.log('Perform side effect after encountoring error');
   }
 
-  const { isLoading, data, error, isError, isFetching, refetch } = useSuperherosData(onSuccess, onError)
+  const { isLoading, data, error, isError, isFetching, refetch } = useSuperherosData(onSuccess, onError);
   // useQuery(
   //   'super-heros',
   //   fetchSuperHeros,
