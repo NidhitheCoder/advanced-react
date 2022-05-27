@@ -1,8 +1,10 @@
+import { Outlet } from "react-router-dom"
 
 export const Albums = () => {
   return (
     <div>
-      <p>Homepage</p>
+      <p>Album list page</p>
+      <Outlet />
     </div>
   )
 
