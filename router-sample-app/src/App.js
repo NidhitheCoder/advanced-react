@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AlbumDetails } from './components/AlbumDetails';
 import { Albums } from './components/Albums';
+import { AlbumsList } from './components/AlbumsList';
 import { Home } from './components/Home';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/albums" element={<Albums />} >
+          <Route index element={<AlbumsList />} />
           <Route path=":id" element={<AlbumDetails />} />
         </Route>
       </Routes>
