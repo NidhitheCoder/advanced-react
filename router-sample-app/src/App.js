@@ -1,18 +1,21 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { AlbumDetails } from './components/AlbumDetails';
-import { Albums } from './components/Albums';
+import { Login } from './components/Login';
 import { AlbumsList } from './components/AlbumsList';
 import { Home } from './components/Home';
 
-function App() {
+const ProtectedRoute = ({ user }) => user ? <Outlet /> : <Navigate to="/login" replace />;
+
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/albums" element={<Albums />} >
+        <Route path="/albums" element={<ProtectedRoute user={true} />} >
           <Route index element={<AlbumsList />} />
           <Route path=":id" element={<AlbumDetails />} />
         </Route>
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
