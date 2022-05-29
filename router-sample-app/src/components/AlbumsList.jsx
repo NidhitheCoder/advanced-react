@@ -1,6 +1,21 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import axios from 'axios';
+import { useEffect } from "react";
+
+async function getUser() {
+  try {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/albums');
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 export const AlbumsList = () => {
+
+useEffect(() => {
+getUser();
+}, [])
   return (
     <div>
       <p>Albums</p>
