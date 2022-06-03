@@ -5,9 +5,9 @@ import {
   Text,
   VStack,
   Code,
-  Grid,
-  theme
+  Grid
 } from '@chakra-ui/react';
+import { theme } from './config/theme/index';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 
 export const App = () => (
