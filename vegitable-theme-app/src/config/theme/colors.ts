@@ -1,11 +1,11 @@
 export const colors = {
-  tomato: '#FF6347',
-  brinjal: '#474AFF',
-  carrot: '#fbb265',
-  beetRoot: '#af09bb',
-  cucumbar: '#67c140',
-  lime: '#FFFC47',
-  onion: '#f3cdf6',
-  cabage: '#eeeeee',
-  mashroom: '#ffffff'
+  tomato: "#EE6C4D",
+  brinjal: "#9a41c4",
+  carrot: "#fbb265",
+  beetroot: "#64184d",
+  cucumbar: "#206656",
+  lime: "#ebed00",
+  onion: "#c496d1",
+  cabage: "#F0F7EE",
+  mashroom: "#ffffff",
 };
