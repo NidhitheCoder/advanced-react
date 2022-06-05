@@ -6,7 +6,8 @@ const Card = {
     background: "white",
     alignItems: "center",
     gap: 6,
-    borderRadius: "xs",
+    maxWidth: 'sm',
+    borderRadius: "xl",
     color: "black",
   },
   // Two variants: rounded and smooth
