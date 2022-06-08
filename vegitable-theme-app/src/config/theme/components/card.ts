@@ -5,10 +5,12 @@ const Card = {
     flexDirection: "column",
     background: "white",
     alignItems: "center",
-    gap: 6,
-    maxWidth: 'sm',
-    borderRadius: "xl",
+    justifyContent: "center",
+    gap: 2,
+    maxWidth: "sm",
+    borderRadius: "20px",
     color: "black",
+    minHeight: "40vh",
   },
   // Two variants: rounded and smooth
   variants: {
@@ -25,7 +27,7 @@ const Card = {
   },
   // The default variant value
   defaultProps: {
-    variant: "smooth",
+    variant: "rounded",
   },
 };
 
