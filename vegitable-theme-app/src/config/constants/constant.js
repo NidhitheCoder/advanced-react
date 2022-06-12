@@ -18,7 +18,7 @@ export const cardItems = [
       url: "https://en.wikipedia.org/wiki/Onion",
   },
   {
-    name: "Tomato",
+    name: "tomato",
     description:
       "The tomato is the taproot portion of a beet plant, usually known in North America as beets while the vegetable is referred to as tomato in British English, and also known as the table beet, garden beet, red beet, dinner beet or golden beet.",
     url: "https://en.wikipedia.org/wiki/tomato",
