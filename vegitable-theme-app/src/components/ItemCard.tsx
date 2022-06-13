@@ -22,6 +22,7 @@ const ItemCard = ({ title, subtitle, link }: Items) => {
           borderRadius={8}
           textTransform="capitalize"
           p={2}
+          bgClip='text'
           bgGradient={`linear(to-r, mashroom, ${title})`}
           color="blue"
           fontSize={32}
