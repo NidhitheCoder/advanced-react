@@ -16,15 +16,14 @@ const ItemCard = ({ title, subtitle, link }: Items) => {
       justifyContent="space-between"
       textAlign="center"
     >
-      <Flex direction="column">
+      <Flex direction="column" bgGradient={`linear(to-r, ${title}, mashroom)}`}>
         <Text
           as="mark"
           borderRadius={8}
           textTransform="capitalize"
           p={2}
           bgClip='text'
-          bgGradient={`linear(to-r, mashroom, ${title})`}
-          color="blue"
+          bgGradient={`linear(to-r, mashroom, mashroom, ${title})`}
           fontSize={32}
           mb={4}
         >
