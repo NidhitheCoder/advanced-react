@@ -15,15 +15,17 @@ const ItemCard = ({ title, subtitle, link }: Items) => {
       display="flex"
       justifyContent="space-between"
       textAlign="center"
+      boxShadow='md'
     >
-      <Flex direction="column" bgGradient={`linear(to-r, ${title}, mashroom)}`}>
+      <Flex direction="column" bgGradient={`linear(to-r, ${title}, mashroom)}`} p={2} textOverflow="ellipsis">
         <Text
           as="mark"
           borderRadius={8}
           textTransform="capitalize"
           p={2}
           bgClip='text'
-          bgGradient={`linear(to-r, mashroom, mashroom, ${title})`}
+          // bgGradient={`linear(to-r, mashroom, mashroom, ${title})`}
+          color="blue"
           fontSize={32}
           mb={4}
         >
