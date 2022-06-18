@@ -1,10 +1,12 @@
 import { Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 
 const Homepage = () => {
   return (
-    <Flex bg="cucumbar" p={8} h="full" w="full" alignItems="center" justifyContent="space-around" flexWrap="wrap">
+    <Flex h="full" w="full" alignItems="center" justifyContent="space-around" flexWrap="wrap">
+      <Navbar />
      <Link to="/list">ListPage</Link>
     </Flex>
   )
