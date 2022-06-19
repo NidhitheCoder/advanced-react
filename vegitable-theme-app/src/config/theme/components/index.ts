@@ -4,8 +4,8 @@ import Card from './card';
 import Link from './link';
 
 export const components = {
-  Text,
-  Button,
-  Card,
-  Link,
+    Text,
+    Button,
+    Card,
+    Link,
 };

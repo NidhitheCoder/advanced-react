@@ -4,12 +4,12 @@ import Homepage from './pages/Homepage';
 import Listpage from './pages/Listpage';
 
 export function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/list" element={<Listpage />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/list" element={<Listpage />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
