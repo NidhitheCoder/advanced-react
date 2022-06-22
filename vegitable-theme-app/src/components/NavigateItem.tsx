@@ -3,11 +3,10 @@ import Card from '../shared/Card';
 
 type Items = {
   title: string;
-  subtitle: string;
-  link: string;
+  progress: string;
 };
 
-const NavigateItem = ({ title, subtitle, link }: Items) => {
+const NavigateItem = ({ title, progress}: Items) => {
   return (
     <Flex
       direction="column"
@@ -15,6 +14,7 @@ const NavigateItem = ({ title, subtitle, link }: Items) => {
       p={2}
       textOverflow="ellipsis"
     >
+      <div className="progress">{progress}</div>
       <Text
         as="mark"
         borderRadius={8}
