@@ -13,13 +13,13 @@ const Homepage = () => {
             flexWrap="wrap"
         >
             <Navbar />
-            <div>
-                <NavigateItem title="Arrow" progress="80" />
-                <NavigateItem title="Ideas that make an impact" progress="0" />
-                <NavigateItem title="Join our team" progress="0" />
-                <NavigateItem title="Case studies and stories" progress="0" />
-                <NavigateItem title="Leading through challange" progress="0" />
-            </div>
+            <Flex direction="row" w="full">
+                <NavigateItem title="Arrow" progress={80} />
+                <NavigateItem title="Ideas that make an impact" progress={12} />
+                <NavigateItem title="Join our team" progress={12} />
+                <NavigateItem title="Case studies and stories" progress={12} />
+                <NavigateItem title="Leading through challange" progress={12} />
+            </Flex>
             <Link to="/list">ListPage</Link>
         </Flex>
     );
