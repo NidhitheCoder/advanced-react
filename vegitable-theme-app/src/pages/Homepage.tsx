@@ -4,6 +4,10 @@ import Navbar from '../components/Navbar';
 import NavigateItem from '../components/NavigateItem';
 
 const Homepage = () => {
+    window.onscroll = () => {
+        console.log('Hello change there');
+    }
+
     return (
         <Flex
             h="full"
