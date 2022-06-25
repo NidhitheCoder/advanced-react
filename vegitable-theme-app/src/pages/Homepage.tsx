@@ -2,6 +2,7 @@ import { Flex } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import NavigateItem from '../components/NavigateItem';
+import SectionContainer from '../components/SectionContianer';
 
 const Homepage = () => {
     window.onscroll = () => {
@@ -17,7 +18,7 @@ const Homepage = () => {
             flexWrap="wrap"
         >
             <Navbar />
-            <Flex direction="row" w="full">
+            <Flex direction="row" w="full" width={['sm', 'md']}>
                 <NavigateItem title="Arrow" progress={80} />
                 <NavigateItem title="Ideas that make an impact" progress={12} />
                 <NavigateItem title="Join our team" progress={12} />
@@ -25,6 +26,11 @@ const Homepage = () => {
                 <NavigateItem title="Leading through challange" progress={12} />
             </Flex>
             <Link to="/list">ListPage</Link>
+            <SectionContainer>
+                <Flex>
+                    Hello
+                </Flex>
+            </SectionContainer>
         </Flex>
     );
 };
