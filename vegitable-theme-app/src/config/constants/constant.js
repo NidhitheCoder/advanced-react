@@ -1,4 +1,4 @@
-export const cardItems = [
+const cardItems = [
   {
     name: 'beetroot',
     description:
@@ -36,3 +36,5 @@ export const cardItems = [
     url: 'https://en.wikipedia.org/wiki/tomato',
   },
 ];
+
+export default cardItems;

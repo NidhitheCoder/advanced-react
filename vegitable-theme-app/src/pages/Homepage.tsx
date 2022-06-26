@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import NavigateItem from '../components/NavigateItem';
@@ -27,8 +27,9 @@ const Homepage = () => {
             </Flex>
             <Link to="/list">ListPage</Link>
             <SectionContainer>
-                <Flex>
-                    Hello
+                <Flex height="2xs">
+                    <Text>title</Text>
+                    <Text>Subtitle or description</Text>                    
                 </Flex>
             </SectionContainer>
         </Flex>
