@@ -8,16 +8,6 @@ module.exports = {
         tablet: '760px',
         desktop: '1248px',
     },
-    colors: {
-      white: '#FFFFFF',
-      purple: '#3F3CBB',
-      midnight: '#121063',
-      metal: '#565584',
-      'tahiti-blue': '#3AB7BF',
-      'cool-white': '#ECEBFF',
-      'bubble-gum': '#FF77E9',
-      'copper-rust': '#77DCCA',
-    },
     boxShadow: {
       sm: '0px 2px 4px 0px rgba(11, 10, 55, 0.15)',
       lg: '0px 8px 20px 0px rgba(18, 16, 99, 0.06)',
@@ -37,6 +27,16 @@ module.exports = {
       inter: 'Inter, sans-serif',
     },
     extend: {
+      colors: {
+        white: '#FFFFFF',
+        purple: '#3F3CBB',
+        midnight: '#121063',
+        metal: '#565584',
+        'tahiti-blue': '#3AB7BF',
+        'cool-white': '#ECEBFF',
+        'bubble-gum': '#FF77E9',
+        'copper-rust': '#77DCCA',
+      },
     },
   },
   plugins: [],
