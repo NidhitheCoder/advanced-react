@@ -5,7 +5,7 @@ const FixedBgSection = ({url}) => {
         <h1 className="text-3xl font-bold underline tablet:text-red-400 desktop:text-green-600 text-blue-300">
           Hello world!
         </h1>
-        <div className='h-96 bg-midnight h-96 w-screen'>
+        <div className='h-96 bg-midnight w-screen'>
           <p>lorem lorem</p>
         </div>
         <div className="h-96 bg-transparent" >

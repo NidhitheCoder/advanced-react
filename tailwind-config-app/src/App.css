@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+.settings {
+  background-image: url('chrome://global/skin/icons/settings.svg');
+  border: 0;
+  border-radius: 4px;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 16px;
+  fill: white;
+}
+
+.logo {
+  background: url("chrome://branding/content/about-logo.png") no-repeat center;
+  height: 100px;
+  width: 100px;
+}
