@@ -54,3 +54,10 @@
   height: 100px;
   width: 100px;
 }
+
+.show-name {
+  background: url("chrome://branding/content/firefox-wordmark.svg") no-repeat center;
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
