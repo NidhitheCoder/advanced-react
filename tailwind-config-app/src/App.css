@@ -51,13 +51,16 @@
 
 .logo {
   background: url("chrome://branding/content/about-logo.png") no-repeat center;
-  height: 100px;
-  width: 100px;
+  background-size: 80px;
 }
 
 .show-name {
   background: url("chrome://branding/content/firefox-wordmark.svg") no-repeat center;
-  height: 100px;
-  width: 100px;
-  position: relative;
+  background-size: 128px;
+  fill: white;
+}
+
+.google-logo {
+  background-size: 14px;
+  background: url('moz-extension://c3cee35f-494a-4f62-8787-c7811e74043e/favicon.ico') no-repeat center left;
 }
