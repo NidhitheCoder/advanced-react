@@ -1,0 +1,66 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.settings {
+  background-image: url('chrome://global/skin/icons/settings.svg');
+  border: 0;
+  border-radius: 4px;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 16px;
+  fill: white;
+}
+
+.logo {
+  background: url("chrome://branding/content/about-logo.png") no-repeat center;
+  background-size: 80px;
+}
+
+.show-name {
+  background: url("chrome://branding/content/firefox-wordmark.svg") no-repeat center;
+  background-size: 128px;
+  fill: white;
+}
+
+.google-logo {
+  background-size: 14px;
+  background: url('moz-extension://c3cee35f-494a-4f62-8787-c7811e74043e/favicon.ico') no-repeat center left;
+}
