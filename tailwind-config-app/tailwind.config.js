@@ -27,6 +27,12 @@ module.exports = {
       inter: 'Inter, sans-serif',
     },
     extend: {
+      spacing: {
+        '3.5': '10px',
+        21: '82px',
+        33: '134px',
+        '3/7': '39%',
+      },
       colors: {
         white: '#FFFFFF',
         purple: '#3F3CBB',
