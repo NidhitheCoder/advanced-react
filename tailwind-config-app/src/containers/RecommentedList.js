@@ -9,13 +9,13 @@ const RecommentedList = ({list}) => {
       </div>
       <div className='w-2/4 mx-auto grid grid-cols-3 gap-6 py-4'>
         {list.map((recommentItem)=> (
-          <div key={recommentItem.title} className='w-full h-80 rounded-lg bg-light text-white'>
+          <div key={recommentItem.title} className='w-full rounded-lg bg-light text-white'>
             <div className="w-full h-2/4 bg-cover bg-no-repeat rounded-t-md" style={{ backgroundImage: `url(${recommentItem.image})`}}></div>
-            <div className="p-4">
+            <div className="p-4 overflow-hidden">
               <span className="pr-2 text-xs">{recommentItem.source}</span>
               <span className="text-xs">{recommentItem.time}</span>
-              <h1 className="text-xl">{recommentItem.title}</h1>
-              <p>{recommentItem.subtitle}</p>
+              <p className="text-sm font-semibold ">{recommentItem.title}</p>
+              <p className="text-ellipsis mb-2">{recommentItem.subtitle}</p>
             </div>
           </div>
         ))}
