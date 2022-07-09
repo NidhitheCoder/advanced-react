@@ -11,7 +11,18 @@ function App() {
       <CustomHeader />
       <ShortCutContianer />
       <RecommentedList list={recommentedList} />
-      <div className='w-screen h-screen bg-dark'></div>
+      <div className='w-2/4 mx-auto h-screen bg-dark flex flex-row justify-between'>
+        <div className='flex flex-row'>
+          <p className='text-white'>Popular topics:</p>
+          <p className='text-active-color whitespace-nowrap'>Self Improvement</p>
+          <p className='text-active-color whitespace-nowrap'>Food</p>
+          <p className='text-active-color whitespace-nowrap'>Entertainment</p>
+          <p className='text-active-color whitespace-nowrap'>Health & fitness</p>
+          <p className='text-active-color whitespace-nowrap'>Science</p>
+          <p className='text-active-color whitespace-nowrap'>More recommendations</p>
+        </div>
+        <p className='text-active-color whitespace-nowrap'>Privacy Notice</p>
+      </div>
       <FixedBgSection
         url="https://azurecomcdn.azureedge.net/cvt-0b95339c25de3ead5c9876ea2353921f110f3a9dfbdc97bdeca9f573aaaa2447/images/page/home/customer-tabs/forza5-desktop.jpg"
       />
