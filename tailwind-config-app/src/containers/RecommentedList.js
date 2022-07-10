@@ -9,7 +9,10 @@ const RecommentedList = ({list}) => {
       </div>
       <div className='w-2/4 mx-auto grid grid-cols-3 gap-4 py-4'>
         {list.map((recommentItem)=> (
-          <div key={recommentItem.title} className=' group w-full h-96 overflow-hidden rounded-lg bg-light text-white'>
+          <div key={recommentItem.title} className=' group w-full h-96 rounded-lg bg-light text-white relative'>
+            <div className="absolute -top-2 -right-2 h-6 w-6 place-items-center border-active-color border-2 border-solid rounded-full hidden group-hover:grid"> 
+              <span>...</span>
+            </div>
             <div className="w-full h-2/4 bg-cover bg-no-repeat rounded-t-md" style={{ backgroundImage: `url(${recommentItem.image})`}}></div>
             <div className="p-4 overflow-hidden">
               <span className="pr-2 text-xs">{recommentItem.source}</span>
