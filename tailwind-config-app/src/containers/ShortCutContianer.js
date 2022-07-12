@@ -12,7 +12,7 @@ const ShortCutContianer = () => {
               <div className="h-1 w-1 group-hover:bg-white rounded-full bg-dark mx-1" />
               <div className="h-1 w-1 group-hover:bg-white rounded-full bg-dark" />
             </div>
-            <div className="bg-dark rounded-lg opacity-80 p-2 mx-4">
+            <div className="bg-dark-color rounded-lg opacity-80 p-2 mx-4">
               <img className="w-14 h-14 rounded-lg" src={shortcut.url} alt={shortcut.name} />
               <p>{shortcut.name}</p>
               {shortcut.sponsored && <p>{shortcut.sponsored}</p>}
