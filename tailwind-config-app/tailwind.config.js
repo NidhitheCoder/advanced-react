@@ -48,6 +48,7 @@ module.exports = {
         'primary-color': '#fbfbfe',
         'faded-color': '#fbfbfe',
         'dark-color': '#42414d',
+        'hovered-color': 'rgba(255,255,255,0.05)'
       },
     },
   },
