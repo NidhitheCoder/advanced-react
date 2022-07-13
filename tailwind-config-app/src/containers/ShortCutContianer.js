@@ -6,7 +6,7 @@ const ShortCutContianer = () => {
     <div className="w-2/4 bg-dark pt-72 m-auto">
       <div className="w-full min-h-36 flex flex-row justify-center gap-2">
         {shortCuts.map((shortcut) => (
-          <div className="text-center group p-4 px-2 text-white hover:bg-hovered-color rounded-md ">
+          <div key={shortcut.name} className="text-center group p-4 px-2 text-white hover:bg-hovered-color rounded-md ">
             <div className="flex flex-row  w-full justify-end align-bottom pb-2 pr-2" >
               <div className="h-1 w-1 group-hover:bg-white rounded-full bg-dark " />
               <div className="h-1 w-1 group-hover:bg-white rounded-full bg-dark mx-1" />
