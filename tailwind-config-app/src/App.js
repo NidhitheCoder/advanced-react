@@ -5,10 +5,12 @@ import ShortCutContianer from './containers/ShortCutContianer';
 import RecommentedList from './containers/RecommentedList';
 import { recommentedList } from './constants';
 import Footer from './components/Footer';
+import PopupNav from './components/PopupNav';
 
 function App() {
   return (
     <div className='h-full min-h-screen bg-dark'>
+      <PopupNav />
       <CustomHeader />
       <ShortCutContianer />
       <RecommentedList list={recommentedList} />

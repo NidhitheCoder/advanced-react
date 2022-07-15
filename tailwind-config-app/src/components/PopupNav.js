@@ -4,7 +4,8 @@ const PopupNav = () => {
   const [open, setOpen] = useState(false);
   return(
     <div className='w-screen flex justify-end'>
-      <div className={`${open ? 'flex' : 'hidden'} text-white w-1/4 p-8 pt-4 pr-4 h-screen bg-light flex-col absolute right-0 top-0 `}>
+      <button className={`settings bg-white fill-white m-4 text-white hover:bg-light`} onClick={() => setOpen(!open)} />
+      <div className={`${open ? 'flex animate-left ' : 'hidden animate-right '} text-white w-1/5 p-8 pt-4 pr-4 h-screen bg-light flex-col `}>
         <div className="w-full flex justify-end items-end pb-4">
           <button className="h-8 text-xs font-medium rounded-sm bg-hovered-color px-4" onClick={() => setOpen(false)}>Close</button>
         </div>
@@ -26,7 +27,6 @@ const PopupNav = () => {
         <div></div>
         <div></div>
       </div>
-      <button className='settings bg-white fill-white m-4 text-white hover:bg-light' onClick={() => setOpen(!open)} />
     </div>
   );
 }

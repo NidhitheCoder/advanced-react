@@ -62,5 +62,50 @@
 
 .google-logo {
   background-size: 14px;
-  background: url('moz-extension://c3cee35f-494a-4f62-8787-c7811e74043e/favicon.ico') no-repeat center left;
+  background: url('moz-extension://c3cee35f-494a-4f62-8787-c7811e74043e/favicon.ico') no-repeat center right;
+}
+
+.animate-left {
+  position: fixed;
+  z-index: 30;
+  right: 0vw;
+  top: 0;
+  bottom: 0;
+  animation:animate-right 0.5s linear;
+}
+
+.animate-right {
+  position: fixed;
+  z-index: 30;
+  right: -20vw;
+  top: 0;
+  bottom: 0;
+  animation:animate-left 0.5s linear;
+}
+
+@keyframes animate-right {
+  0% {
+    opacity: 0;
+    right: -20vw;
+    transform: translateX(-1.25em);
+}
+100% {
+    opacity: 1;
+    right: 0;
+    transform: translateX(0);
+}
+}
+
+@keyframes animate-left {
+  0% {
+    opacity: 1;
+    right: 0;
+    transform: translateX(0);
+
+}
+100% {
+  opacity: 0;
+  right: -20vw;
+  transform: translateX(-1.25em);
+}
 }
