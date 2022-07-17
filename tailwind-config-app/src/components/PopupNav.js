@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Toggle from "./Toggle";
 
 const PopupNav = () => {
   const [open, setOpen] = useState(false);
@@ -12,7 +13,7 @@ const PopupNav = () => {
         <div className="p-4 flex flex-col">
           <div className="flex flex-row justify-between">
             <p className="font-bold">ShortCuts</p>
-            <p>toggle</p>
+            <Toggle />
           </div>
           <p className="text-xs py-2">Sites you save or visit</p>
           <select name="row" id="row" className="w-2/6 bg-light border-2 rounded-md p-1 my-2 border-solid border-hovered-color">
@@ -29,14 +30,14 @@ const PopupNav = () => {
         <div className="p-4">
           <div className="flex flex-row justify-between py-4">
             <h2>Recommended by Pocket</h2>
-            <p>Toggle</p>
+            <Toggle />
           </div>
           <p>Exceptional content curated by Pocket, part of the Firefox family</p>
         </div>
         <div className="border-b border-gray-500 p-4">
           <div className="flex flex-row justify-between py-4">
             <h2>Recent activity</h2>
-            <p>Toggle</p>
+            <Toggle />
           </div>
           <p>A selection of recent sites and content</p>
         </div>
