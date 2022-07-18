@@ -1,5 +1,4 @@
 import { useState } from "react";
-import PopupNav from "../components/PopupNav";
 
 const CustomHeader = () => {
 
@@ -7,8 +6,7 @@ const CustomHeader = () => {
   window.addEventListener('scroll', () => setfixHeader(window.scrollY > 200));
 
   return (
-    <div className={`w-full m-auto fixed flex flex-col justify-center align-center py-6 border-b-2 ${fixHeader ? 'border-light' : 'border-transparent'}`}>
-      <PopupNav />
+    <div className={`w-full m-auto fixed flex flex-col z-10 justify-center bg-dark/40 align-center py-6 border-b-2 ${fixHeader ? 'border-light' : 'border-transparent'}`}>
       <div className={`w-full transition-transform m-auto py-6 ${fixHeader ? 'hidden' : 'flex' } flex-row justify-center mb-4 align-middle`}>
         <div className="logo w-21 h-21 py-2 mr-2" />
         <div className="show-name w-33 h-21 fill-white" />
