@@ -63,6 +63,7 @@
 .google-logo {
   background-size: 14px;
   background: url('moz-extension://c3cee35f-494a-4f62-8787-c7811e74043e/favicon.ico') no-repeat center right;
+  background-position: left;
 }
 
 .animate-left {

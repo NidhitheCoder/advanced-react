@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Toggle from "./Toggle";
 
-const PopupNav = (sethasShortcuts, setHasRecommend, setHasRecentActivity) => {
+const PopupNav = ({toggleShortCuts, toggleRecommend, toggleRecentActivity}) => {
   const [open, setOpen] = useState(false);
   return(
     <div className='w-screen flex justify-end'>
@@ -13,7 +13,7 @@ const PopupNav = (sethasShortcuts, setHasRecommend, setHasRecentActivity) => {
         <div className="p-4 flex flex-col">
           <div className="flex flex-row justify-between">
             <p className="font-bold">ShortCuts</p>
-            <Toggle onToggle={sethasShortcuts} />
+            <Toggle onToggle={toggleShortCuts} />
           </div>
           <p className="text-xs py-2">Sites you save or visit</p>
           <select name="row" id="row" className="w-2/6 bg-light border-2 rounded-md p-1 my-2 border-solid border-hovered-color">
@@ -30,14 +30,14 @@ const PopupNav = (sethasShortcuts, setHasRecommend, setHasRecentActivity) => {
         <div className="p-4">
           <div className="flex flex-row justify-between py-4">
             <h2>Recommended by Pocket</h2>
-            <Toggle onToggle={setHasRecommend} />
+            <Toggle onToggle={toggleRecommend} />
           </div>
           <p>Exceptional content curated by Pocket, part of the Firefox family</p>
         </div>
         <div className="border-b border-gray-500 p-4">
           <div className="flex flex-row justify-between py-4">
             <h2>Recent activity</h2>
-            <Toggle onToggle={setHasRecentActivity} />
+            <Toggle onToggle={toggleRecentActivity} />
           </div>
           <p>A selection of recent sites and content</p>
         </div>

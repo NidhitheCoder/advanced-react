@@ -9,35 +9,36 @@ import PopupNav from './components/PopupNav';
 import { useState } from 'react';
 
 function App() {
-  const [hasShortcuts, sethasShortcuts] = useState(false);
-  const [hasRecommend, setHasRecommend] = useState(false);
-  const [hasRecentActivity, setHasRecentActivity] = useState(false);
+  const [hasShortcuts, sethasShortcuts] = useState(true);
+  const [hasRecommend, setHasRecommend] = useState(true);
+  const [hasRecentActivity, setHasRecentActivity] = useState(true);
 
   const toggleShortCuts = () => {
     sethasShortcuts(!hasShortcuts);
   };
 
   const toggleRecommend = () => {
-    setHasRecommend(hasRecommend);
+    setHasRecommend(!hasRecommend);
   };
 
   const toggleRecentActivity = () => {
-    setHasRecentActivity(hasRecentActivity);
+    setHasRecentActivity(!hasRecentActivity);
   };
 
   return (
     <div className='h-full min-h-screen bg-dark'>
       <PopupNav toggleShortCuts={toggleShortCuts} toggleRecommend={toggleRecommend} toggleRecentActivity={toggleRecentActivity} />
       <CustomHeader />
-      <ShortCutContianer />
-      <RecommentedList list={recommentedList} />
-      <Footer />
-      <FixedBgSection
+      {hasShortcuts && <ShortCutContianer />}
+      {hasRecommend && <RecommentedList list={recommentedList} />}
+      {hasRecentActivity && <p> Recent Activity</p>}
+      {hasRecommend && <Footer />}
+      {/* <FixedBgSection
         url="https://azurecomcdn.azureedge.net/cvt-0b95339c25de3ead5c9876ea2353921f110f3a9dfbdc97bdeca9f573aaaa2447/images/page/home/customer-tabs/forza5-desktop.jpg"
       />
       <FixedBgSection
         url="https://azurecomcdn.azureedge.net/cvt-0b95339c25de3ead5c9876ea2353921f110f3a9dfbdc97bdeca9f573aaaa2447/images/page/home/customer-tabs/forza5-desktop.jpg"
-      />
+      /> */}
     </div>
   );
 }
