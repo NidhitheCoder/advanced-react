@@ -6,11 +6,28 @@ import RecommentedList from './containers/RecommentedList';
 import { recommentedList } from './constants';
 import Footer from './components/Footer';
 import PopupNav from './components/PopupNav';
+import { useState } from 'react';
 
 function App() {
+  const [hasShortcuts, sethasShortcuts] = useState(false);
+  const [hasRecommend, setHasRecommend] = useState(false);
+  const [hasRecentActivity, setHasRecentActivity] = useState(false);
+
+  const toggleShortCuts = () => {
+    sethasShortcuts(!hasShortcuts);
+  };
+
+  const toggleRecommend = () => {
+    setHasRecommend(hasRecommend);
+  };
+
+  const toggleRecentActivity = () => {
+    setHasRecentActivity(hasRecentActivity);
+  };
+
   return (
     <div className='h-full min-h-screen bg-dark'>
-      <PopupNav />
+      <PopupNav toggleShortCuts={toggleShortCuts} toggleRecommend={toggleRecommend} toggleRecentActivity={toggleRecentActivity} />
       <CustomHeader />
       <ShortCutContianer />
       <RecommentedList list={recommentedList} />
