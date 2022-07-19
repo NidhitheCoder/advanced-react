@@ -39,6 +39,11 @@ function App() {
       <FixedBgSection
         url="https://azurecomcdn.azureedge.net/cvt-0b95339c25de3ead5c9876ea2353921f110f3a9dfbdc97bdeca9f573aaaa2447/images/page/home/customer-tabs/forza5-desktop.jpg"
       /> */}
+      <div className='grid grid-cols-12 bg-orange-700'>
+        <div className=' col-span-12 bg-amber-200 grid grid-cols-12'>
+          <div className='col-span-12 desktop:col-start-3 desktop:col-span-8 bg-lime-600'>dude</div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -9,7 +9,7 @@ const RecommentedList = ({list}) => {
       </div>
       <div className='w-2/4 mx-auto grid grid-cols-3 gap-4 py-4'>
         {list.map((recommentItem)=> (
-          <div key={recommentItem.title} className=' group w-full h-96 rounded-lg bg-light text-white relative'>
+          <div key={recommentItem.title} className='group w-full h-96 rounded-lg bg-light text-white relative'>
             <div
               className="absolute -top-2 -right-2 h-6 w-6 hidden group-hover:flex flex-row bg-light justify-center items-center space-x-1 border-fade-color border-2 border-solid rounded-full"
             > 
