@@ -45,17 +45,31 @@ function App() {
           <div className='col-span-12 desktop:col-start-3 desktop:col-span-8 bg-lime-600'>dude</div>
         </div>
       </div>
-      <div className='flex flex-col justify-center item w-full h-screen'>
-        
-        <div className='bg-orange-700' onClick={() => setShow(true)}>
-          Hmm. We’re having trouble finding that site.
-          {show && <p>lorem ipsum subtitle sample lorem ipsum subtitle sample 1 lorem ipsum subtitle sample
+      <div className='flex flex-col  justify-center item w-full h-screen'>
+
+      <div className="relative group">
+        <p>Hello</p>
+        <div className="absolute top-0 left-0 z-10 hidden">lorem ipsum subtitle sample lorem ipsum subtitle sample 1 lorem ipsum subtitle sample
              1 lorem ipsum subtitle sample 1 4lorem ipsum subtitle sample lorem ipsum subtitle sample 1 lorem 
              ipsum subtitle sample 1 lorem ipsum subtitle sample 1 4lorem ipsum subtitle sample lorem ipsum
               subtitle sample 1 lorem ipsum subtitle sample 1 lorem ipsum subtitle sample 1 4lorem ipsum 
               subtitle sample lorem ipsum subtitle sample 1 lorem ipsum subtitle sample 1 lorem ipsum 
-              subtitle sample 1 4
-          </p>}
+              subtitle sample 1 4</div>
+      </div>
+
+
+        <div className='bg-orange-700 overflow-visible h-full' onClick={() => setShow(!show)}>
+          Hmm. We’re having trouble finding that site.
+          <div className='relative h-full'>
+            {show && <p className='absolute top-0 left-0 z-10 h-full bg-orange-700'>lorem ipsum subtitle sample lorem ipsum subtitle sample 1 lorem ipsum subtitle sample
+              1 lorem ipsum subtitle sample 1 4lorem ipsum subtitle sample lorem ipsum subtitle sample 1 lorem 
+              ipsum subtitle sample 1 lorem ipsum subtitle sample 1 4lorem ipsum subtitle sample lorem ipsum
+                subtitle sample 1 lorem ipsum subtitle sample 1 lorem ipsum subtitle sample 1 4lorem ipsum 
+                subtitle sample lorem ipsum subtitle sample 1 lorem ipsum subtitle sample 1 lorem ipsum 
+                subtitle sample 1 4
+            </p>}
+          </div>
+          
           </div>
         <div className='bg-green-400'>Check your network connection.
 If you are connected but behind a firewall, check that Firefox has permission to access the Web.</div>
