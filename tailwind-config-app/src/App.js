@@ -12,6 +12,7 @@ function App() {
   const [hasShortcuts, sethasShortcuts] = useState(true);
   const [hasRecommend, setHasRecommend] = useState(true);
   const [hasRecentActivity, setHasRecentActivity] = useState(true);
+  const [show, setShow] = useState(false);
 
   const toggleShortCuts = () => {
     sethasShortcuts(!hasShortcuts);
@@ -43,6 +44,21 @@ function App() {
         <div className=' col-span-12 bg-amber-200 grid grid-cols-12'>
           <div className='col-span-12 desktop:col-start-3 desktop:col-span-8 bg-lime-600'>dude</div>
         </div>
+      </div>
+      <div className='flex flex-col justify-center item w-full h-screen'>
+        
+        <div className='bg-orange-700' onClick={() => setShow(true)}>
+          Hmm. We’re having trouble finding that site.
+          {show && <p>lorem ipsum subtitle sample lorem ipsum subtitle sample 1 lorem ipsum subtitle sample
+             1 lorem ipsum subtitle sample 1 4lorem ipsum subtitle sample lorem ipsum subtitle sample 1 lorem 
+             ipsum subtitle sample 1 lorem ipsum subtitle sample 1 4lorem ipsum subtitle sample lorem ipsum
+              subtitle sample 1 lorem ipsum subtitle sample 1 lorem ipsum subtitle sample 1 4lorem ipsum 
+              subtitle sample lorem ipsum subtitle sample 1 lorem ipsum subtitle sample 1 lorem ipsum 
+              subtitle sample 1 4
+          </p>}
+          </div>
+        <div className='bg-green-400'>Check your network connection.
+If you are connected but behind a firewall, check that Firefox has permission to access the Web.</div>
       </div>
     </div>
   );

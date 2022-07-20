@@ -3,12 +3,21 @@ import Toggle from "./Toggle";
 
 const PopupNav = ({toggleShortCuts, toggleRecommend, toggleRecentActivity}) => {
   const [open, setOpen] = useState(false);
+
+  const onClickOpen = () => {
+    setOpen(!open)
+  };
+
+  const onCloseClick = () => {
+    setOpen(false);
+  };
+
   return(
     <div className='w-screen flex justify-end'>
-      <button className={`${open ? 'hidden' : 'block' } settings bg-white fill-white m-4 text-white hover:bg-light fixed z-40`} onClick={() => setOpen(!open)} />
+      <button className={`${open ? 'hidden' : 'block' } settings bg-white fill-white m-4 text-white hover:bg-light fixed z-40`} onClick={onClickOpen} />
       <div className={`${open ? 'flex animate-left ' : 'animate-right '} text-white w-1/5 p-4 h-screen bg-light flex-col `}>
         <div className="w-full flex justify-end items-end p-4 px-2">
-          <button className="h-8 text-xs font-medium rounded-sm bg-hovered-color px-4" onClick={() => setOpen(false)}>Close</button>
+          <button className="h-8 text-xs font-medium rounded-sm bg-hovered-color px-4" onClick={onCloseClick}>Close</button>
         </div>
         <div className="p-4 flex flex-col">
           <div className="flex flex-row justify-between">
