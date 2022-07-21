@@ -50,6 +50,20 @@ module.exports = {
         'dark-color': '#42414d',
         'hovered-color': 'rgba(255,255,255,0.05)'
       },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+        'animate-top': {
+          '0%': { opacity: 0, height: 0 },
+          '100%': { opacity: 1, height: '50px' },
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+        upward: 'animate-top 1s ease-in-out'
+      },
     },
   },
   plugins: [],
