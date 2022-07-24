@@ -16,3 +16,13 @@ export const last = <T>(arr: T[]) => {
 
 // export const last = <T>(arr: T[]): T => { // when we are using :T that helps to make sure the return type is T only.
 // }
+
+export const makeArr = (x: number) => {
+  return [x];
+};
+
+// Multiple props 
+// export const sample = <T, Y = number>(x: T, y: Y) => { // Here we can say specifically the number types only
+export const sample = <T, Y>(x: T, y: Y) => {
+  return [x, y]
+}
