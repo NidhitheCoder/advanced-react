@@ -43,3 +43,23 @@ export const makeFullName2 = <T extends {firstName: string, lastName: string}>(o
     fullName: obj.firstName + ' ' + obj.lastName,
   }
 }
+
+
+// create generics with interfaces(T is used to accpect diffrent types of data as data)
+interface Tab<T> {
+  id: string;
+  position: number;
+  data: T;
+};
+
+// // Specified version
+// type NumberTab =  {
+//   id: string;
+//   position: number;
+//   data: number;
+// }
+
+// // simple version
+type NumberTab = Tab<number>;
+
+type StringTab = Tab<string>;
