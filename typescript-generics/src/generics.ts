@@ -12,7 +12,7 @@
 
 export const last = <T>(arr: T[]) => {
   return arr[arr.length-1];
-}
+};
 
 // export const last = <T>(arr: T[]): T => { // when we are using :T that helps to make sure the return type is T only.
 // }
@@ -25,4 +25,21 @@ export const makeArr = (x: number) => {
 // export const sample = <T, Y = number>(x: T, y: Y) => { // Here we can say specifically the number types only
 export const sample = <T, Y>(x: T, y: Y) => {
   return [x, y]
+};
+
+
+// Here in this function we can only pass firstname as string and lastName as string only.
+export const makeFullName = (obj: {firstName: string, lastName: string}) => {
+  return {
+    ...obj,
+    fullName: obj.firstName + ' ' + obj.lastName,
+  }
+};
+
+// Now in the same function we can pass diff types of props.
+export const makeFullName2 = <T extends {firstName: string, lastName: string}>(obj: T) => {
+  return {
+    ...obj,
+    fullName: obj.firstName + ' ' + obj.lastName,
+  }
 }
