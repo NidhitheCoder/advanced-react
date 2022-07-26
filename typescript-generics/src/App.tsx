@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Form from './components/Form';
 import { last, makeArr, makeFullName, makeFullName2, sample } from './generics';
 
 function App() {
@@ -26,6 +27,10 @@ const nameObject2 = makeFullName2({firstName: 'John', lastName: 'honay', age: 25
      <p>{value3}</p>
      <p>{nameObject.fullName}</p>
      <p>{nameObject2.fullName}</p>
+
+     <Form values={{firstName: 'Bob'}}>
+       {(values) => <div> Hello from form {values.firstName}</div>}
+     </Form>
     </div>
   );
 }
