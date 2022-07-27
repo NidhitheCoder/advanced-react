@@ -8,6 +8,7 @@ const fetchSuperHero = (heroId) => {
 
 export const useSuperheroData = (heroId) => {
   const queryClient = useQueryClient();
+
   return useQuery(
     ['super-hero', heroId],
     () => fetchSuperHero(heroId),
