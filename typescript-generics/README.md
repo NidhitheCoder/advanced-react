@@ -3,4 +3,6 @@ Generics
 - This allows user to consume these components and use their own types.
 - Basic syntax:
   `function identity<Type>(arg: Type): Type { return}`
-- 
+- No learning curve.
+- How to insert
+  `npm i -g typescript`

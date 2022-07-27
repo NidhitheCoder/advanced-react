@@ -28,8 +28,8 @@ const nameObject2 = makeFullName2({firstName: 'John', lastName: 'honay', age: 25
      <p>{nameObject.fullName}</p>
      <p>{nameObject2.fullName}</p>
 
-     <Form values={{firstName: 'Bob'}}>
-       {(values) => <div> Hello from form {values.firstName}</div>}
+     <Form<{lastName: string| null}> values={{lastName: 'Bob'}}>
+       {(values) => <div> Hello from form {values.lastName}</div>}
      </Form>
     </div>
   );
