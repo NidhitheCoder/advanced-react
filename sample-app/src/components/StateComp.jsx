@@ -14,11 +14,24 @@ const StateComp = ({ color, increment, underline, background }) => {
   const incrementAge = (id) => {
     setUsers((currUsers) => {
       return currUsers.map((user) => {
-        console.log(user);
+        if (user.id === id) {
+          return { ...user, age: user.age + 1 };
+        } else {
+          return user;
+        }
       });
     });
   };
-  return <div className="App"></div>;
+
+  const selectUser = (id) => {
+    const user =  users.find(user =>  user.id === id);
+    setSelectedUser(user);
+  }
+  
+  return (
+  <div className="App">
+    <h2>Selected user: {selectUser === null ? "None" : `${selectUser.name} is  ${selectUser.age} years old.`}cd </h2>
+  </div>);
 };
 
 export default StateComp;
