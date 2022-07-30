@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect, useReducer, useState } from "react";
 import Navbar from "./components/Navbar";
+import StateComp from "./components/StateComp";
 
 const reducer = ({ state }) => {
   switch (state) {
@@ -72,6 +73,7 @@ function App() {
     <div className="container two">Two</div>
     <div className="container three">Three</div>
     <div className="container one">Four</div>
+    <StateComp />
     </div>;
 }
 
