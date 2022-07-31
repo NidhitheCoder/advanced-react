@@ -1,8 +1,9 @@
 import React from "react";
 import Todo from "./components/Todo";
-type TodoItem = {
+export type TodoItem = {
   id: number;
   title: string;
+  completed: boolean;
 };
 
 function App() {
@@ -11,8 +12,8 @@ function App() {
   // }
 
   const todos: TodoItem[] = [
-    { id: 1, title: "Washing clothes" },
-    { id: 2, title: "Making dinner" },
+    { id: 1, title: "Washing clothes", completed: true },
+    { id: 2, title: "Making dinner", completed: false },
   ];
 
   return (
