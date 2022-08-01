@@ -10,6 +10,9 @@ test("Shoud render non completed todo component", () => {
   expect(todoElement).toBeInTheDocument();
   expect(todoElement).toHaveTextContent(todo.title);
   expect(todoElement).toContainHTML('<h4>');
+
+  // screen.getByTestId('reward-button');
+  screen.getByTestId('waitmore-button');
 });
 
 afterEach(() => {
@@ -23,4 +26,7 @@ test("Shoud render completed todo component", () => {
   expect(todoElement).toBeInTheDocument();
   expect(todoElement).toHaveTextContent(todo.title);
   expect(todoElement).toContainHTML('<h2>');
+
+  screen.getByTestId('reward-button');
+  // screen.getByTestId('waitmore-button');
 });
