@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import Todo from "../Todo";
 import { TodoItem } from "../../App";
 
@@ -12,7 +12,10 @@ test("Shoud render non completed todo component", () => {
   expect(todoElement).toContainHTML('<h4>');
 
   // screen.getByTestId('reward-button');
-  screen.getByTestId('waitmore-button');
+  const waitMore = screen.getByTestId('waitmore-button');
+  
+  expect(waitMore).toBeInTheDocument();
+  fireEvent.click(waitMore);
 });
 
 afterEach(() => {
@@ -27,6 +30,8 @@ test("Shoud render completed todo component", () => {
   expect(todoElement).toHaveTextContent(todo.title);
   expect(todoElement).toContainHTML('<h2>');
 
-  screen.getByTestId('reward-button');
+  const reward = screen.getByTestId('reward-button');
+  expect(reward).toBeInTheDocument();
+  fireEvent.click(reward);
   // screen.getByTestId('waitmore-button');
 });
