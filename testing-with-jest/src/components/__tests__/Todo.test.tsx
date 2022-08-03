@@ -24,7 +24,7 @@ afterEach(() => {
 
 test("Shoud render completed todo component", () => {
   const todo: TodoItem = { id: 2, title: "Making dinner", completed: true };
-  render (<Todo todo={todo} />)
+  render (<Todo todo={todo} discount={20}/>)
   const todoElement = screen.getByTestId('todo-item-' + todo.id);
   expect(todoElement).toBeInTheDocument();
   expect(todoElement).toHaveTextContent(todo.title);
@@ -34,4 +34,7 @@ test("Shoud render completed todo component", () => {
   expect(reward).toBeInTheDocument();
   fireEvent.click(reward);
   // screen.getByTestId('waitmore-button');
+
+  const collectButton = screen.getByTestId('collect-discount-button');
+  expect(collectButton).toBeInTheDocument();
 });

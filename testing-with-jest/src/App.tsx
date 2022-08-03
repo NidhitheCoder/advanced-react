@@ -17,9 +17,9 @@ function App() {
   ];
 
   return (
-    <div className="App">
+    <div className="todo-container">
       {todos.map((todo) => (
-        <Todo key={todo.id} todo={todo} />
+        <Todo key={todo.id} todo={todo} discount={20} />
       ))}
     </div>
   );

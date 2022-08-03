@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.todo-container {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-card {
+  margin: 1rem 0;
+  background-color: khaki;
+  border: 1px solid lightgreen;
+  padding: 10px;
+  width: 100%;
+}
+
+.todo-card-empty {
+  margin: 1rem 0;
+  background-color: aliceblue;
+  border: 1px solid gray;
+  padding: 10px;
+  width: 100%;
+}
