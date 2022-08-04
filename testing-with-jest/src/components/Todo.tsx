@@ -6,7 +6,7 @@ type TodoItem = {
     title: string;
     completed: boolean;
   };
-  discount: number;
+  discount?: number;
 };
 
 const Todo = ({ todo, discount = 10 }: TodoItem) => {

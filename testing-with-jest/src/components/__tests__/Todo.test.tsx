@@ -25,10 +25,11 @@ afterEach(() => {
 test("Shoud render completed todo component", () => {
   const todo: TodoItem = { id: 2, title: "Making dinner", completed: true };
   render (<Todo todo={todo} discount={20}/>)
-  const todoElement = screen.getByTestId('todo-item-' + todo.id);
+  const todoElement = screen.getByTestId(`todo-item-${todo.id}`);
   expect(todoElement).toBeInTheDocument();
   expect(todoElement).toHaveTextContent(todo.title);
   expect(todoElement).toContainHTML('<h2>');
+  expect(todoElement).toHaveClass('todo-card');
 
   const reward = screen.getByTestId('reward-button');
   expect(reward).toBeInTheDocument();
@@ -37,4 +38,6 @@ test("Shoud render completed todo component", () => {
 
   const collectButton = screen.getByTestId('collect-discount-button');
   expect(collectButton).toBeInTheDocument();
+  fireEvent.click(collectButton);
+  expect(screen.getByTestId(`todo-item-${todo.id}`)).toHaveClass('todo-card-empty')
 });

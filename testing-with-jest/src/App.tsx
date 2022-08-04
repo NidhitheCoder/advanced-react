@@ -1,4 +1,5 @@
 import React from "react";
+import SayHello from "./components/SayHello";
 import Todo from "./components/Todo";
 export type TodoItem = {
   id: number;
@@ -17,10 +18,13 @@ function App() {
   ];
 
   return (
+    <div>
     <div className="todo-container">
       {todos.map((todo) => (
         <Todo key={todo.id} todo={todo} discount={20} />
       ))}
+    </div>
+    <SayHello id={9} />
     </div>
   );
 }
