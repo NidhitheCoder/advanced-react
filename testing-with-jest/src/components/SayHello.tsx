@@ -1,11 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { getCharacter } from "../data";
+
+const [character, setCharacter] = useState("");
 
 const SayHello = ({ id }: { id: number }) => {
-
   useEffect(() => {
-    const getCharactor =() => 'boby'
-  }, [])  
-  return <p>hello welcome</p>;
+    setCharacter(getCharacter(id));
+  }, [id]);
+
+  if (!character) {
+    return null;
+  }
+
+  return <p>hello welcome {character}</p>;
 };
 
 export default SayHello;
