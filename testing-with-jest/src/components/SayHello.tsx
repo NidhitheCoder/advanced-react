@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { getCharacter } from "../data";
 
-const [character, setCharacter] = useState("");
-
 const SayHello = ({ id }: { id: number }) => {
+  const [character, setCharacter] = useState("");
   useEffect(() => {
     setCharacter(getCharacter(id));
   }, [id]);
@@ -12,7 +11,12 @@ const SayHello = ({ id }: { id: number }) => {
     return null;
   }
 
-  return <p>hello welcome {character}</p>;
+  return (
+    <div>
+      <p>hello welcome</p>
+      <p data-testid="character-show">{character}</p>
+    </div>
+  );
 };
 
 export default SayHello;
