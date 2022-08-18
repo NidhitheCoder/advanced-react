@@ -1,33 +1,26 @@
-import React, { createContext } from "react";
+import React, { useState } from "react";
 import "./App.css";
-
-const themeContext = createContext("light");
-
-const ThemeButton = () => {
-  return (
-    <themeContext.Consumer>
-      {(themeValue) => (
-        <div>
-          <button className={themeValue}>{themeValue}</button>
-        </div>
-      )}
-    </themeContext.Consumer>
-  );
-};
-
-const Toolbar = () => {
-  return (
-    <div>
-      <ThemeButton />
-    </div>
-  );
-};
+import Toolbar from "./components/Toolbar";
+import { ThemeContext, themes } from "./themeContext";
 
 function App() {
+  const [theme, setTheme] = useState(themes.dark);
+
+  const toggleTheme = () => {
+    setTheme(state.theme === themes.dark ? themes.light : themes.dark);
+  };
+
+  const state = {
+    theme: theme,
+    toggleTheme: toggleTheme,
+  };
+
   return (
-    <themeContext.Provider value="dark">
-      <Toolbar />
-    </themeContext.Provider>
+    <ThemeContext.Provider value={state}>
+      <div>
+        <Toolbar />
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
