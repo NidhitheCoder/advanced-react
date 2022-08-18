@@ -1,11 +1,33 @@
-import React from 'react';
-import './App.css';
+import React, { createContext } from "react";
+import "./App.css";
+
+const themeContext = createContext("light");
+
+const ThemeButton = () => {
+  return (
+    <themeContext.Consumer>
+      {(themeValue) => (
+        <div>
+          <button className={themeValue}>{themeValue}</button>
+        </div>
+      )}
+    </themeContext.Consumer>
+  );
+};
+
+const Toolbar = () => {
+  return (
+    <div>
+      <ThemeButton />
+    </div>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <h2>Context api sample app</h2>
-    </div>
+    <themeContext.Provider value="dark">
+      <Toolbar />
+    </themeContext.Provider>
   );
 }
 
