@@ -11,10 +11,15 @@ const SayHello = ({ id }: { id: number }) => {
     return null;
   }
 
+  const changeId = () => {
+    setCharacter(getCharacter(111));
+  }
+
   return (
     <div>
       <p>hello welcome</p>
       <p data-testid="character-show">{character}</p>
+      <button data-testid="change-button" onClick={changeId}>Change id</button>
     </div>
   );
 };
