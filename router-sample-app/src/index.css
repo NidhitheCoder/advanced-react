@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.albums-container {
+padding-left: 3rem;
+}
+
+.album {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: cadetblue;
+  width: 20%;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.album h3 {
+  padding-right: 2rem;
+}
