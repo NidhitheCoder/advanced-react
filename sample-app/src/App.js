@@ -2,6 +2,7 @@ import "./App.css";
 import { useEffect, useReducer, useState } from "react";
 import Navbar from "./components/Navbar";
 import StateComp from "./components/StateComp";
+import HOCWrapper from "./components/HOCWrapper";
 
 const reducer = ({ state }) => {
   switch (state) {
@@ -77,4 +78,4 @@ function App() {
     </div>;
 }
 
-export default App;
+export default HOCWrapper(App);
