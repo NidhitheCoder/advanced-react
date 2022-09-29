@@ -9,8 +9,8 @@ interface BadgeProps {
 
 const Badge = ({
   text,
-  bgColor = "very-soft-yellow",
-  color = "darker-cyan",
+  bgColor = "bg-very-soft-yellow",
+  color = "text-darker-cyan",
 }: BadgeProps) => {
   const badgeStyle = classNames("px-4 py-1", {
     [bgColor]: true,
