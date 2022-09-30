@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**.{html,js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{html,js,ts,tsx}"],
   theme: {
     extend: {
       backgroundImage: {
@@ -17,8 +17,8 @@ module.exports = {
         "very-dark-cyan":   "var(--very-dark-cyan)",
         "darker-cyan":  "var(--darker-cyan)",
         "strong-orange":  "var(--strong-orange)",
-      }
-    },
+      },
+   },
   },
   plugins: [],
 }
