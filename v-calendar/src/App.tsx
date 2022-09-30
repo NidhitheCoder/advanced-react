@@ -1,4 +1,5 @@
 import Badge from "./components/Badge";
+import TitleBar from "./components/TitleBar";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <Badge text="Change" />
       <Badge text="Calender" />
       <Badge text="Container" />
-      <Badge text="Calender" />
+      <TitleBar month="January" year={'2022'} />
     </div>
   );
 }
