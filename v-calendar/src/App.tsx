@@ -1,4 +1,5 @@
 import Badge from "./components/Badge";
+import Note from "./components/Note";
 import TitleBar from "./components/TitleBar";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Badge text="Calender" />
       <Badge text="Container" />
       <TitleBar month="January" year={'2022'} />
+      <Note text="Holidays" bgColor="bg-dark-red" />
     </div>
   );
 }
