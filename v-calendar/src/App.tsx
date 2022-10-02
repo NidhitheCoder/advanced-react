@@ -1,6 +1,7 @@
 import Badge from "./components/Badge";
 import BioCard from "./components/BioCard";
 import Holiday, { Holidays } from "./components/Holiday";
+import QuoteCard from "./components/QuoteCard";
 import TitleBar from "./components/TitleBar";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Holiday text="Holidays" />
       <Holiday text="Holidays"variant={Holidays.Company} />
       <BioCard name="John" description="lorem sdfskjfksjd" imgSrc="https://random-user.png" />
+      <QuoteCard text="lorem o123333" />
     </div>
   );
 }

@@ -9,7 +9,7 @@ module.exports = {
       "linear-gradient(200deg, var(--very-soft-green) 0%, var(--soft-pink))",
   },
   colors: {
-    "very-soft-green":    "var(--very-soft-green)",
+    "very-soft-green": "var(--very-soft-green)",
     "soft-pink":  "var(--soft-pink)",
     "strong-blue":  "var(--strong-blue)",
     "light-grayish-blue":  "var(--light-grayish-blue)",
