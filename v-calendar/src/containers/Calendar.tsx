@@ -80,14 +80,19 @@ const Calendar = () => {
 
   return (
     <div className="p-8">
-      <div className="flex flex-row w-full justify-between">
+      <div className="flex flex-row w-full justify-between text-xl font-bold">
         <p>{weekDay[today.getDay()]}</p>
         <p>{monthsData[today.getMonth()].name}</p>
         <p>{today.getFullYear()}</p>
       </div>
-      <div className="grid grid-cols-7">
+      <div className="grid grid-cols-7 border-2 border-solid border-light-grayish-blue">
         {cells.map((cell) => (
-          <div className="p-4 border-2">{cell}</div>
+          <div
+            key={cell}
+            className="p-4 border-2 border-solid border-light-grayish-blue text-strong-orange"
+          >
+            {cell}
+          </div>
         ))}
       </div>
     </div>
