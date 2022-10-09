@@ -8,8 +8,15 @@ const Calendar = () => {
 
   const getElements = (monthData: any, currentYear: number, currentMonth: number) => {
     const days: any = [];
-    for (let index = 0; index <= monthData.days; index++) {
-      days.push(`${index}/${currentMonth}/${currentYear}`);
+    for (let index = 1; index <= monthData.days; index++) {
+      if(index < 1) {
+        const nextDate = `${currentMonth + 1}/${index + 1}/${currentYear}`;
+        const dt = new Date(nextDate);
+        dt.setDate(dt.getDate() - today.getDate() - index );
+        days.push(dt);
+      } else {
+        days.push(`${currentMonth + 1}/${index}/${currentYear}`);
+      }
     }
     setCells(days);
   };
@@ -30,18 +37,18 @@ const Calendar = () => {
         <p>{today.getFullYear()}</p>
       </div>
       <div className="grid grid-cols-7 border-2 border-solid border-light-grayish-blue">
-        {cells.map((cell) => {
-          console.log(cell);
+        {cells.map((cell : Date) => {
+          const dt = new Date(cell);
           // const isHoliday = holidayList.map(holiday => {
           //   const currentDate = new Date(holiday.date)
           //   console.log(currentDate, cell)
           // })
           return (
             <div
-              key={cell.getDate()}
+              key={dt.getDate()}
               className="p-4 border-2 border-solid border-light-grayish-blue text-strong-orange"
             >
-              {cell.getDate()}
+              {dt.getDate()}
             </div>
           );
         })}
