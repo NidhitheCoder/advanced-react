@@ -6,20 +6,23 @@ const UnwantedUseState = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: any) => {
     e.preventDefault();
     console.warn({ email, password });
   };
+
   return (
     <form onSubmit={onSubmit}>
       <label htmlFor="email">Email</label>
       <input
+        value={email}
         type="email"
         id="email"
         onChange={(e) => setEmail(e.target.value)}
       />
       <label htmlFor="password">Password</label>
       <input
+        value={password}
         type="password"
         id="password"
         onChange={(e) => setPassword(e.target.value)}

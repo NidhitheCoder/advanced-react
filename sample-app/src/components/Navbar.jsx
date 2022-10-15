@@ -1,4 +1,5 @@
 import React from "react";
+import HOCWrapper from "./HOCWrapper";
 import './Navbar.css';
 
 const Navbar = ({children}) => {
@@ -16,4 +17,4 @@ const Navbar = ({children}) => {
   )
 };
 
-export default Navbar;
+export default HOCWrapper(Navbar);

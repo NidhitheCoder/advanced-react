@@ -1,10 +1,9 @@
 import React from "react";
 import "./App.css";
-import { useEffect, useReducer, useState } from "react";
+import { useReducer, useState } from "react";
 import Navbar from "./components/Navbar";
-import StateComp from "./components/StateComp";
-import HOCWrapper from "./components/HOCWrapper";
 import UnwantedUseState from "./components/hooks/UnwantedUsestate";
+import StateComp from "./components/StateComp";
 
 const reducer = ({ state }) => {
   switch (state) {
@@ -18,6 +17,9 @@ const reducer = ({ state }) => {
       return {
         state: "PRESSED_ONCE",
       };
+
+    default:
+      return "PRESSED_NOTHING"
   }
 };
 
@@ -66,19 +68,19 @@ function App() {
   }
 
   return <div className="App" onClick={clicked}>
-    <Navbar>
+    {/* <Navbar>
       <div>This is navbar content</div>
-    </Navbar>
+    </Navbar> */}
     <div className="container one">
       One Current state :{state}
-    {/* <Button color="orange" background="blue" /> */}
+    <Button color="orange" background="blue" />
     </div>
     <div className="container two">Two</div>
     <div className="container three">Three</div>
     <div className="container one">Four</div>
-    {/* <StateComp /> */}
+    <StateComp />
     <UnwantedUseState />
     </div>;
 }
 
-export default HOCWrapper(App);
+export default App;
