@@ -1,8 +1,10 @@
+import React from "react";
 import "./App.css";
 import { useEffect, useReducer, useState } from "react";
 import Navbar from "./components/Navbar";
 import StateComp from "./components/StateComp";
 import HOCWrapper from "./components/HOCWrapper";
+import UnwantedUseState from "./components/hooks/UnwantedUsestate";
 
 const reducer = ({ state }) => {
   switch (state) {
@@ -69,12 +71,13 @@ function App() {
     </Navbar>
     <div className="container one">
       One Current state :{state}
-    <Button color="orange" background="blue" />
+    {/* <Button color="orange" background="blue" /> */}
     </div>
     <div className="container two">Two</div>
     <div className="container three">Three</div>
     <div className="container one">Four</div>
-    <StateComp />
+    {/* <StateComp /> */}
+    <UnwantedUseState />
     </div>;
 }
 
