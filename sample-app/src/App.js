@@ -68,6 +68,7 @@ function App() {
   }
 
   return <div className="App" onClick={clicked}>
+    <UnwantedUseState />
     {/* <Navbar>
       <div>This is navbar content</div>
     </Navbar> */}
@@ -79,7 +80,6 @@ function App() {
     <div className="container three">Three</div>
     <div className="container one">Four</div>
     <StateComp />
-    <UnwantedUseState />
     </div>;
 }
 
