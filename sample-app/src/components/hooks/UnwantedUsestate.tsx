@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import React from "react";
 
 // this is the old way and actually there are no need to use useStates
@@ -38,7 +38,7 @@ const UnwantedUseState = () => {
   const passwordRef = useRef(null);
     const onSubmit = (e: any) => {
       e.preventDefault();
-      console.warn('hii');
+      console.warn('hii',  emailRef.current);
     };
 
   return (

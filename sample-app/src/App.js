@@ -1,42 +1,38 @@
 import React from "react";
 import "./App.css";
-import { useReducer, useState } from "react";
-import Navbar from "./components/Navbar";
+import { useState } from "react";
+// import Navbar from "./components/Navbar";
 import UnwantedUseState from "./components/hooks/UnwantedUsestate";
 import StateComp from "./components/StateComp";
 
-const reducer = ({ state }) => {
-  switch (state) {
-    case "PRESSED_ONCE":
-      return { state: "PRESSED_TWO" };
-    case "PRESSED_TWO":
-      return {
-        state: "PRESSED_THREE",
-      };
-    case "PRESSED_THREE":
-      return {
-        state: "PRESSED_ONCE",
-      };
+// const reducer = ({ state }) => {
+//   switch (state) {
+//     case "PRESSED_ONCE":
+//       return { state: "PRESSED_TWO" };
+//     case "PRESSED_TWO":
+//       return {
+//         state: "PRESSED_THREE",
+//       };
+//     case "PRESSED_THREE":
+//       return {
+//         state: "PRESSED_ONCE",
+//       };
 
-    default:
-      return "PRESSED_NOTHING"
-  }
-};
+//     default:
+//       return "PRESSED_NOTHING"
+//   }
+// };
 
-const Button = ({ color, increment, underline, background}) => {
-  const [counter, setCounter] = useState(0);
-  const [state, dispatch] = useReducer(reducer, { state: "PRESSED_ONCE" });
-  return (
-    <div style={{ color, background, textDecoration: underline && "underline" }}>
-      <div onClick={() => dispatch()}>I am a button</div>
-      <div>{state.state}</div>
-    </div>
-  );
-};
-// idle
-// Loading
-// loaded
-// error
+// const Button = ({ color, increment, underline, background}) => {
+//   // const [counter, setCounter] = useState(0);
+//   const [state, dispatch] = useReducer(reducer, { state: "PRESSED_ONCE" });
+//   return (
+//     <div style={{ color, background, textDecoration: underline && "underline" }}>
+//       <div onClick={() => dispatch()}>I am a button</div>
+//       <div>{state.state}</div>
+//     </div>
+//   );
+// };
 
 function App() {
   const [state, setState] = useState("idle");
@@ -69,16 +65,13 @@ function App() {
 
   return <div className="App" onClick={clicked}>
     <UnwantedUseState />
-    {/* <Navbar>
-      <div>This is navbar content</div>
-    </Navbar> */}
-    <div className="container one">
+    {/* <div className="container one">
       One Current state :{state}
     <Button color="orange" background="blue" />
     </div>
     <div className="container two">Two</div>
     <div className="container three">Three</div>
-    <div className="container one">Four</div>
+    <div className="container one">Four</div> */}
     <StateComp />
     </div>;
 }
