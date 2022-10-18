@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import React from "react";
+import React, { FormEvent, useRef } from "react";
 
 // this is the old way and actually there are no need to use useStates
 // const UnwantedUseState = () => {
@@ -36,10 +35,11 @@ const UnwantedUseState = () => {
 
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
-    const onSubmit = (e: any) => {
-      e.preventDefault();
-      console.warn('hii',  emailRef.current);
-    };
+
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.warn('hii', emailRef?.current?.['value'], passwordRef?.current?.['value']);
+  };
 
   return (
     <form onSubmit={onSubmit}>

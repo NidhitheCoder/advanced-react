@@ -4,6 +4,7 @@ import { useState } from "react";
 // import Navbar from "./components/Navbar";
 import UnwantedUseState from "./components/hooks/UnwantedUsestate";
 import StateComp from "./components/StateComp";
+import Counter from "./components/hooks/Counter";
 
 // const reducer = ({ state }) => {
 //   switch (state) {
@@ -63,7 +64,8 @@ function App() {
     return <div>Bad server response</div>
   }
 
-  return <div className="App" onClick={clicked}>
+  return <div className="App">
+    <div onClick={clicked}> click</div>
     <UnwantedUseState />
     {/* <div className="container one">
       One Current state :{state}
@@ -73,6 +75,7 @@ function App() {
     <div className="container three">Three</div>
     <div className="container one">Four</div> */}
     <StateComp />
+    <Counter />
     </div>;
 }
 
