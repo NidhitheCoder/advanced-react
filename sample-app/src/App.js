@@ -5,6 +5,7 @@ import { useState } from "react";
 import UnwantedUseState from "./components/hooks/UnwantedUsestate";
 import StateComp from "./components/StateComp";
 import Counter from "./components/hooks/Counter";
+import ShowName from "./components/hooks/ShowName";
 
 // const reducer = ({ state }) => {
 //   switch (state) {
@@ -76,6 +77,7 @@ function App() {
     <div className="container one">Four</div> */}
     <StateComp />
     <Counter />
+    <ShowName />
     </div>;
 }
 
