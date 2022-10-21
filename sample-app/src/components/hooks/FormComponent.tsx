@@ -18,7 +18,7 @@ const FormComponent = () => {
 
   return (
     <div
-      className="bg-black"
+      className="bg-black p-24"
       style={{ background: darkMode ? "#333" : "#FFF" }}
     >
       <form>

@@ -6,6 +6,7 @@ import UnwantedUseState from "./components/hooks/UnwantedUsestate";
 import StateComp from "./components/StateComp";
 import Counter from "./components/hooks/Counter";
 import ShowName from "./components/hooks/ShowName";
+import FormComponent from "./components/hooks/FormComponent";
 
 // const reducer = ({ state }) => {
 //   switch (state) {
@@ -78,6 +79,7 @@ function App() {
     <StateComp />
     <Counter />
     <ShowName />
+    <FormComponent /> 
     </div>;
 }
 
