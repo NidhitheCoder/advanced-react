@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 
 const StateComp = ({ color, increment, underline, background }) => {
   const [users, setUsers] = useState([
@@ -24,14 +23,21 @@ const StateComp = ({ color, increment, underline, background }) => {
   };
 
   const selectUser = (id) => {
-    const user =  users.find(user =>  user.id === id);
+    const user = users.find((user) => user.id === id);
     setSelectedUser(user);
-  }
-  
+  };
+
   return (
-  <div className="App">
-    <h2>Selected user: {selectUser === null ? "None" : `${selectUser.name} is  ${selectUser.age} years old.`}cd </h2>
-  </div>);
+    <div className="App">
+      <h2>
+        Selected user:{" "}
+        {selectUser === null
+          ? "None"
+          : `${selectUser.name} is  ${selectUser.age} years old.`}
+        cd{" "}
+      </h2>
+    </div>
+  );
 };
 
 export default StateComp;

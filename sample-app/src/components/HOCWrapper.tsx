@@ -1,15 +1,17 @@
 import React from "react";
 import { useState } from "react";
 
-const HOCWrapper = (WrappedComponent) => {
-  const [isLoader, setIsLoader] = useState();
-  if (isLoader) {
+const HOCWrapper = (WrappedComponent: any) => {
+  // const [isLoader, setIsLoader] = useState();
+
+  if (true) {
     return (
       <div className="h-screen w-screen grid place-items-center">
         <p>Loading</p>
       </div>
     );
   }
+
   return (
     <div className="bg-slate-100">
       <p className="rotate-12">One</p>
