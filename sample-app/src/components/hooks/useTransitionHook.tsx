@@ -1,24 +1,34 @@
 import React, { useState, useTransition } from "react";
 
 const UseTransitionHook = () => {
+  const [name, setName] = useState<string>("");
+  const [lists, setLists] = useState<string[]>([]);
   const [isPending, startTransition] = useTransition();
-  const [value, setValue] = useState("");
+  const LIST_SIZE: number = 10000;
 
-  const someEventHandler = (event: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setName(value);
+
     startTransition(() => {
-      setValue(event.target.value);
+      const dataList: string[] = [];
+      for (let i: number = 0; i < LIST_SIZE; i++) {
+        dataList.push(value);
+      }
+      setLists(dataList);
     });
   };
 
   return (
     <div>
-      <h1>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae
-        molestias asperiores magni, dolores ducimus, error fuga quis est sit
-        laborum delectus. Itaque eveniet ipsum, maiores vero asperiores
-        exercitationem sapiente ipsam?
-      </h1>
-      <button onClick={someEventHandler}>Click Me</button>
+      <input type="text" value={name} onChange={handleChange} />
+      {isPending ? (
+        <div>Loading...</div>
+      ) : (
+        lists.map((list: string) => {
+          return <div key={list}>{list}</div>;
+        })
+      )}
     </div>
   );
 };
