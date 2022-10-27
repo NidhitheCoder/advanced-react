@@ -7,8 +7,9 @@ import StateComp from "./components/StateComp";
 import Counter from "./components/hooks/Counter";
 import ShowName from "./components/hooks/ShowName";
 import FormComponent from "./components/hooks/FormComponent";
-import {ReactComponent as ReactLogo} from './logo.svg';
-import UseTransitionHook from "./components/hooks/useTransitionHook";
+// import {ReactComponent as ReactLogo} from './logo.svg';
+// import UseTransitionHook from "./components/hooks/useTransitionHook";
+import UseTransitionHook2 from "./components/hooks/useTransitionHook2";
 
 // const reducer = ({ state }) => {
 //   switch (state) {
@@ -82,8 +83,9 @@ function App() {
     <Counter />
     <ShowName />
     <FormComponent /> 
-    <ReactLogo />
-    <UseTransitionHook /> 
+    {/* <ReactLogo /> */}
+    {/* <UseTransitionHook />  */}
+    <UseTransitionHook2 />
     </div>;
 }
 
