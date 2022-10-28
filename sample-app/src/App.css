@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+/* Code for customizing file input  */
+input[type="file"] {
+  position: relative;
+  /* display: none; */
+  width: 15rem;
+  height: 5rem;
+}
+
+input[type="file"]::before {
+  content: "Browse file";
+  position: absolute;
+  background-color: orange;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
