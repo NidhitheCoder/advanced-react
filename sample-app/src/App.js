@@ -10,6 +10,7 @@ import FormComponent from "./components/hooks/FormComponent";
 // import {ReactComponent as ReactLogo} from './logo.svg';
 // import UseTransitionHook from "./components/hooks/useTransitionHook";
 import UseTransitionHook2 from "./components/hooks/useTransitionHook2";
+import FileUploader from "./components/FileUploader";
 
 // const reducer = ({ state }) => {
 //   switch (state) {
@@ -86,6 +87,7 @@ function App() {
     {/* <ReactLogo /> */}
     {/* <UseTransitionHook />  */}
     <UseTransitionHook2 />
+    <FileUploader />
     </div>;
 }
 
