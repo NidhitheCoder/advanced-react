@@ -39,19 +39,37 @@
 
 /* Code for customizing file input  */
 input[type="file"] {
+  margin-top: 5rem;
   position: relative;
   /* display: none; */
-  width: 15rem;
-  height: 5rem;
+  width: 100px;
+  height: 200px;
 }
 
 input[type="file"]::before {
   content: "Browse file";
   position: absolute;
   background-color: orange;
-  z-index: 2;
+  /* z-index: 2; */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 200px;
+}
+
+.climate {
+  background-color: yellowgreen;
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+
+.climate::before {
+  content: 'Some content';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
 }

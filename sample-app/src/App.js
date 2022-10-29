@@ -88,6 +88,8 @@ function App() {
     {/* <UseTransitionHook />  */}
     <UseTransitionHook2 />
     <FileUploader />
+
+    <div className="climate">Hello there</div>
     </div>;
 }
 
