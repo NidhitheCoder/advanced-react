@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+/* Code for customizing file input  */
+input[type="file"] {
+  position: relative;
+  /* display: none; */
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+input[type="file"]::after {
+  content: "Browse file";
+  position: absolute;
+  background-color: orange;
+  /* z-index: 2; */
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 50px;
+}
+
+.climate {
+  background-color: yellowgreen;
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+
+.climate::before {
+  content: 'Some content';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: blueviolet;
+}

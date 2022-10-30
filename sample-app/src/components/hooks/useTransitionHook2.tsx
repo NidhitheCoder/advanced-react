@@ -20,7 +20,7 @@ const UseTransitionHook2 = () => {
 
   return (
     <div className="">
-      <input type="text" value={input} onChange={handleChange} />
+      <input type="text" value={input } onChange={handleChange} />
       {isPending
         ? "Loading..."
         : list.map((item, index) => {
