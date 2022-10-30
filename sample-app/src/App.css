@@ -39,22 +39,25 @@
 
 /* Code for customizing file input  */
 input[type="file"] {
-  margin-top: 5rem;
   position: relative;
   /* display: none; */
-  width: 100px;
-  height: 200px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
 }
 
-input[type="file"]::before {
+input[type="file"]::after {
   content: "Browse file";
   position: absolute;
   background-color: orange;
   /* z-index: 2; */
   top: 0;
   left: 0;
-  width: 100px;
-  height: 200px;
+  width: 200px;
+  height: 50px;
 }
 
 .climate {
