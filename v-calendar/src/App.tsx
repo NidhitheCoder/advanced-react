@@ -1,21 +1,15 @@
-import Badge from "./components/Badge";
-import BioCard from "./components/BioCard";
-import Holiday, { Holidays } from "./components/Holiday";
-import QuoteCard from "./components/QuoteCard";
-import TitleBar from "./components/TitleBar";
 import Calendar from "./containers/Calendar";
+import MonthCover from "./containers/MonthCover";
 
 function App() {
   return (
     <div className="flex flex-col h-screen w-screen bg-linear-softgreen-softpink">
-      {/* <Badge text="Calender" />
-      <Badge text="New" />
-      <Badge text="Change" />
-      <Badge text="Calender" />
-      <Badge text="Container" />
-      <TitleBar month="January" year={"2022"} />
-      <Holiday text="Holidays" />
-      <Holiday text="Holidays" variant={Holidays.Company} /> */}
+      <MonthCover
+        quote="lorem ipsam"
+        author="Jet Lee"
+        imgSrc="https://random.jpg"
+        description="description texts here"
+      />
       <Calendar />
     </div>
   );
