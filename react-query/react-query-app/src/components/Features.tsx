@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
-import { useQuery } from "react-query";
+import { useQueries, useQuery } from "react-query";
+
+const fetchSuperHero = (postId: number) => {
+  return axios.get(`http://localhost:4000/superheros/${postId}`);
+};
 
 const Features = () => {
-
-  const [post, setPost] = useState<any>();
   const { data: featuresList, isLoading } = useQuery("features posts", () => {
     return axios
       .get("https://jsonplaceholder.typicode.com/posts")
       .then((res: any) => res.data);
   });
+
+  const queryResults = useQueries(
+    featuresList.map((feature: any) => {
+      return {
+        queryKey: ["posts", feature.id],
+        queryFunc: () => fetchSuperHero(feature.id),
+      };
+    })
+  );
 
   if (isLoading) {
     return (
@@ -28,7 +39,13 @@ const Features = () => {
         ))}
       </div>
       <div>
-        <p>{post.name}</p>
+        {queryResults.map(post => {
+          return (
+            <div>
+              <p>{post.name}</p>
+            </div>
+          )
+        })}
       </div>
     </div>
   );
