@@ -18,7 +18,7 @@ const MonthCover = ({
   description,
 }: MonthCoverProps) => {
   return (
-    <div className="flex flex-col p-4">
+    <div className="flex flex-col p-4 h-auto">
       <Badge text="Quote of the month"/>
       <QuoteCard text={quote} />
       <BioCard name={author} description={description} imgSrc={imgSrc} />

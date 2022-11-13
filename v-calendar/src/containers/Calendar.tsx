@@ -10,10 +10,7 @@ const Calendar = () => {
 
   useEffect(() => {
     const currentMonthData = monthsData[today.getMonth()];
-    const dateCells = getElements(
-      currentMonthData,
-      today,
-    );
+    const dateCells = getElements(currentMonthData, today);
     setCells(dateCells);
   }, []);
 
@@ -25,7 +22,7 @@ const Calendar = () => {
 
   return (
     <div className="p-8">
-      <div className="flex flex-row w-full justify-between text-xl font-bold">
+      <div className="flex flex-row w-full h-auto justify-between text-xl font-bold">
         <p>{weekDay[today.getDay()]}</p>
         <div className="flex flex-row">
           <p className="pr-4">{today.getDate()}</p>
@@ -43,7 +40,6 @@ const Calendar = () => {
           const isHoliday = holidayList.find(
             (day) => day.date === cell.toString()
           )?.date;
-          console.log(isHoliday);
 
           const textStyles = classNames(
             "p-4 border-2 border-solid border-light-grayish-blue",
