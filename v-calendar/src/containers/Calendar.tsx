@@ -14,15 +14,19 @@ const Calendar = () => {
     setCells(dateCells);
   }, []);
 
-  const extraSpaceOnStart = today.getDate() % 6;
+  useEffect(() => {
+    if (cells.length < 32) {
+      const extraSpaceOnStart = today.getDate() % 6;
 
-  for (let i = 0; i <= extraSpaceOnStart; i++) {
-    cells.unshift(new Date("0"));
-  }
+      for (let i = 0; i <= extraSpaceOnStart; i++) {
+        cells.unshift(new Date("0"));
+      }
+    }
+  }, [cells]);
 
   return (
     <div className="p-8">
-      <div className="flex flex-row w-full h-auto justify-between text-xl font-bold">
+      <div className="flex flex-row w-full h-auto justify-between text-xl font-bold pt-4">
         <p>{weekDay[today.getDay()]}</p>
         <div className="flex flex-row">
           <p className="pr-4">{today.getDate()}</p>

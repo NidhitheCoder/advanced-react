@@ -3,7 +3,7 @@ import MonthCover from "./containers/MonthCover";
 
 function App() {
   return (
-    <div className="flex flex-col h-screen w-screen bg-linear-softgreen-softpink">
+    <div className="flex flex-col h-auto md:h-screen w-screen bg-linear-softgreen-softpink">
       <MonthCover
         quote='"The Web as I envisaged it, we have not seen it yet. The future is still so much bigger than the past.”'
         author="Tim Berners-Lee"
