@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
-import { monthsData, weekDay } from "../constants";
+import { monthsData, weekDays } from "../constants";
 import holidayList from "../data.json";
 import { getElements } from "../utils/date.utils";
 
@@ -26,13 +26,19 @@ const Calendar = () => {
 
   return (
     <div className="p-8">
-      <div className="flex flex-row w-full h-auto justify-between text-xl font-bold pt-4">
-        <p>{weekDay[today.getDay()]}</p>
+      <div className="flex flex-row w-full h-auto justify-around text-xl font-bold text-left pt-4 mb-2">
+        <p>{weekDays[today.getDay()]}</p>
         <div className="flex flex-row">
           <p className="pr-4">{today.getDate()}</p>
           <p>{monthsData[today.getMonth()].name}</p>
         </div>
         <p>{today.getFullYear()}</p>
+      </div>
+      <div className="flex flex-row justify-between border-2 border-solid border-light-grayish-blue">
+        {
+          weekDays.map(day => 
+            <p className="w-full bg-very-soft-green text-center border-2 border-solid border-light-grayish-blue">{day}</p>)
+        }
       </div>
       <div className="grid grid-cols-7 border-2 border-solid border-light-grayish-blue">
         {cells.map((cell: Date) => {
