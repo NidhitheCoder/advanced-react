@@ -1,54 +1,68 @@
+import classNames from "classnames";
 import React, { useEffect, useState } from "react";
-import { monthsData, weekDay } from "../constants";
+import { monthsData, weekDays } from "../constants";
 import holidayList from "../data.json";
+import { getElements } from "../utils/date.utils";
 
 const Calendar = () => {
   const [cells, setCells] = useState<Date[]>([]);
   const today = new Date(Date.now());
 
-  const getElements = (monthData: any, currentYear: number, currentMonth: number) => {
-    const days: any = [];
-    for (let index = 1; index <= monthData.days; index++) {
-      if(index < 1) {
-        const nextDate = `${currentMonth + 1}/${index + 1}/${currentYear}`;
-        const dt = new Date(nextDate);
-        dt.setDate(dt.getDate() - today.getDate() - index );
-        days.push(dt);
-      } else {
-        days.push(`${currentMonth + 1}/${index}/${currentYear}`);
-      }
-    }
-    setCells(days);
-  };
-
   useEffect(() => {
     const currentMonthData = monthsData[today.getMonth()];
-    getElements(currentMonthData, today.getFullYear(), today.getMonth());
+    const dateCells = getElements(currentMonthData, today);
+    setCells(dateCells);
   }, []);
+
+  useEffect(() => {
+    if (cells.length < 32) {
+      const extraSpaceOnStart = today.getDate() % 6;
+
+      for (let i = 0; i <= extraSpaceOnStart; i++) {
+        cells.unshift(new Date("0"));
+      }
+    }
+  }, [cells]);
 
   return (
     <div className="p-8">
-      <div className="flex flex-row w-full justify-between text-xl font-bold">
-        <p>{weekDay[today.getDay()]}</p>
+      <div className="flex flex-row w-full h-auto justify-around text-xl font-bold text-left pt-4 mb-2">
+        <p>{weekDays[today.getDay()]}</p>
         <div className="flex flex-row">
           <p className="pr-4">{today.getDate()}</p>
           <p>{monthsData[today.getMonth()].name}</p>
         </div>
         <p>{today.getFullYear()}</p>
       </div>
+      <div className="flex flex-row justify-between border-2 border-solid border-light-grayish-blue">
+        {
+          weekDays.map(day => 
+            <p className="w-full bg-very-soft-green text-center border-2 border-solid border-light-grayish-blue">{day}</p>)
+        }
+      </div>
       <div className="grid grid-cols-7 border-2 border-solid border-light-grayish-blue">
-        {cells.map((cell : Date) => {
+        {cells.map((cell: Date) => {
           const dt = new Date(cell);
-          // const isHoliday = holidayList.map(holiday => {
-          //   const currentDate = new Date(holiday.date)
-          //   console.log(currentDate, cell)
-          // })
+          const isToday =
+            dt.toLocaleDateString("en-US") ===
+            today.toLocaleDateString("en-US");
+
+          const isHoliday = holidayList.find(
+            (day) => day.date === cell.toString()
+          )?.date;
+
+          const textStyles = classNames(
+            "p-4 border-2 border-solid border-light-grayish-blue",
+            {
+              "text-dark-red font-bold text-xl": isHoliday,
+              "text-strong-orange font-bold text-xl": isToday,
+              "text-white": !isHoliday && !isToday,
+            }
+          );
+
           return (
-            <div
-              key={dt.getDate()}
-              className="p-4 border-2 border-solid border-light-grayish-blue text-strong-orange"
-            >
-              {dt.getDate()}
+            <div key={dt.getDate()} className={textStyles}>
+              {dt.getFullYear() === today.getFullYear() ? dt.getDate() : ""}
             </div>
           );
         })}

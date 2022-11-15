@@ -1,4 +1,4 @@
-const weekDay = [
+const weekDays = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -59,5 +59,4 @@ const monthsData = [
   },
 ];
 
-
-export { weekDay, monthsData }
+export { weekDays, monthsData };

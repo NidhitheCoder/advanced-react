@@ -18,6 +18,7 @@ module.exports = {
     "very-dark-cyan":   "var(--very-dark-cyan)",
     "darker-cyan":  "var(--darker-cyan)",
     "strong-orange":  "var(--strong-orange)",
+    'white': 'white',
   },
   },
   plugins: [],
