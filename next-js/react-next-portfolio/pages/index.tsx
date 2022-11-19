@@ -1,6 +1,4 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
 
 export default function Home() {
   return (
@@ -11,8 +9,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main >
+      <main>
+        <section className="bg-blue-700 min-h-screen w-screen p-4">hello</section>
       </main>
     </div>
-  )
+  );
 }
