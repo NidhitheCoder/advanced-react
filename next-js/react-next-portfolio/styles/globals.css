@@ -20,6 +20,6 @@ a {
 }
 
 @font-face {
-  font-family: "sans-serif";
+  font-family: "kalam";
+  src: url("../Kalam-Regular.ttf");
 }
-
