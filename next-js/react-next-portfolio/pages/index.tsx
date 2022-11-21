@@ -1,5 +1,13 @@
-import Head from "next/head";
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import {
+  AiFillLinkedin,
+  AiFillTwitterCircle,
+  AiFillYoutube,
+} from "react-icons/ai";
+import Head from "next/head";
+import Image from "next/image";
+
+import Dev from "../assets/sun-boat.jpg";
 
 const Home = () => {
   return (
@@ -13,16 +21,40 @@ const Home = () => {
       <main className="bg-white px-10">
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between">
-            <h1 className="text-xl">Developed by Nidheesh</h1>
+            <h1 className="text-xl font-kalam">Developed by Nidheesh</h1>
             <ul className="flex items-center">
               <li>
-                <BsFillMoonStarsFill className="cursor-pointer text-2xl"/>
+                <BsFillMoonStarsFill className="cursor-pointer text-2xl" />
               </li>
               <li>
-                <a href="#" className="bg-gradient-to-r from-cyan-500 to-teal-500 px-4 py-2 text-white text-2xl rounded-md ml-2">Resume</a>
+                <a
+                  href="#"
+                  className="bg-gradient-to-r from-cyan-500 to-teal-500 px-4 py-2 text-white text-2xl rounded-md ml-4"
+                >
+                  Resume
+                </a>
               </li>
             </ul>
           </nav>
+          <div className="text-center p-10">
+            <h2 className="text-5xl py-2 text-teal-600 font-medium">
+              Developer Name
+            </h2>
+            <h3 className="text-2xl py-2">Developer and Learner</h3>
+            <p className="text-md py-5 leading-8 text-gray-800">
+              Freelancer providing services for programming and design content
+              needs. Join me down below and let's cracking!
+            </p>
+          </div>
+          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
+            <AiFillLinkedin className="hover:text-pink-600" />
+            <AiFillYoutube className="hover:text-pink-600" />
+            <AiFillTwitterCircle className="hover:text-pink-600" />
+          </div>
+          <div className="relative bg-gradient-to-b from-teal-500 rounded-full">
+            <Image src={Dev} alt="dev" />
+            {/* // layout="fill" */}
+          </div>
         </section>
       </main>
     </div>
