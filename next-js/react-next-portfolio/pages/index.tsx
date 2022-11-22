@@ -51,9 +51,14 @@ const Home = () => {
             <AiFillYoutube className="hover:text-pink-600" />
             <AiFillTwitterCircle className="hover:text-pink-600" />
           </div>
-          <div className="relative bg-gradient-to-b from-teal-500 rounded-full">
-            <Image src={Dev} alt="dev" />
+          <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mx-auto overflow-hidden">
+            <Image src={Dev} alt="dev"  layout="fill" objectFit="cover"/>
             {/* // layout="fill" */}
+          </div>
+        </section>
+        <section>
+          <div>
+            <h3 className='text-sm'>Services I offer </h3>
           </div>
         </section>
       </main>
