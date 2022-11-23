@@ -52,13 +52,40 @@ const Home = () => {
             <AiFillTwitterCircle className="hover:text-pink-600" />
           </div>
           <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mx-auto overflow-hidden">
-            <Image src={Dev} alt="dev"  layout="fill" objectFit="cover"/>
+            <Image src={Dev} alt="dev" layout="fill" objectFit="cover" />
             {/* // layout="fill" */}
           </div>
         </section>
         <section>
+          <div className="py-4">
+            <h3 className="text-3xl py-1">Services I offer </h3>
+            <p className="text-md py-2 leading-08 text-gray-80">
+              Since the beginning of the journey as a freelance developer, I've
+              done remote work for
+              <span className="text-teal-500">agencies</span>
+              and collaborated with talented to create digit for both business
+              and customer use.
+            </p>
+            <p className="text-md py-2 leading-08 text-gray-80">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+              inventore saepe porro repellendus optio quos pariatur expedita ab
+              cupiditate nihil culpa asperiores facilis, recusandae tenetur, cum
+              adipisci soluta sequi. Laudantium!
+            </p>
+          </div>
           <div>
-            <h3 className='text-sm'>Services I offer </h3>
+            <div>
+              <Image src={Dev} />
+              <h3>Beautiful designs </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam
+                hic vel ea id fuga cumque blanditiis maiores minus illum
+                reprehenderit.
+              </p>
+              <h4>Design tools i use</h4>
+              <p>Photoshop</p>
+              <p>Figma</p>
+            </div>
           </div>
         </section>
       </main>
