@@ -74,18 +74,54 @@ const Home = () => {
             </p>
           </div>
           <div>
-            <div>
+            <div className="text-center p-10 shadow-lg rounded-xl my-10">
               <Image src={Dev} />
-              <h3>Beautiful designs </h3>
-              <p>
+              <h3 className="text-lg font-medium pt-8 pb-2">
+                Beautiful designs
+              </h3>
+              <p className="py-2">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam
                 hic vel ea id fuga cumque blanditiis maiores minus illum
                 reprehenderit.
               </p>
-              <h4>Design tools i use</h4>
-              <p>Photoshop</p>
-              <p>Figma</p>
+              <h4 className="py-4 text-teal-600">Design tools I use</h4>
+              <p className="py-1 text-gray-800">Figma</p>
+              <p className="py-1 text-gray-800">Illustrator</p>
+              <p className="py-1 text-gray-800">Photoshop</p>
             </div>
+
+            <div className="text-center p-10 shadow-lg rounded-xl my-10">
+              <Image src={Dev} />
+              <h3 className="text-lg font-medium pt-8 pb-2">
+                Beautiful designs
+              </h3>
+              <p className="py-2">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Cupiditate reiciendis dicta impedit, consectetur qui id deleniti
+                nobis recusandae? Consequatur, quaerat.
+              </p>
+              <h4 className="py-4 text-teal-600">Design tools I used:</h4>
+              <p className="py-1 text-teal-800">Figma</p>
+              <p className="py-1 text-teal-800">Illustrator</p>
+              <p className="py-1 text-teal-800">Photoshop</p>
+            </div>
+            <div className="text-center p-10 shadow-lg rounded-xl my-10">
+              <Image src={Dev} />
+              <h3 className="text-lg font-medium pt-8 pb-2">Beautiful sites</h3>
+              <p className="py-2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+                placeat consectetur iusto reiciendis.
+              </p>
+              <h4 className="py-4 text-teal 600">Sites I developed</h4>
+              <p className="py-1 text-teal-800">Sample site 1</p>
+              <p className="py-1 text-teal-800">Sample site 2</p>
+              <p className="py-1 text-teal-800">Sample site 3</p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div>
+            <h3 className="text-3xl py-1">Portfolio</h3>
           </div>
         </section>
       </main>
