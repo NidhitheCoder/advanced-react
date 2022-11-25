@@ -18,7 +18,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="bg-white px-10">
+      <main className="bg-white px-10 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between">
             <h1 className="text-xl font-kalam">Developed by Nidheesh</h1>
@@ -37,11 +37,11 @@ const Home = () => {
             </ul>
           </nav>
           <div className="text-center p-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium">
+            <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">
               Developer Name
             </h2>
-            <h3 className="text-2xl py-2">Developer and Learner</h3>
-            <p className="text-md py-5 leading-8 text-gray-800">
+            <h3 className="text-2xl py-2 md:text-3xl">Developer and Learner</h3>
+            <p className="text-md py-5 leading-8 text-gray-800 md:text-xl">
               Freelancer providing services for programming and design content
               needs. Join me down below and let's cracking!
             </p>
@@ -122,6 +122,31 @@ const Home = () => {
         <section>
           <div>
             <h3 className="text-3xl py-1">Portfolio</h3>
+            <p className="text-md py-2 leading-08 text-gray-80">
+              Since the beginning of the journey as a freelance developer, I've
+              done remote work for
+              <span className="text-teal-500">agencies</span>
+              and collaborated with talented to create digit for both business
+              and customer use.
+            </p>
+            <p className="text-md py-2 leading-08 text-gray-80">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+              inventore saepe porro repellendus optio quos pariatur expedita ab
+              cupiditate nihil culpa asperiores facilis, recusandae tenetur, cum
+              adipisci soluta sequi. Laudantium!
+            </p>
+          </div>
+          <div>
+            <Image src={Dev} alt="webImages"/>
+          </div>
+          <div>
+            <Image src={Dev} alt="webImages"/>
+          </div>
+          <div>
+            <Image src={Dev} alt="webImages"/>
+          </div>
+          <div>
+            <Image src={Dev} alt="webImages"/>
           </div>
         </section>
       </main>
