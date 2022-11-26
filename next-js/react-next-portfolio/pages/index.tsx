@@ -51,7 +51,7 @@ const Home = () => {
             <AiFillYoutube className="hover:text-pink-600" />
             <AiFillTwitterCircle className="hover:text-pink-600" />
           </div>
-          <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mx-auto overflow-hidden">
+          <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mx-auto overflow-hidden md:h-96 md:w-96">
             <Image src={Dev} alt="dev" layout="fill" objectFit="cover" />
             {/* // layout="fill" */}
           </div>
@@ -73,7 +73,7 @@ const Home = () => {
               adipisci soluta sequi. Laudantium!
             </p>
           </div>
-          <div>
+          <div className="lg:flex gap-10">
             <div className="text-center p-10 shadow-lg rounded-xl my-10">
               <Image src={Dev} />
               <h3 className="text-lg font-medium pt-8 pb-2">
@@ -120,7 +120,7 @@ const Home = () => {
           </div>
         </section>
         <section>
-          <div>
+          <div className="md:max-w-lg mx-auto">
             <h3 className="text-3xl py-1">Portfolio</h3>
             <p className="text-md py-2 leading-08 text-gray-80">
               Since the beginning of the journey as a freelance developer, I've
@@ -136,17 +136,43 @@ const Home = () => {
               adipisci soluta sequi. Laudantium!
             </p>
           </div>
-          <div>
-            <Image src={Dev} alt="webImages"/>
-          </div>
-          <div>
-            <Image src={Dev} alt="webImages"/>
-          </div>
-          <div>
-            <Image src={Dev} alt="webImages"/>
-          </div>
-          <div>
-            <Image src={Dev} alt="webImages"/>
+          <div className="flex flex-col gap-10 py-10 lg-flex-row lg:flex-wrap">
+            <div className="basis-1/2 flex-1">
+              <Image
+                src={Dev}
+                alt="webImages"
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+              />
+            </div>
+            <div className="basis-1/2 flex-1">
+              <Image
+                src={Dev}
+                alt="webImages"
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+              />
+            </div>
+            <div className="basis-1/2 flex-1">
+              <Image
+                src={Dev}
+                alt="webImages"
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+              />
+            </div>
+            <div className="basis-1/2 flex-1">
+              <Image
+                src={Dev}
+                alt="webImages"
+                className="rounded-lg object-cover"
+                width={"100%"}
+                height={"100%"}
+              />
+            </div>
           </div>
         </section>
       </main>
