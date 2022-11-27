@@ -73,7 +73,7 @@ const Home = () => {
               adipisci soluta sequi. Laudantium!
             </p>
           </div>
-          <div className="lg:flex gap-10">
+          <div className="sm:flex gap-10">
             <div className="text-center p-10 shadow-lg rounded-xl my-10">
               <Image src={Dev} />
               <h3 className="text-lg font-medium pt-8 pb-2">
@@ -173,6 +173,46 @@ const Home = () => {
                 height={"100%"}
               />
             </div>
+          </div>
+        </section>
+        <section className="flex flex-row gap-4 flex-wrap">
+          <div className="bg-orange-900 p-4 h-auto min-w-[20vw]">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit
+              delectus repudiandae, consequuntur debitis hic illum.
+            </p>
+          </div>
+          <div className="bg-red-200 p-4 h-auto min-w-[20vw]">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel
+              aliquam, perspiciatis nihil harum ex sapiente!
+            </p>
+          </div>
+          <div className="bg-stone-400 p-4 h-auto min-w-[20vw]">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ipsum
+              autem voluptatibus ex.
+            </p>
+          </div>
+          <div className="bg-zinc-50 p-4 h-auto min-w-[20vw]">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A cumque
+              ipsum officia!
+            </p>
+          </div>
+          <div className="bg-gray-900 p-4 h-auto min-w-[20vw]">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
+              doloremque suscipit cum veritatis quibusdam esse saepe. Hic!
+            </p>
+          </div>
+          <div className="bg-green-200 p-4 h-auto min-w-[20vw]">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Necessitatibus cum exercitationem adipisci praesentium atque
+              iusto. Animi, dignissimos eum quos, exercitationem corporis nihil
+              nemo officia veritatis tempore dolores labore nostrum eius.
+            </p>
           </div>
         </section>
       </main>
