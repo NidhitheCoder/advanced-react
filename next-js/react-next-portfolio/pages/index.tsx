@@ -46,15 +46,15 @@ const changeMode = () => setDarkMode(!darkMode);
               Developer Name
             </h2>
             <h3 className="text-2xl py-2 md:text-3xl">Developer and Learner</h3>
-            <p className="text-md py-5 leading-8 text-gray-800 md:text-xl">
+            <p className="text-md py-5 leading-8 text-gray-800 md:text-xl dark:text-green-200">
               Freelancer providing services for programming and design content
               needs. Join me down below and let's cracking!
             </p>
           </div>
           <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
-            <AiFillLinkedin className="hover:text-pink-600" />
-            <AiFillYoutube className="hover:text-pink-600" />
-            <AiFillTwitterCircle className="hover:text-pink-600" />
+            <AiFillLinkedin className="hover:text-pink-600 dark:text-orange-600" />
+            <AiFillYoutube className="hover:text-pink-600 dark:text-orange-600" />
+            <AiFillTwitterCircle className="hover:text-pink-600 dark:text-orange-600" />
           </div>
           <div className="relative bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 mx-auto overflow-hidden md:h-96 md:w-96">
             <Image src={Dev} alt="dev" layout="fill" objectFit="cover" />
@@ -105,10 +105,10 @@ const changeMode = () => setDarkMode(!darkMode);
                 Cupiditate reiciendis dicta impedit, consectetur qui id deleniti
                 nobis recusandae? Consequatur, quaerat.
               </p>
-              <h4 className="py-4 text-teal-600">Design tools I used:</h4>
-              <p className="py-1 text-teal-800">Figma</p>
-              <p className="py-1 text-teal-800">Illustrator</p>
-              <p className="py-1 text-teal-800">Photoshop</p>
+              <h4 className="py-4 text-teal-900">Design tools I used:</h4>
+              <p className="py-1 text-teal-800 dark:text-slate-500">Figma</p>
+              <p className="py-1 text-teal-800 dark:text-slate-500">Illustrator</p>
+              <p className="py-1 text-teal-800 dark:text-slate-500">Photoshop</p>
             </div>
             <div className="text-center p-10 shadow-lg rounded-xl my-10">
               <Image src={Dev} />
@@ -118,9 +118,9 @@ const changeMode = () => setDarkMode(!darkMode);
                 placeat consectetur iusto reiciendis.
               </p>
               <h4 className="py-4 text-teal 600">Sites I developed</h4>
-              <p className="py-1 text-teal-800">Sample site 1</p>
-              <p className="py-1 text-teal-800">Sample site 2</p>
-              <p className="py-1 text-teal-800">Sample site 3</p>
+              <p className="py-1 text-teal-800 dark:text-slate-500">Sample site 1</p>
+              <p className="py-1 text-teal-800 dark:text-slate-500">Sample site 2</p>
+              <p className="py-1 text-teal-800 dark:text-slate-500">Sample site 3</p>
             </div>
           </div>
         </section>
