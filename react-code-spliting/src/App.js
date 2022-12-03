@@ -1,18 +1,20 @@
 import { lazy } from "react";
-import { Router, Routes } from "react-router-dom";
+import { Route, Router, Routes } from "react-router-dom";
 
 import "./App.css";
 
 const Home = lazy(() => import('./components/Home'))
 const About = lazy(() => import('./components/About'))
+const Teams = lazy(() => import('./components/Teams'))
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Routes path="/about" element={<About />} />
-        <Routes path="/" element={<Home />} />
-      </Router>
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/teams" element={<Teams />} />
+      </Routes>
     </div>
   );
 }
