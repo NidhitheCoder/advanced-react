@@ -10,6 +10,7 @@ const Teams = () => {
         necessitatibus, pariatur nihil. Inventore mollitia facilis labore
         impedit tempore quod tempora laudantium?
       </p>
+      <a href="/">Back to home</a>
     </div>
   );
 };

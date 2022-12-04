@@ -11,7 +11,7 @@ const Home = () => {
           ex delectus sint distinctio, earum vel sequi? Alias autem magni
           repudiandae error?
         </p>
-        <a href="/about">About us</a>
+        <a href="/about" style={{ paddingRight: '2rem'}}>About us</a>
         <a href="/teams">Our teams</a>
       </div>
     </div>

@@ -11,6 +11,7 @@ const About = () => {
           aperiam molestiae recusandae accusantium fugiat a, doloremque delectus
           porro eveniet inventore quae autem.
         </p>
+        <a href="/">Back to home</a>
       </div>
     </div>
   );
