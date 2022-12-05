@@ -1,6 +1,23 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Teams = () => {
+  const [posts, setPosts] = useState();
+  const [comments, setComments] = useState();
+
+  const fetchData = async () => {
+    const postsFromApi = await fetchPosts();
+    const commentsFromApi = await fetchComments();
+
+    setPosts(postsFromApi);
+    setComments(commentsFromApi);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div>
       <h3>Teams profile</h3>
