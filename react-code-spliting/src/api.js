@@ -1,17 +1,17 @@
-const fetchPosts = async () => {
+export const fetchPosts = async () => {
   console.log("Fetching Posts");
 
   const response = await axios.get(
     "https://jsonplaceholder.typicode.com/posts"
   );
-  posts = response.data;
+  const posts = response.data;
 
   console.log({ posts });
 
   return posts;
 };
 
-const fetchComments = async () => {
+export const fetchComments = async () => {
   console.log("Fetching comments");
 
   const response = await axios.get(
@@ -23,5 +23,3 @@ const fetchComments = async () => {
 
   return comments;
 };
-
-export default { fetchComments, fetchPosts };
