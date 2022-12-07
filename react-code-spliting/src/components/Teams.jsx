@@ -9,11 +9,20 @@ const Teams = () => {
   const [comments, setComments] = useState();
 
   const fetchData = async () => {
-    const postsFromApi = await fetchPosts();
-    const commentsFromApi = await fetchComments();
+    // const postsFromApi = await fetchPosts();
+    // const commentsFromApi = await fetchComments();
 
-    setPosts(postsFromApi);
-    setComments(commentsFromApi);
+    const postsPromise = fetchPosts();
+    const commentsPromise = fetchComments();
+
+    const postsAPI = await postsPromise;
+    const commentsAPI = await commentsPromise;
+
+    setPosts(postsAPI);
+    setComments(commentsAPI);
+
+    // setPosts(postsFromApi);
+    // setComments(commentsFromApi);
   };
 
   useEffect(() => {
@@ -32,7 +41,7 @@ const Teams = () => {
       <a href="/">Back to home</a>
 
       <h2>Posts</h2>
-      {posts.map((post) => (
+      {posts?.map((post) => (
         <div style={{ padding: "2rem" }}>
           <h4>{post.title}</h4>
           <p>{post.body}</p>
@@ -40,7 +49,7 @@ const Teams = () => {
       ))}
 
       <h2>Comments</h2>
-      {comments.map((comment) => (
+      {comments?.map((comment) => (
         <div>
           <h4>{comment.name}</h4>
           <h6>{comment.email}</h6>

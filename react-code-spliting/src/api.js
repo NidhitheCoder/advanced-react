@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const fetchPosts = async () => {
   console.log("Fetching Posts");
 
