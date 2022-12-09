@@ -42,7 +42,7 @@ const Teams = () => {
 
       <h2>Posts</h2>
       {posts?.map((post) => (
-        <div style={{ padding: "2rem" }}>
+        <div style={{ padding: "2rem" }} className="p-2 text-red-50">
           <h4>{post.title}</h4>
           <p>{post.body}</p>
         </div>
