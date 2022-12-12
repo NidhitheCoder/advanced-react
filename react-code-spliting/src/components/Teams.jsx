@@ -22,21 +22,34 @@ const Teams = () => {
   //   setComments(commentsFromApi);
   // };
 
-  const fetchWithPromiseAll = async () => {
-    const postsPromise = fetchPosts();
-    const commentsPromise = fetchComments();
-    const [posts, comments] = await Promise.all([
-      postsPromise,
-      commentsPromise,
-    ]);
+  // const fetchWithPromiseAll = async () => {
+  //   const postsPromise = fetchPosts();
+  //   const commentsPromise = fetchComments();
+  //   const [posts, comments] = await Promise.all([
+  //     postsPromise,
+  //     commentsPromise,
+  //   ]);
 
-    setPosts(posts);
+  //   setPosts(posts);
+  //   setComments(comments);
+  // };
+
+  const fetchData2 = async () => {
+    const commentsPromise = fetchComments();
+    const topCommentsPromise = fetchTopComments();
+
+    const comments = await commentsPromise;
     setComments(comments);
-  };
+    const topComments = await topCommentsPromise();
+    const postsForComments = await fetchPosts(topComments)
+    setPosts(postsForComments);
+
+  }
 
   useEffect(() => {
     // fetchData();
-    fetchWithPromiseAll();
+    // fetchWithPromiseAll();
+    fetchData2();
   }, []);
 
   return (
