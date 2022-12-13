@@ -1,6 +1,12 @@
 import React from "react";
+import { useEffect } from "react";
 
 const About = () => {
+
+   useEffect(() => {
+
+   }, []);
+
   return (
     <div>
       <p>About page</p>
