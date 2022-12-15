@@ -3,4 +3,7 @@
 - So that you don't want to load everything at once.
 
 ## UseEffect
-- useEffect is a react hook that lets you synchronize a component with an external stystem
+- useEffect is a react hook that lets you synchronize a component with an external system.
+- Syntax
+    ``` useEffect(setup, dependencies); ```
+- 
