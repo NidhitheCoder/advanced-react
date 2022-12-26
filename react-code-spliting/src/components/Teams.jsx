@@ -36,7 +36,7 @@ const Teams = () => {
 
   const fetchData2 = async () => {
     const commentsPromise = fetchComments();
-    const topCommentsPromise = fetchTopComments();
+    const topCommentsPromise = fetchPosts();
 
     const comments = await commentsPromise;
     setComments(comments);
