@@ -2,12 +2,16 @@ import { useEffect, useState } from "react";
 
 function UseEffectHook() {
   const [number, setNumber] = useState(0);
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
+  const [userState, setUserState] = useState({
+    name: "",
+    selected: false,
+  });
 
   useEffect(() => {
     console.count("useEffect");
     document.title = `Title ${number}`;
-  });
+  }, []);
 
   console.count("Component rendered", name);
 
@@ -16,7 +20,8 @@ function UseEffectHook() {
   };
 
   const onChangeName = (e) => {
-    setName(e.target.value);
+    // setName(e.target.value);
+    setUserState({ ...userState, name: e.target.value });
   };
 
   return (
