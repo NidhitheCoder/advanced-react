@@ -7,7 +7,7 @@ function UseEffectHook() {
     name: "",
     selected: false,
     age: 20,
-    city: ''
+    city: "",
   });
 
   // useEffect(() => {
@@ -17,17 +17,18 @@ function UseEffectHook() {
 
   // console.count("Component rendered", name);
 
-  const user = useMemo(
-    () => ({
-      name: userState.name,
-      selected: useState.selected,
-    }),
-    [userState.name, userState.selected]
-  );
-
+  // You can use useMemo hook for avoid multi rendering of code
+  // const user = useMemo(
+  //   () => ({
+  //     name: userState.name,
+  //     selected: useState.selected,
+  //   }),
+  //   [userState.name, userState.selected]
+  // );
   useEffect(() => {
     console.log("The state has changed, useEffect runs!");
-  }, [user]);
+    // you can add every single primitive variables here
+  }, [userState.name, userState.selectedW]);
 
   const increaseNumber = () => {
     setNumber(number + 1);
