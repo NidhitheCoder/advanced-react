@@ -11,16 +11,19 @@ function UseEffectExample2() {
   //     }, 2000);
   //   }, [number]);
 
-  // Best way without unwanted rerendering and this one also some issue and it 
+  // Best way without unwanted rerendering and this one also some issue and it
   // create different setinterval in each render.
   useEffect(() => {
     console.log("changes with number:", number);
-    setInterval(() => {
+    const interval = setInterval(() => {
       setNumber((prev) => prev + 1);
     }, 2000);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
-  return <div>{number}233ssssjjghgss</div>;
+  return <div>{number} cleaning time</div>;
 }
 
 export default UseEffectExample2;
