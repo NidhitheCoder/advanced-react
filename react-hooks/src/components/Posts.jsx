@@ -5,9 +5,18 @@ const Posts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    const isCancelled = false;
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => res.json())
-      .then((data) => setPosts(data));
+      .then((data) => {
+        if (isCancelled) {
+          alert("Posts are updated");
+          setPosts(data);
+          console.log("data", data);
+        }
+      });
+
+    return () => {};
   }, []);
   return (
     <div>
