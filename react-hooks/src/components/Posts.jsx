@@ -9,15 +9,18 @@ const Posts = () => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => res.json())
       .then((data) => {
-        if (isCancelled) {
+        if (!isCancelled) {
           alert("Posts are updated");
           setPosts(data);
           console.log("data", data);
         }
       });
 
-    return () => {};
+    return () => {
+      isCancelled = true;
+    };
   }, []);
+
   return (
     <div>
       {posts?.map((p) => (
