@@ -1,8 +1,11 @@
-// import UseEffectHook from "./components/UseEffect";
-// import UseEffectExample2 from  './components/UseEffectExample2'
-
 import { useEffect, useState } from "react";
-import UseEffectCleanup from "./components/UseEffectCleanup";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
+import UseEffectHook from "./components/UseEffect";
+import UseEffectExample2 from "./components/UseEffectExample2";
+
+import Home from "./components/Home";
+import Posts from "./components/Posts";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,9 +28,15 @@ function App() {
     <div className="App">
       <h1>React hooks</h1>
       <p>isOpen: {isOpen.toString()}</p>
-      {/* <UseEffectHook /> */}
-      {/* <UseEffectExample2 /> */}
-      <UseEffectCleanup />
+      <UseEffectHook />
+      <UseEffectExample2 />
+      {/* <UseEffectCleanup /> */}
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/posts" element={<Posts />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
