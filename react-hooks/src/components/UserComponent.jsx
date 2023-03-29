@@ -5,18 +5,27 @@ const User = () => {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    let unSubscribed = false;
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const id = useLocation().pathname.split("/")[2];
-    fetch(`https://jsonplaceholder.typicode.com/Users${id}`)
-      .then((res) => res.json())
-      .then((data) => {
+    axios
+      .get(`https://jsonplaceholder.typicode.com/Users${id}`, { signal })
+      .then((res) => {
         if (!unSubscribed) {
-          setUser(data);
+          setUser(res.data);
+        }
+      })
+      .catch((err) => {
+        if (err.name == "AbortError") {
+          console.log("Cancelled");
+        } else {
+          // TODO handle error
         }
       });
 
     return () => {
-      unSubscribed = true;
+      controller.abort();
     };
   }, [id]);
 

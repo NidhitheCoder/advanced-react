@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 function UseEffectHook() {
   const [number, setNumber] = useState(0);
