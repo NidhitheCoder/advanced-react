@@ -4,24 +4,31 @@ import { useLocation, Link } from "react-router-dom";
 const User2 = () => {
   const [user, setUser] = useState([]);
 
-  const cancellToken = axios.cancelToken.source();
+  const cancelToken = axios.cancelToken.source();
 
   useEffect(() => {
+    console.log("useEffects mounts");
     const id = useLocation().pathname.split("/")[2];
     axios
-      .get(`https://jsonplaceholder.typicode.com/Users${id}`, {})
+      .get(`https://jsonplaceholder.typicode.com/Users${id}`, {
+        cancelToken: cancelToken.token,
+      })
       .then((res) => {
         setUser(res.data);
       })
       .catch((err) => {
-        if (err.name == "AbortError") {
+        if (axios.isCancel(err)) {
           console.log("Cancelled");
         } else {
           // TODO handle error
         }
       });
 
-    return () => {};
+    return () => {
+      console.log("useEffects unmounts");
+
+      cancelToken.cancel();
+    };
   }, [id]);
 
   return (
