@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 // import UseEffectHook from "./components/UseEffect";
@@ -45,12 +45,20 @@ import { useState } from "react";
 
 function App() {
   const [resourceType, setResourceType] = useState("posts");
+  console.log("render");
+
+  useEffect(() => {
+    console.log(resourceType);
+    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  }, [resourceType]);
 
   return (
     <div>
-      <button onClik={() => setResourceType("posts")}>Posts</button>
-      <button onClik={() => setResourceType("users")}>Users</button>
-      <button onClik={() => setResourceType("comments")}>Comments</button>
+      <button onClick={() => setResourceType("posts")}>Posts</button>
+      <button onClick={() => setResourceType("users")}>Users</button>
+      <button onClick={() => setResourceType("comments")}>Comments</button>
       <h1>{resourceType}</h1>
     </div>
   );
