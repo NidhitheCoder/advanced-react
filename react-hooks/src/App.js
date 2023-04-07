@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import WindowWidth from './components/WindowWidth'
 // import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 // import UseEffectHook from "./components/UseEffect";
@@ -45,21 +46,28 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [resourceType, setResourceType] = useState("posts");
+  const [items, setItems] = useState([]);
+
   console.log("render");
 
   useEffect(() => {
     console.log(resourceType);
     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
       .then((response) => response.json())
-      .then((json) => console.log(json));
+      .then((json) => setItems(json));
   }, [resourceType]);
 
   return (
     <div>
+      <WindowWidth />
+ 
       <button onClick={() => setResourceType("posts")}>Posts</button>
       <button onClick={() => setResourceType("users")}>Users</button>
       <button onClick={() => setResourceType("comments")}>Comments</button>
       <h1>{resourceType}</h1>
+      {items.map((item) => {
+        return <pre>{JSON.stringify(item) }</pre>;
+      })}
     </div>
   );
 }
