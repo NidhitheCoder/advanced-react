@@ -1,4 +1,3 @@
-
 // // useeffect hook example
 
 // import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
@@ -65,7 +64,7 @@
 //   return (
 //     <div>
 //       <WindowWidth />
- 
+
 //       <button onClick={() => setResourceType("posts")}>Posts</button>
 //       <button onClick={() => setResourceType("users")}>Users</button>
 //       <button onClick={() => setResourceType("comments")}>Comments</button>
@@ -79,16 +78,38 @@
 
 // export default App;
 
-// // Usememo hook example 1
+// // UseMemo hook example 1
+import { useState } from "react/cjs/react.production.min";
+
 
 const App = () => {
+  const [number, setNumber] = useState();
+  const [dark, setDark] = useState();
+  const doubleNumber = slowFunction(number);
+  const themeStyles = {
+    backgroundColor: dark ? "black" : "white",
+    color: dark ? "white" : "black",
+  };
 
+  const onNumberChange = (e) => {
+    setNumber(parseInt(e.target.value));
+  };
+
+  const onThemeChange = () => {
+    setDark((prevDark) => !prevDark);
   return (
     <>
-    <input type="number" value="" onchange={() => {}} />
-    <button >Click me</button>
+      <input type="number" value="" onchange={onNumberChange} />
+      <button onClick={onThemeChange}>Change theme</button>
+      <div style={themeStyles}>{doubleNumber}</div>
     </>
-  )
-}
+  );
+};
+
+const slowFunction = (num) => {
+  console.log(num);
+  for (let i = 0; i < 100000000; i++) {}
+  return num * 2;
+};
 
 export default App;
