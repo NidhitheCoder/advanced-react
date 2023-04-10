@@ -81,7 +81,6 @@
 // // UseMemo hook example 1
 import { useState } from "react/cjs/react.production.min";
 
-
 const App = () => {
   const [number, setNumber] = useState();
   const [dark, setDark] = useState();
@@ -97,19 +96,20 @@ const App = () => {
 
   const onThemeChange = () => {
     setDark((prevDark) => !prevDark);
-  return (
-    <>
-      <input type="number" value="" onchange={onNumberChange} />
-      <button onClick={onThemeChange}>Change theme</button>
-      <div style={themeStyles}>{doubleNumber}</div>
-    </>
-  );
+    return (
+      <>
+        <input type="number" value={number} onchange={onNumberChange} />
+        <button onClick={onThemeChange}>Change theme</button>
+        <div style={themeStyles}>{doubleNumber}</div>
+      </>
+    );
+  };
 };
+
+export default App;
 
 const slowFunction = (num) => {
   console.log(num);
   for (let i = 0; i < 100000000; i++) {}
   return num * 2;
 };
-
-export default App;
