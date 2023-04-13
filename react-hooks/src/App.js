@@ -79,12 +79,14 @@
 // export default App;
 
 // // UseMemo hook example 1
-import { useState } from "react/cjs/react.production.min";
+import { useMemo, useState } from "react/cjs/react.production.min";
 
 const App = () => {
   const [number, setNumber] = useState();
   const [dark, setDark] = useState();
-  const doubleNumber = slowFunction(number);
+  const doubleNumber = useMemo(() => {
+    return slowFunction(number);
+  }, [number]);
   const themeStyles = {
     backgroundColor: dark ? "black" : "white",
     color: dark ? "white" : "black",
