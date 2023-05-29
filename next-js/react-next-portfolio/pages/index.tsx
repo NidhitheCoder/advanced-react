@@ -11,9 +11,9 @@ import { useState } from "react";
 import Dev from "../assets/sun-boat.jpg";
 
 const Home = () => {
-const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
-const changeMode = () => setDarkMode(!darkMode);
+  const changeMode = () => setDarkMode(!darkMode);
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -29,7 +29,10 @@ const changeMode = () => setDarkMode(!darkMode);
             <h1 className="text-xl font-kalam">Developed by Nidheesh</h1>
             <ul className="flex items-center">
               <li>
-                <BsFillMoonStarsFill className="cursor-pointer text-2xl"  onClick={changeMode} />
+                <BsFillMoonStarsFill
+                  className="cursor-pointer text-2xl"
+                  onClick={changeMode}
+                />
               </li>
               <li>
                 <a
@@ -48,7 +51,7 @@ const changeMode = () => setDarkMode(!darkMode);
             <h3 className="text-2xl py-2 md:text-3xl">Developer and Learner</h3>
             <p className="text-md py-5 leading-8 text-gray-800 md:text-xl dark:text-green-200">
               Freelancer providing services for programming and design content
-              needs. Join me down below and let's cracking!
+              needs. Join me down below and let&apos;s cracking!
             </p>
           </div>
           <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
@@ -65,8 +68,8 @@ const changeMode = () => setDarkMode(!darkMode);
           <div className="py-4">
             <h3 className="text-3xl py-1">Services I offer </h3>
             <p className="text-md py-2 leading-08 text-gray-80">
-              Since the beginning of the journey as a freelance developer, I've
-              done remote work for
+              Since the beginning of the journey as a freelance developer,
+              I&apos;ve done remote work for
               <span className="text-teal-500">agencies</span>
               and collaborated with talented to create digit for both business
               and customer use.
@@ -80,7 +83,7 @@ const changeMode = () => setDarkMode(!darkMode);
           </div>
           <div className="sm:flex gap-10">
             <div className="text-center p-10 shadow-lg rounded-xl my-10">
-              <Image src={Dev} />
+              <Image src={Dev} alt="dev item" />
               <h3 className="text-lg font-medium pt-8 pb-2">
                 Beautiful designs
               </h3>
@@ -96,7 +99,7 @@ const changeMode = () => setDarkMode(!darkMode);
             </div>
 
             <div className="text-center p-10 shadow-lg rounded-xl my-10">
-              <Image src={Dev} />
+              <Image src={Dev} alt="dev item" />
               <h3 className="text-lg font-medium pt-8 pb-2">
                 Beautiful designs
               </h3>
@@ -107,20 +110,30 @@ const changeMode = () => setDarkMode(!darkMode);
               </p>
               <h4 className="py-4 text-teal-900">Design tools I used:</h4>
               <p className="py-1 text-teal-800 dark:text-slate-500">Figma</p>
-              <p className="py-1 text-teal-800 dark:text-slate-500">Illustrator</p>
-              <p className="py-1 text-teal-800 dark:text-slate-500">Photoshop</p>
+              <p className="py-1 text-teal-800 dark:text-slate-500">
+                Illustrator
+              </p>
+              <p className="py-1 text-teal-800 dark:text-slate-500">
+                Photoshop
+              </p>
             </div>
             <div className="text-center p-10 shadow-lg rounded-xl my-10">
-              <Image src={Dev} />
+              <Image src={Dev} alt="dev item" />
               <h3 className="text-lg font-medium pt-8 pb-2">Beautiful sites</h3>
               <p className="py-2">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
                 placeat consectetur iusto reiciendis.
               </p>
               <h4 className="py-4 text-teal 600">Sites I developed</h4>
-              <p className="py-1 text-teal-800 dark:text-slate-500">Sample site 1</p>
-              <p className="py-1 text-teal-800 dark:text-slate-500">Sample site 2</p>
-              <p className="py-1 text-teal-800 dark:text-slate-500">Sample site 3</p>
+              <p className="py-1 text-teal-800 dark:text-slate-500">
+                Sample site 1
+              </p>
+              <p className="py-1 text-teal-800 dark:text-slate-500">
+                Sample site 2
+              </p>
+              <p className="py-1 text-teal-800 dark:text-slate-500">
+                Sample site 3
+              </p>
             </div>
           </div>
         </section>
@@ -128,8 +141,8 @@ const changeMode = () => setDarkMode(!darkMode);
           <div className="md:max-w-lg mx-auto">
             <h3 className="text-3xl py-1">Portfolio</h3>
             <p className="text-md py-2 leading-08 text-gray-80">
-              Since the beginning of the journey as a freelance developer, I've
-              done remote work for
+              Since the beginning of the journey as a freelance developer,
+              I&apos;ve done remote work for
               <span className="text-teal-500">agencies</span>
               and collaborated with talented to create digit for both business
               and customer use.
@@ -147,8 +160,8 @@ const changeMode = () => setDarkMode(!darkMode);
                 src={Dev}
                 alt="webImages"
                 className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
+                width={100}
+                height={100}
               />
             </div>
             <div className="basis-1/2 flex-1">
@@ -156,8 +169,8 @@ const changeMode = () => setDarkMode(!darkMode);
                 src={Dev}
                 alt="webImages"
                 className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
+                width={100}
+                height={100}
               />
             </div>
             <div className="basis-1/2 flex-1">
@@ -165,8 +178,8 @@ const changeMode = () => setDarkMode(!darkMode);
                 src={Dev}
                 alt="webImages"
                 className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
+                width={100}
+                height={100}
               />
             </div>
             <div className="basis-1/2 flex-1">
@@ -174,8 +187,8 @@ const changeMode = () => setDarkMode(!darkMode);
                 src={Dev}
                 alt="webImages"
                 className="rounded-lg object-cover"
-                width={"100%"}
-                height={"100%"}
+                width={100}
+                height={100}
               />
             </div>
           </div>
