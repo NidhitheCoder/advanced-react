@@ -30,3 +30,15 @@
 - All the data and routing is handle from the browser.
 - But the web pages are not SEO friendly (initial request is for a blank html page).
 - Single page applications are easy to update.
+
+3. Server side rendered
+
+- Pages rendered on the server after every request
+- Server sources data(eg: mongodb) and uses templates render HTML pages.
+- Resulting pages are send back to the browser.
+- Fresh requests needs to made for every page.
+- Server can take time getting data and rendering pages.
+- Content rich html pages back from the server on each request.
+- Server need to query data needed for a requested html pages from the database. that slow down our website little bit.
+- And it helps to SEO.
+
