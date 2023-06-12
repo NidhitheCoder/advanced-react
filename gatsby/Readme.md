@@ -55,4 +55,8 @@
   - Static pages are then deployed to web.
   - After initial request, the site behaves more like an SPA.
 
-  - Create a html page with react elements and then inside gatsby we could run a build command on our computer, it fetches all of our react components fetches any data that they need and pumbs into them
+  - Create a html page with react elements and then inside gatsby we could run a build command on our computer, it fetches all of our react components fetches any data that they need and pumbs into them.
+
+- We can use different data sources for our application.
+- Create graphql layer using source plugins.
+- We can use graphql query for fetching data.
