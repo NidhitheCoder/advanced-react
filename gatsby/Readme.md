@@ -60,3 +60,10 @@
 - We can use different data sources for our application.
 - Create graphql layer using source plugins.
 - We can use graphql query for fetching data.
+
+### Gatsby CLI
+
+- The Gatsby CLI is the main tool you use to initialize, build and develop Gatsby sites.
+- To use Gatsby CLI you must either:
+  1.  Install it globally with `npm install -g gatsby-cli`, where you execute commands with the syntax `gatsby new `
+  2.  or, Run commands directly with npx where you execute commands with the syntax `npx gatsby new`.
