@@ -13,5 +13,8 @@ module.exports = {
       }
     ]
   },
-  devtool: 'cheap-module-eval-source-map'
+  devtool: 'inline-cheap-module-source-map',
+  devServer: {
+    static: path.join(__dirname, 'public')
+  }
 };
