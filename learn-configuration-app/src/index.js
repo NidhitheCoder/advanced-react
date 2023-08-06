@@ -1,6 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import styles  from './style/style.css';
+import ReactDOM from "react-dom/client";
+// import styles from './style/style.css'
 
 // const template = React.createElement(
 //   "h1",
@@ -14,4 +14,8 @@ const App = () => {
   return <h1>Hello React world</h1>;
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+// Old one and not supported
+// ReactDOM.render(<App />, document.getElementById("root"));
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />)
