@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import styles from './style/style.css'
+// import './style/style.css'
+import './style/style.scss';
 
 // const template = React.createElement(
 //   "h1",

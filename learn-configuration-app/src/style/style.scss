@@ -1,0 +1,11 @@
+$bg-color: #333;
+$text-color: #fff;
+
+* {
+    background-color: $bg-color;
+    color: $text-color;
+
+    h1 {
+        color: #ff0000,
+    }
+}
