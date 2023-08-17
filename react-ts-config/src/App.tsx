@@ -1,5 +1,5 @@
 import "./style.css";
-import Image from "./assets/sub_boat.jpg";
+import Image from "./sun_boat.jpg";
 
 export const App = () => {
   return (
