@@ -5,7 +5,7 @@ export const App = () => {
   return (
     <>
       <h1>React typescript template</h1>
-      <Image src={Image} alt="sun" height="300" width="300" />
+      <img src={Image} alt="sun" height="300" width="300" />
     </>
   );
 };
