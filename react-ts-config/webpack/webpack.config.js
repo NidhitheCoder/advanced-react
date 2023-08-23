@@ -22,9 +22,9 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(?:ico|jpeg|gif|png|svg|jpg)$/i,
         type: 'asset/resource'
-      },
+      }
     ]
   },
   output: {
@@ -34,7 +34,7 @@ module.exports = {
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, '..', './src/index.html')
+      template: path.resolve(__dirname, '..', './src/index.html')
     })
   ]
 };
