@@ -1,7 +1,7 @@
-import Image from "./assets/sun_boat.jpg";
-import Logo from "./assets/logo.svg";
-import "./style.css";
-import { ClickCounter } from "./ClickCounter";
+import Image from './assets/sun_boat.jpg'
+import Logo from './assets/logo.svg'
+import './style.css'
+import { ClickCounter } from './ClickCounter'
 
 export const App = () => {
   return (
@@ -13,5 +13,5 @@ export const App = () => {
       <img src={Image} alt="sun" height="300" width="300" />
       <ClickCounter />
     </>
-  );
-};
+  )
+}
