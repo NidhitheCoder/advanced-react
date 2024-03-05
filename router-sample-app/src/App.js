@@ -13,7 +13,11 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/albums" element={<ProtectedRoute user={true} />} >
           <Route index element={<AlbumsList />} />
-          <Route path=":id" element={<AlbumDetails />} />
+          <Route path=":id" >
+            <Route index element={<AlbumDetails />} />
+            <Route path="details" element={<AlbumDetails />} />
+            <Route path="edit" element={<AlbumDetails />} />
+          </Route>
         </Route>
         <Route path="/login" element={<Login />} />
       </Routes>
