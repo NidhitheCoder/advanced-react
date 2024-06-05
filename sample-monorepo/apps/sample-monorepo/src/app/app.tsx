@@ -1,9 +1,9 @@
-import NxWelcome from './nx-welcome';
+import Home from './home';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="sample-monorepo" />
+      <Home />
     </div>
   );
 }
