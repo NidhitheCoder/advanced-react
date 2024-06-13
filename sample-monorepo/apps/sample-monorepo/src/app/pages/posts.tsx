@@ -1,4 +1,7 @@
+import { Link } from 'react-router-dom';
+
 const Posts = () => {
+  const logoURL = 'https://picsum.photos/50/50';
   const posts = [
     {
       title: 'Sample post',
@@ -6,9 +9,16 @@ const Posts = () => {
       thumbnailImage: 'https://picsum.photos/600/400',
     },
   ];
+
   return (
     <div className="bg-gray-700 h-screen w-screen flex flex-col items-center p-6 overflow-y-auto overflow-x-hidden">
-      <h2 className="text-white text-3xl font-bold">Your posts</h2>
+      <div className="w-full h-20 flex flex-row justify-between items-center pb-4">
+        <img src={logoURL} alt="Logo" />
+        <h2 className="text-white text-3xl font-bold">Your posts</h2>
+        <Link className="text-white" to={'/'}>
+          Back to home
+        </Link>
+      </div>
       <div className="w-full h-full grid grid-cols-4 gap-6 border-solid border-[0.5px] border-gray-500 p-6">
         {posts?.map((post) => (
           <div className="bg-gray-600 h-96 rounded-md">
