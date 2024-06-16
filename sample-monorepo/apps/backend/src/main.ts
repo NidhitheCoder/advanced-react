@@ -4,8 +4,8 @@ import cors from 'cors';
 import xss from 'xss-clean';
 import rateLimiter from 'express-rate-limit';
 
-const host = process.env.HOST ?? 'localhost';
-const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+const baseURL = process.env.VITE_API_URL ?? 'http://localhost:3000';
+const port = process.env.VITE_PORT ?? '3000';
 
 const app = express();
 app.use(
@@ -18,11 +18,12 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors());
 app.use(xss());
+app.set('base', baseURL);
 
 app.get('/', (req, res) => {
-  res.send({ message: 'Hello API' });
+  res.send({ message: 'Ping API is success' });
 });
 
-app.listen(port, host, () => {
-  console.log(`[ ready ] http://${host}:${port}`);
+app.listen(port, () => {
+  console.log(baseURL);
 });

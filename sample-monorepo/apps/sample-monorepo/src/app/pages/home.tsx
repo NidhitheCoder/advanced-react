@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+
+import axios from '../axios';
 
 const Home = () => {
   const [message, setMessage] = useState('');
@@ -8,9 +9,7 @@ const Home = () => {
   const logoURL = 'https://picsum.photos/50/50';
 
   const onShowMessage = async () => {
-    const host = import.meta.env.HOST ?? 'localhost';
-    const port = import.meta.env.PORT ? Number(import.meta.env.PORT) : 3000;
-    const { data } = await axios.get(`http://${host}:${port}`);
+    const { data } = await axios.get('/');
 
     setMessage(data.message);
   };
@@ -44,9 +43,7 @@ const Home = () => {
         <p className="py-8 text-2xl">
           Welcome to the sample app that helps to share your posts with friends.
         </p>
-        {message && (
-          <span>The secret message that getting from ping api: {message}</span>
-        )}
+        {message && <span>The secret message: {message}</span>}
       </div>
     </div>
   );
