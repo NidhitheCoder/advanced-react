@@ -23,7 +23,7 @@ app.use(cors());
 app.use(xss());
 app.set('base', baseURL);
 
-app.use('/', (req, res) => res.send('Ping route'));
+app.use('api/v1/', (req, res) => res.send('Ping route'));
 app.get('api/v1/auth/', auth);
 app.get('api/v1/users', user);
 
