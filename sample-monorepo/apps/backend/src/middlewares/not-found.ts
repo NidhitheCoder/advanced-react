@@ -1,4 +1,6 @@
+import { StatusCodes } from 'http-status-codes';
+
 const notFound = (req: any, res: any) =>
-  res.status(404).send('Route does not exist');
+  res.status(StatusCodes.NOT_FOUND).send('Route does not exist');
 
 export default notFound;
