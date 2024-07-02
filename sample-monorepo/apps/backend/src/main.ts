@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import xss from 'xss-clean';
@@ -26,7 +26,7 @@ app.use(cors());
 app.use(xss());
 app.set('base', baseURL);
 
-app.use('/', (req, res) => res.send('Ping route'));
+app.use('/', (req: Request, res: Response) => res.send('Ping route'));
 app.get('/auth', auth);
 app.get('/users', Auth, user);
 

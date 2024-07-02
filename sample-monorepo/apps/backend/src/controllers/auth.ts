@@ -1,4 +1,6 @@
-const register = async (req, res, next) => {
+import { NextFunction, Request, Response } from 'express';
+
+const register = async (req: Request, res: Response, next: NextFunction) => {
   try {
     res.status(201).json({ msg: 'user registered' });
   } catch (err) {
@@ -6,7 +8,7 @@ const register = async (req, res, next) => {
   }
 };
 
-const login = async (req, res, next) => {
+const login = async (req: Request, res: Response, next: NextFunction) => {
   try {
     res.status(200).json({ msg: 'Login successful' });
   } catch (err) {
