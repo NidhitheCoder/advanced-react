@@ -1,13 +1,14 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import xss from 'xss-clean';
 import rateLimiter from 'express-rate-limit';
 
-import user from './routes/user';
-import auth from './routes/auth';
+import userRoute from './routes/user';
+import authRoute from './routes/auth';
 import errorHandler from './middlewares/error-handler';
 import notFound from './middlewares/not-found';
+import authMiddleware from './middlewares/authentication';
 
 const baseURL = process.env.VITE_API_URL ?? 'http://localhost:3000';
 const port = process.env.VITE_PORT ?? '3000';
@@ -25,14 +26,22 @@ app.use(cors());
 app.use(xss());
 app.set('base', baseURL);
 
-app.use('/api/v1/', (req, res) => res.send('Ping route'));
-app.get('/api/v1/auth', auth);
-app.get('/api/v1/users', user);
+app.use('/', (req: Request, res: Response) => res.send('Ping route'));
+app.get('/auth', authRoute);
+app.get('/users', authMiddleware, userRoute);
 
 // Error handler middlewares
 app.use(errorHandler);
 app.use(notFound);
 
-app.listen(port, () => {
-  console.log(baseURL);
-});
+const start = async () => {
+  try {
+    app.listen(port, () => {
+      console.log(baseURL);
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+start();
