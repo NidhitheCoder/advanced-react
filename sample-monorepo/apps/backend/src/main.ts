@@ -4,11 +4,11 @@ import cors from 'cors';
 import xss from 'xss-clean';
 import rateLimiter from 'express-rate-limit';
 
-import user from './routes/user';
-import auth from './routes/auth';
+import userRoute from './routes/user';
+import authRoute from './routes/auth';
 import errorHandler from './middlewares/error-handler';
 import notFound from './middlewares/not-found';
-import Auth from './middlewares/authentication';
+import authMiddleware from './middlewares/authentication';
 
 const baseURL = process.env.VITE_API_URL ?? 'http://localhost:3000';
 const port = process.env.VITE_PORT ?? '3000';
@@ -27,8 +27,8 @@ app.use(xss());
 app.set('base', baseURL);
 
 app.use('/', (req: Request, res: Response) => res.send('Ping route'));
-app.get('/auth', auth);
-app.get('/users', Auth, user);
+app.get('/auth', authRoute);
+app.get('/users', authMiddleware, userRoute);
 
 // Error handler middlewares
 app.use(errorHandler);
