@@ -1,27 +1,81 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import Button from './Button';
 
+export enum ModalPosition {
+  bottomCenter = 'bottom-center',
+  bottomLeft = 'bottom-left',
+  bottomRight = 'bottom-right',
+  center = 'center',
+  topCenter = 'top-center',
+  topLeft = 'top-left',
+  topRight = 'top-right',
+}
 interface CustomModalProps {
-  title?: string;
-  onClose?: () => void;
   children: React.ReactNode;
+  className?: string;
+  onClose?: () => void;
+  onOutsideClick?: () => void;
+  title?: string;
+  variant?: ModalPosition;
 }
 
+const getModalPositionClass = (currentPosition: ModalPosition) => {
+  switch (currentPosition) {
+    case ModalPosition.topLeft:
+      return 'justify-start items-start';
+
+    case ModalPosition.topRight:
+      return 'justify-end items-start';
+
+    case ModalPosition.topCenter:
+      return 'justify-center items-start';
+
+    case ModalPosition.bottomLeft:
+      return 'justify-start items-end';
+
+    case ModalPosition.bottomRight:
+      return 'justify-end items-end';
+
+    case ModalPosition.bottomCenter:
+      return 'justify-center items-end';
+
+    default:
+      return 'justify-center items-center';
+  }
+};
+
 const CustomModal = ({
-  title,
   children,
-  onClose = () => Boolean,
+  className,
+  onClose,
+  onOutsideClick,
+  title,
+  variant = ModalPosition.center,
 }: CustomModalProps) => {
+  const positionClass = getModalPositionClass(variant);
+
+  const onOutsideDivClick = (event: MouseEvent) => {
+    onOutsideClick?.();
+    event.preventDefault();
+  };
+
   return (
-    <div className="relative h-0 w-0">
-      <div className="bg-slate-100 p-4 w-fit rounded-sm absolute right-0 top-0">
-        <div className="flex">
-          <h3 className="w-auto text-center">{title}</h3>
-          <Button
-            className="p-1 hover:opacity-100 w-2"
-            label="X"
-            onClick={onClose}
-          />
+    <div
+      onClick={onOutsideDivClick}
+      className={`w-full h-full bg-slate-100 bg-opacity-10 absolute right-0 top-0 flex z-50 ${positionClass}`}
+    >
+      <div
+        className={`bg-white h-1/4 w-1/4 text-red-950 rounded-sm ${className}`}
+      >
+        <div className="flex justify-between items-center">
+          {title && <h3 className="w-auto text-center">{title}</h3>}
+          {onClose && (
+            <Button
+              className="p-1 hover:opacity-100 w-2"
+              label="X"
+              onClick={onClose}
+            />
+          )}
         </div>
         {/* Body section */}
         <div>{children}</div>

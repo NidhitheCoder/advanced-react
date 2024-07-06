@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 import axios from '../axios';
 import Button from '../components/Button';
-import CustomModal from '../components/CustomModal';
+import CustomModal, { ModalPosition } from '../components/CustomModal';
+import TabCollection from '../components/TabCollection';
 
 const Home = () => {
   const [pingSuccess, setPingSuccess] = useState('');
@@ -11,6 +12,14 @@ const Home = () => {
 
   const imageURL = 'https://picsum.photos/600/400';
   const logoURL = 'https://picsum.photos/50/50';
+
+  const tabItems = [
+    {
+      title: 'Register',
+      component: <p>Register</p>,
+    },
+    { title: 'Login', component: <p>Login</p> },
+  ];
 
   const onShowMessage = async () => {
     const { data } = await axios.get('/');
@@ -20,6 +29,10 @@ const Home = () => {
 
   const onLoginButtonClick = () => {
     setHasLoginPopupOpen(true);
+  };
+
+  const onLoginModalClose = () => {
+    setHasLoginPopupOpen(false);
   };
 
   const pingText = pingSuccess ? 'API is Active' : 'Check API';
@@ -51,8 +64,12 @@ const Home = () => {
             onClick={onLoginButtonClick}
           />
           {hasLoginPopupOpen && (
-            <CustomModal title="Login">
-              <p>Hellooo</p>
+            <CustomModal
+              variant={ModalPosition.topRight}
+              onOutsideClick={onLoginModalClose}
+              className="rounded-md m-4"
+            >
+              <TabCollection items={tabItems} />
             </CustomModal>
           )}
         </div>
