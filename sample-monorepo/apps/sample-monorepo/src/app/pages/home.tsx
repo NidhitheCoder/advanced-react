@@ -2,9 +2,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import axios from '../axios';
+import Button from '../components/Button';
+import CustomModal from '../components/CustomModal';
 
 const Home = () => {
   const [pingSuccess, setPingSuccess] = useState('');
+  const [hasLoginPopupOpen, setHasLoginPopupOpen] = useState(false);
+
   const imageURL = 'https://picsum.photos/600/400';
   const logoURL = 'https://picsum.photos/50/50';
 
@@ -12,6 +16,10 @@ const Home = () => {
     const { data } = await axios.get('/');
 
     setPingSuccess(data);
+  };
+
+  const onLoginButtonClick = () => {
+    setHasLoginPopupOpen(true);
   };
 
   const pingText = pingSuccess ? 'API is Active' : 'Check API';
@@ -28,17 +36,25 @@ const Home = () => {
         <div className="flex flex-row gap-4 justify-between items-center">
           <Link to="/#">Home</Link>
           <Link to="/posts">Posts</Link>
-          <button
-            className={`bg-gray-600 border-gray-500 border-solid border-[0.5px] opacity-80 rounded-md px-4 py-2 hover:opacity-100 w-36
-              ${
-                pingSuccess
-                  ? 'bg-green-600 border-green-800'
-                  : 'bg-gray-600 border-gray-500'
-              }`}
+          <Button
+            className={
+              pingSuccess
+                ? 'bg-green-600 border-green-800'
+                : 'bg-gray-600 border-gray-500'
+            }
             onClick={onShowMessage}
-          >
-            {pingText}
-          </button>
+            label={pingText}
+          />
+          <Button
+            className="bg-blue-600 border-white-100"
+            label="Not login?"
+            onClick={onLoginButtonClick}
+          />
+          {hasLoginPopupOpen && (
+            <CustomModal title="Login">
+              <p>Hellooo</p>
+            </CustomModal>
+          )}
         </div>
       </div>
       {/* Content section */}
