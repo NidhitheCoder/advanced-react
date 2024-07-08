@@ -55,8 +55,9 @@ const CustomModal = ({
   const positionClass = getModalPositionClass(variant);
 
   const onOutsideDivClick = (event: MouseEvent) => {
-    onOutsideClick?.();
-    event.preventDefault();
+    if (event.target === event.currentTarget) {
+      onOutsideClick?.();
+    }
   };
 
   return (

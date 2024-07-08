@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import axios from '../axios';
 import Button from '../components/Button';
 import CustomModal, { ModalPosition } from '../components/CustomModal';
 import TabCollection from '../components/TabCollection';
+import LoginForm from '../components/LoginForm';
+import axios from '../axios';
 
 const Home = () => {
   const [pingSuccess, setPingSuccess] = useState('');
@@ -18,7 +19,7 @@ const Home = () => {
       title: 'Register',
       component: <p>Register</p>,
     },
-    { title: 'Login', component: <p>Login</p> },
+    { title: 'Login', component: <LoginForm /> },
   ];
 
   const onShowMessage = async () => {

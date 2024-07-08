@@ -32,7 +32,7 @@ const TabCollection = ({ items }: TabCollectionProps) => {
           />
         ))}
       </div>
-      {currentComponent && <div>{currentComponent}</div>}
+      {currentComponent && <div className="p-4">{currentComponent}</div>}
     </div>
   );
 };
