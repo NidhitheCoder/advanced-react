@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import CustomModal, { ModalPosition } from '../components/CustomModal';
 import TabCollection from '../components/TabCollection';
+import RegisterForm from '../components/RegisterForm';
 import LoginForm from '../components/LoginForm';
 import axios from '../axios';
 
@@ -17,7 +18,7 @@ const Home = () => {
   const tabItems = [
     {
       title: 'Register',
-      component: <p>Register</p>,
+      component: <RegisterForm />,
     },
     { title: 'Login', component: <LoginForm /> },
   ];
