@@ -24,7 +24,7 @@ const RegisterForm = () => {
         </label>
         <input
           name="confirm-password"
-          className="bg-slate-100 outline-none w-full mt-2"
+          className="bg-slate-100 outline-none w-full my-2"
         />
 
         <Button label="Register" className="bg-sky-700 text-white w-1/2" />

@@ -14,10 +14,13 @@ const LoginForm = () => {
         onSubmit={onSubmitForm}
       >
         <label className="w-full mt-2">Email</label>
-        <input className="bg-slate-100 outline-none pl-2 w-full" type="email" />
+        <input
+          className="bg-slate-100 mt-2 outline-none pl-2 w-full"
+          type="email"
+        />
         <label className="w-full mt-2">Password</label>
         <input
-          className="bg-slate-100 outline-none pl-2 w-full mb-2"
+          className="bg-slate-100 mt-2 outline-none pl-2 w-full mb-2"
           type="password"
         />
         <Button label="Login" className="bg-sky-700 text-white w-1/2" />
