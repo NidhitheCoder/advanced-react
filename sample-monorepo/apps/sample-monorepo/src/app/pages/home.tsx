@@ -1,15 +1,23 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 
 import Button from '../components/Button';
 import CustomModal, { ModalPosition } from '../components/CustomModal';
 import TabCollection from '../components/TabCollection';
+import RegisterForm from '../components/RegisterForm';
 import LoginForm from '../components/LoginForm';
 import axios from '../axios';
 
 const Home = () => {
   const [pingSuccess, setPingSuccess] = useState('');
   const [hasLoginPopupOpen, setHasLoginPopupOpen] = useState(false);
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const redirectURL = searchParams.get('redirectURL');
+    setHasLoginPopupOpen(!!redirectURL);
+  }, [searchParams]);
 
   const imageURL = 'https://picsum.photos/600/400';
   const logoURL = 'https://picsum.photos/50/50';
@@ -17,7 +25,7 @@ const Home = () => {
   const tabItems = [
     {
       title: 'Register',
-      component: <p>Register</p>,
+      component: <RegisterForm />,
     },
     { title: 'Login', component: <LoginForm /> },
   ];
@@ -34,6 +42,7 @@ const Home = () => {
 
   const onLoginModalClose = () => {
     setHasLoginPopupOpen(false);
+    navigate('/');
   };
 
   const pingText = pingSuccess ? 'API is Active' : 'Check API';

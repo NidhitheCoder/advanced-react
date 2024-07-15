@@ -24,7 +24,7 @@ const TabCollection = ({ items }: TabCollectionProps) => {
           <Button
             label={item.title}
             onClick={() => setSelectedItem(item)}
-            className={`flex-1 p-2 rounded-none border-b-2 border-solid ${
+            className={`flex-1 p-2 rounded-tl-md border-b-2 border-solid ${
               item.title === selectedItem.title
                 ? 'bg-gray-50 border-red-400'
                 : 'bg-transparent border-transparent'

@@ -66,7 +66,7 @@ const CustomModal = ({
       className={`w-full h-full bg-slate-100 bg-opacity-10 absolute right-0 top-0 flex z-50 ${positionClass}`}
     >
       <div
-        className={`bg-white h-1/4 w-1/4 text-red-950 rounded-sm ${className}`}
+        className={`bg-white h-auto w-1/4 text-red-950 rounded-md ${className}`}
       >
         <div className="flex justify-between items-center">
           {title && <h3 className="w-auto text-center">{title}</h3>}
