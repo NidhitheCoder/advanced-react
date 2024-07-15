@@ -7,7 +7,7 @@ interface AuthComponentProps {
 const AuthComponent = ({ component }: AuthComponentProps) => {
   const hasAuthToken = sessionStorage.getItem('auth_token');
 
-  return <div>{hasAuthToken ? component : <Navigate to="/" />}</div>;
+  return <div>{hasAuthToken ? component : <Navigate to="/?redirectURL=login" />}</div>;
 };
 
 export default AuthComponent;
