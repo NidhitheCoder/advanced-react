@@ -1,10 +1,16 @@
 interface ButtonProps {
   label: string;
   className?: string;
+  type?: 'button' | 'submit' | 'reset';
   onClick?: () => void;
 }
 
-const Button = ({ label, className, onClick }: ButtonProps) => {
+const Button = ({
+  label,
+  className,
+  onClick,
+  type = 'button',
+}: ButtonProps) => {
   return (
     <button
       onClick={onClick}

@@ -9,6 +9,7 @@ import authRoute from './routes/auth';
 import errorHandler from './middlewares/error-handler';
 import notFound from './middlewares/not-found';
 import authMiddleware from './middlewares/authentication';
+import connectDB from './connect/db';
 
 const baseURL = process.env.VITE_API_URL ?? 'http://localhost:3000';
 const port = process.env.VITE_PORT ?? '3000';
@@ -35,6 +36,8 @@ app.use(errorHandler);
 app.use(notFound);
 
 const start = async () => {
+  await connectDB(process.env.VITE_MONGO_URI);
+
   try {
     app.listen(port, () => {
       console.log(baseURL);

@@ -1,33 +1,62 @@
+import { ChangeEvent, FormEvent, useState } from 'react';
 import Button from './Button';
+import { User, userRegister } from '../api';
+
+const initialValue: User = {
+  name: '',
+  password: '',
+  email: '',
+};
 
 const RegisterForm = () => {
+  const [user, setUser] = useState<User>(initialValue);
+  const onRegister = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const userSuccess = await userRegister(user);
+    console.log(userSuccess);
+  };
+
+  const onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const currentEvent = event.target as HTMLInputElement;
+    setUser((prev) => ({ ...prev, [currentEvent?.name]: currentEvent?.value }));
+  };
+
   return (
     <div className="flex flex-col justify-center items-center w-full">
       <h3 className="font-bold">Register</h3>
       <form
-        action="post"
         className="flex flex-col justify-between items-center w-full"
+        onSubmit={onRegister}
       >
+        <label htmlFor="name" className="w-full mt-2">
+          Name
+        </label>
+        <input
+          name="name"
+          className="bg-slate-100 outline-none w-full my-2"
+          onChange={onInputChange}
+        />
         <label htmlFor="email" className="w-full mt-2">
           Email
         </label>
-        <input name="email" className="bg-slate-100 outline-none w-full mt-2" />
+        <input
+          name="email"
+          className="bg-slate-100 outline-none w-full mt-2"
+          onChange={onInputChange}
+        />
         <label htmlFor="password" className="w-full mt-2">
           Password
         </label>
         <input
           name="password"
-          className="bg-slate-100 outline-none w-full mt-2"
-        />
-        <label htmlFor="confirm-password" className="w-full mt-2">
-          Confirm Password
-        </label>
-        <input
-          name="confirm-password"
           className="bg-slate-100 outline-none w-full my-2"
+          onChange={onInputChange}
         />
-
-        <Button label="Register" className="bg-sky-700 text-white w-1/2" />
+        <Button
+          label="Register"
+          type="submit"
+          className="bg-sky-700 text-white w-1/2"
+        />
       </form>
     </div>
   );
