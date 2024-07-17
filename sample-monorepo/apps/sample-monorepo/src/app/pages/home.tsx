@@ -6,7 +6,7 @@ import CustomModal, { ModalPosition } from '../components/CustomModal';
 import TabCollection from '../components/TabCollection';
 import RegisterForm from '../components/RegisterForm';
 import LoginForm from '../components/LoginForm';
-import axios from '../axios';
+import { getPingStatus } from '../api';
 
 const Home = () => {
   const [pingSuccess, setPingSuccess] = useState('');
@@ -31,9 +31,9 @@ const Home = () => {
   ];
 
   const onShowMessage = async () => {
-    const { data } = await axios.get('/');
+    const pingStatus = await getPingStatus();
 
-    setPingSuccess(data);
+    setPingSuccess(pingStatus);
   };
 
   const onLoginButtonClick = () => {
