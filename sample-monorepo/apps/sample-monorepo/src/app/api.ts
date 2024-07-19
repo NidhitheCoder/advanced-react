@@ -6,10 +6,11 @@ export interface User {
   email: string;
 }
 
-const userRegister = async (user: User) => await axios.post('/signup', user);
+const userRegister = async (user: User) =>
+  await axios.post('/auth/signup', user);
 
 const getPingStatus = async () => {
-  const { data } = await axios.get('/');
+  const { data } = await axios.get('/ping');
 
   return data;
 };

@@ -15,6 +15,7 @@ const baseURL = process.env.VITE_API_URL ?? 'http://localhost:3000';
 const port = process.env.VITE_PORT ?? '3000';
 
 const app = express();
+app.set("trust proxy", 1);
 app.use(
   rateLimiter({
     windowMs: 15 * 60 * 1000,
@@ -27,9 +28,9 @@ app.use(cors());
 app.use(xss());
 app.set('base', baseURL);
 
-app.use('/', (req: Request, res: Response) => res.send('Ping route'));
-app.get('/auth', authRoute);
-app.get('/users', authMiddleware, userRoute);
+app.get('/ping', (req: Request, res: Response) => res.send('Ping route'));
+app.use('/auth', authRoute);
+app.use('/users', authMiddleware, userRoute);
 
 // Error handler middlewares
 app.use(errorHandler);
