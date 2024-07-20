@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import Button from '../components/Button';
 import CustomModal, { ModalPosition } from '../components/CustomModal';
@@ -23,11 +23,11 @@ const Home = () => {
   const logoURL = 'https://picsum.photos/50/50';
 
   const tabItems = [
+    { title: 'Login', component: <LoginForm /> },
     {
       title: 'Register',
       component: <RegisterForm />,
     },
-    { title: 'Login', component: <LoginForm /> },
   ];
 
   const onShowMessage = async () => {
@@ -57,8 +57,6 @@ const Home = () => {
           <p className="mb-4 hidden sm:block">Share your posts with images</p>
         </div>
         <div className="flex flex-row gap-4 justify-between items-center">
-          <Link to="/#">Home</Link>
-          <Link to="/posts">Posts</Link>
           <Button
             className={
               pingSuccess
