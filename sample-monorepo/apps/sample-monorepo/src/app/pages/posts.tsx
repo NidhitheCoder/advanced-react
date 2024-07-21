@@ -15,13 +15,13 @@ const Posts = () => {
       <div className="w-full h-20 flex flex-row justify-between items-center pb-4">
         <img src={logoURL} alt="Logo" />
         <h2 className="text-white text-3xl font-bold">Your posts</h2>
-        <Link className="text-white" to={'/'}>
+        <Link className="text-white" to={'/dashboard'}>
           Back to home
         </Link>
       </div>
       <div className="w-full h-full grid grid-cols-4 gap-6 border-solid border-[0.5px] border-gray-500 p-6">
         {posts?.map((post) => (
-          <div className="bg-gray-600 h-96 rounded-md">
+          <div key={post.title} className="bg-gray-600 h-96 rounded-md">
             <img
               src={post.thumbnailImage}
               alt="post"

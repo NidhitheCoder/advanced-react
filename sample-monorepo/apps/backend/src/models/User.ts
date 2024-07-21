@@ -20,13 +20,14 @@ const UserSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, 'Please provide email'],
-    match: [/\S+@\S+\.\s+/, 'Please provide valid email'],
+    // eslint-disable-next-line no-useless-escape
+    match: [/[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}/, 'Please provide valid email'],
     unique: true,
   },
   password: {
     type: String,
     required: [true, 'Please provide password'],
-    maxLength: 6,
+    maxLength: 14,
   },
 });
 

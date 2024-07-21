@@ -1,7 +1,7 @@
 import axios from './axios';
 
 export interface User {
-  name: string;
+  name?: string;
   password: string;
   email: string;
 }
@@ -15,4 +15,10 @@ const getPingStatus = async () => {
   return data;
 };
 
-export { userRegister, getPingStatus };
+const userLogin = async (user: User) => {
+  const { data } = await axios.post('/auth/login', user);
+
+  return data;
+};
+
+export { userRegister, getPingStatus, userLogin };

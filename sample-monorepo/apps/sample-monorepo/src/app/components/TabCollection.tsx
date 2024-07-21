@@ -22,6 +22,7 @@ const TabCollection = ({ items }: TabCollectionProps) => {
       <div className="w-full flex flex-row">
         {items.map((item) => (
           <Button
+            key={item.title}
             label={item.title}
             onClick={() => setSelectedItem(item)}
             className={`flex-1 p-2 rounded-tl-md border-b-2 border-solid ${

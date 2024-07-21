@@ -11,11 +11,11 @@ import notFound from './middlewares/not-found';
 import authMiddleware from './middlewares/authentication';
 import connectDB from './connect/db';
 
-const baseURL = process.env.VITE_API_URL ?? 'http://localhost:3000';
+const baseURL = process.env.VITE_API_BACKEND_URI ?? 'http://localhost:3000';
 const port = process.env.VITE_PORT ?? '3000';
 
 const app = express();
-app.set("trust proxy", 1);
+app.set('trust proxy', 1);
 app.use(
   rateLimiter({
     windowMs: 15 * 60 * 1000,
@@ -28,9 +28,11 @@ app.use(cors());
 app.use(xss());
 app.set('base', baseURL);
 
-app.get('/ping', (req: Request, res: Response) => res.send('Ping route'));
-app.use('/auth', authRoute);
-app.use('/users', authMiddleware, userRoute);
+app.get('/api/v1/ping', (req: Request, res: Response) =>
+  res.send('Ping route')
+);
+app.use('/api/v1/auth', authRoute);
+app.use('/api/v1/users', authMiddleware, userRoute);
 
 // Error handler middlewares
 app.use(errorHandler);

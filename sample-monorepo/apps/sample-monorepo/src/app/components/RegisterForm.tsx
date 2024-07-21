@@ -1,6 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import Button from './Button';
+import { useNavigate } from 'react-router-dom';
+
 import { User, userRegister } from '../api';
+import Button from './Button';
 
 const initialValue: User = {
   name: '',
@@ -9,11 +11,15 @@ const initialValue: User = {
 };
 
 const RegisterForm = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState<User>(initialValue);
+
   const onRegister = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const userSuccess = await userRegister(user);
-    console.log(userSuccess);
+    const userData = await userRegister(user);
+    if (userData) {
+      navigate('/?redirectURL=login');
+    }
   };
 
   const onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
