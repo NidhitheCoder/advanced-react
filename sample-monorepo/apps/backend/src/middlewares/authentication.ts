@@ -11,11 +11,11 @@ interface AuthRequest extends Request {
 const auth = (req: AuthRequest, res: Response, next: NextFunction) => {
   const authHeader = req.headers.authorization;
 
-  if (!authHeader || authHeader.startsWith('Bearer ')) {
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
     throw new UnauthenticatedError('Need authentication');
   }
 
-  const token = authHeader.split(' ')[0];
+  const token = authHeader.split(' ')[1];
 
   try {
     const payload = jwtToken.verify(
