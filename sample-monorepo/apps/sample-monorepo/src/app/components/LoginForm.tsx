@@ -1,16 +1,19 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-
-import { User, userLogin } from '../api';
-import Button from './Button';
 import { useNavigate } from 'react-router-dom';
-const initialValue: User = {
-  password: '',
-  email: '',
-};
+
+import { userLogin } from '../api';
+import {
+  ACCESS_TOKEN_KEY,
+  INITIAL_USER,
+  ROUTES,
+  USER_NAME_KEY,
+} from '../constants';
+import { User } from '../types';
+import Button from './Button';
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState<User>(initialValue);
+  const [user, setUser] = useState<User>(INITIAL_USER);
 
   const onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const currentEvent = event.target as HTMLInputElement;
@@ -22,9 +25,9 @@ const LoginForm = () => {
     const userData = await userLogin(user);
 
     if (userData) {
-      sessionStorage.setItem('access_token', userData.token);
-      sessionStorage.setItem('user_name', userData.user.name);
-      navigate('/dashboard');
+      sessionStorage.setItem(ACCESS_TOKEN_KEY, userData.token);
+      sessionStorage.setItem(USER_NAME_KEY, userData.user.name);
+      navigate(ROUTES.dashboard);
     }
   };
 

@@ -5,22 +5,26 @@ import Posts from './pages/posts';
 import Post from './pages/post';
 import AuthComponent from './components/AuthComponent';
 import Dashboard from './pages/Dashboard';
+import { ROUTES } from './constants';
 
 export function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path={ROUTES.home} element={<Home />} />
       <Route
-        path="/dashboard"
+        path={ROUTES.dashboard}
         element={<AuthComponent component={<Dashboard />} />}
       />
-      <Route path="/posts" element={<AuthComponent component={<Posts />} />} />
       <Route
-        path="/posts/:id"
+        path={ROUTES.posts}
+        element={<AuthComponent component={<Posts />} />}
+      />
+      <Route
+        path={ROUTES.singlePost}
         element={<AuthComponent component={<Post />} />}
       />
       <Route
-        path="*"
+        path={ROUTES.notFound}
         element={
           <div>
             <p>Not found</p>
