@@ -11,6 +11,14 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide title'],
   },
+  description: {
+    type: String,
+    required: [true, 'Please provide description'],
+  },
+  author: {
+    type: String,
+    required: [true, 'Please provide an author name'],
+  },
 });
 
 const Post = mongoose.model<PostDoc>('Post', PostSchema);

@@ -1,24 +1,40 @@
 import { NextFunction, Request, Response } from 'express';
+import Post from '../models/Post';
+import { StatusCodes } from 'http-status-codes';
+import { BadRequestError } from '../error';
 
-const getPosts = (req: Request, res: Response, next: NextFunction) => {
+const getPosts = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    res.status(200).json({ msg: 'posts list', users: [], total: 0 });
+    const posts = await Post.find({ createdBy: req.user.userId }).sort(
+      'createBy'
+    );
+
+    res.status(200).json(posts);
   } catch (err) {
     next(err);
   }
 };
 
-const getPost = (req: Request, res: Response, next: NextFunction) => {
+const getPost = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    res.status(200).json({ msg: 'Individual post list', user: {} });
+    const { id } = req.body;
+    const post = await Post.findOne({ id });
+
+    if (!post) {
+      throw new BadRequestError(`No user found with id ${id}`);
+    }
+
+    res.status(StatusCodes.OK).json(post);
   } catch (err) {
     next(err);
   }
 };
 
-const createPost = (req: Request, res: Response, next: NextFunction) => {
+const createPost = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    res.status(200).json({ msg: 'posts creation' });
+    const post = await Post.create(req.body);
+
+    res.status(StatusCodes.CREATED).json({ post });
   } catch (err) {
     next(err);
   }
