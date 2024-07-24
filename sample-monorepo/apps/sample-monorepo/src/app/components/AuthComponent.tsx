@@ -1,11 +1,13 @@
 import { Navigate } from 'react-router-dom';
 
+import { ACCESS_TOKEN_KEY } from '../constants';
+
 interface AuthComponentProps {
   component: React.ReactNode;
 }
 
 const AuthComponent = ({ component }: AuthComponentProps) => {
-  const hasAuthToken = sessionStorage.getItem('access_token');
+  const hasAuthToken = sessionStorage.getItem(ACCESS_TOKEN_KEY);
 
   return (
     <div>

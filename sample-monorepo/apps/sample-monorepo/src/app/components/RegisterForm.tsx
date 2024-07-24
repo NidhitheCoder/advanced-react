@@ -1,18 +1,14 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { User, userRegister } from '../api';
+import { userRegister } from '../api';
+import { INITIAL_USER } from '../constants';
+import { User } from '../types';
 import Button from './Button';
-
-const initialValue: User = {
-  name: '',
-  password: '',
-  email: '',
-};
 
 const RegisterForm = () => {
   const navigate = useNavigate();
-  const [user, setUser] = useState<User>(initialValue);
+  const [user, setUser] = useState<User>(INITIAL_USER);
 
   const onRegister = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

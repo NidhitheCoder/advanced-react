@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import { ROUTES } from '../constants';
+
 const Posts = () => {
   const logoURL = 'https://picsum.photos/50/50';
   const posts = [
@@ -15,8 +17,8 @@ const Posts = () => {
       <div className="w-full h-20 flex flex-row justify-between items-center pb-4">
         <img src={logoURL} alt="Logo" />
         <h2 className="text-white text-3xl font-bold">Your posts</h2>
-        <Link className="text-white" to={'/dashboard'}>
-          Back to home
+        <Link className="text-white" to={ROUTES.dashboard}>
+          Back to Dashboard
         </Link>
       </div>
       <div className="w-full h-full grid grid-cols-4 gap-6 border-solid border-[0.5px] border-gray-500 p-6">

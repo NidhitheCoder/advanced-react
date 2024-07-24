@@ -4,7 +4,7 @@ import cors from 'cors';
 import xss from 'xss-clean';
 import rateLimiter from 'express-rate-limit';
 
-import userRoute from './routes/user';
+import postRoute from './routes/post';
 import authRoute from './routes/auth';
 import errorHandler from './middlewares/error-handler';
 import notFound from './middlewares/not-found';
@@ -32,7 +32,7 @@ app.get('/api/v1/ping', (req: Request, res: Response) =>
   res.send('Ping route')
 );
 app.use('/api/v1/auth', authRoute);
-app.use('/api/v1/users', authMiddleware, userRoute);
+app.use('/api/v1/posts', authMiddleware, postRoute);
 
 // Error handler middlewares
 app.use(errorHandler);
