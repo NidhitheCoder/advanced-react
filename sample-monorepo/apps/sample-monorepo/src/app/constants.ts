@@ -17,6 +17,7 @@ const API_ENDPOINTS = {
   signup: '/auth/signup',
   login: '/auth/login',
   ping: '/ping',
+  posts: '/posts',
 };
 
 const ACCESS_TOKEN_KEY = 'access_token';

@@ -17,4 +17,11 @@ const userLogin = async (user: User) => {
   return data;
 };
 
-export { userRegister, getPingStatus, userLogin };
+const getPosts = async () => {
+  const posts = await axios.post(API_ENDPOINTS.posts);
+  console.log(posts);
+
+  return posts;
+};
+
+export { userRegister, getPosts, getPingStatus, userLogin };

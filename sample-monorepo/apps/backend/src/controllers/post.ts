@@ -3,9 +3,21 @@ import Post from '../models/Post';
 import { StatusCodes } from 'http-status-codes';
 import { BadRequestError } from '../error';
 
-const getPosts = async (req: Request, res: Response, next: NextFunction) => {
+interface User {
+  mail: string;
+}
+
+interface GetPostsProps extends Request {
+  user: User;
+}
+
+const getPosts = async (
+  req: GetPostsProps,
+  res: Response,
+  next: NextFunction
+) => {
   try {
-    const posts = await Post.find({ createdBy: req.user.userId }).sort(
+    const posts = await Post.find({ createdBy: req.user.mail }).sort(
       'createBy'
     );
 
