@@ -3,15 +3,16 @@ import { useEffect, useState } from 'react';
 
 import { getPosts } from '../api';
 import { ROUTES } from '../constants';
+import { Post } from '../types';
 
 const Posts = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
   const logoURL = 'https://picsum.photos/50/50';
 
   const getPostsFromAPI = async () => {
-    const response = await getPosts();
+    const postsFromAPI = await getPosts();
 
-    setPosts(response);
+    setPosts(postsFromAPI);
   };
 
   useEffect(() => {

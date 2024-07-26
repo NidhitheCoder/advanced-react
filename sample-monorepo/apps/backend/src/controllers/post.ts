@@ -1,10 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
+import jwt from 'jsonwebtoken';
+
 import Post from '../models/Post';
 import { StatusCodes } from 'http-status-codes';
 import { BadRequestError } from '../error';
 
 interface User {
-  mail: string;
+  userId: string;
 }
 
 interface GetPostsProps extends Request {
@@ -17,9 +19,8 @@ const getPosts = async (
   next: NextFunction
 ) => {
   try {
-    const posts = await Post.find({ createdBy: req.user.mail }).sort(
-      'createBy'
-    );
+    // TODO: Need to replace undefined with userId
+    const posts = await Post.find({ createdBy: undefined }).sort('createBy');
 
     res.status(200).json(posts);
   } catch (err) {
@@ -44,7 +45,12 @@ const getPost = async (req: Request, res: Response, next: NextFunction) => {
 
 const createPost = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const post = await Post.create(req.body);
+    const authorization = req.headers.authorization;
+    const token = authorization.split(' ')[1];
+    const userID = jwt.decode(token).userId;
+
+    const newPost = { ...req.body, author: userID };
+    const post = await Post.create(newPost);
 
     res.status(StatusCodes.CREATED).json({ post });
   } catch (err) {
