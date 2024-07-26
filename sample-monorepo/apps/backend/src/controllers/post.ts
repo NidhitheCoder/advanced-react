@@ -1,26 +1,23 @@
 import { NextFunction, Request, Response } from 'express';
-import jwt from 'jsonwebtoken';
+import { StatusCodes } from 'http-status-codes';
 
 import Post from '../models/Post';
-import { StatusCodes } from 'http-status-codes';
 import { BadRequestError } from '../error';
+import { User } from '../types';
 
-interface User {
-  userId: string;
-}
-
-interface GetPostsProps extends Request {
+interface RequestWithUser extends Request {
   user: User;
 }
 
 const getPosts = async (
-  req: GetPostsProps,
+  req: RequestWithUser,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    // TODO: Need to replace undefined with userId
-    const posts = await Post.find({ createdBy: undefined }).sort('createBy');
+    const posts = await Post.find({ createdBy: req.user.userId }).sort(
+      'createBy'
+    );
 
     res.status(200).json(posts);
   } catch (err) {
@@ -28,10 +25,14 @@ const getPosts = async (
   }
 };
 
-const getPost = async (req: Request, res: Response, next: NextFunction) => {
+const getPost = async (
+  req: RequestWithUser,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const { id } = req.body;
-    const post = await Post.findOne({ id });
+    const post = await Post.findOne({ id, createdBy: req.user.userId });
 
     if (!post) {
       throw new BadRequestError(`No user found with id ${id}`);
@@ -43,13 +44,13 @@ const getPost = async (req: Request, res: Response, next: NextFunction) => {
   }
 };
 
-const createPost = async (req: Request, res: Response, next: NextFunction) => {
+const createPost = async (
+  req: RequestWithUser,
+  res: Response,
+  next: NextFunction
+) => {
   try {
-    const authorization = req.headers.authorization;
-    const token = authorization.split(' ')[1];
-    const userID = jwt.decode(token).userId;
-
-    const newPost = { ...req.body, author: userID };
+    const newPost = { ...req.body, author: req.user.userId };
     const post = await Post.create(newPost);
 
     res.status(StatusCodes.CREATED).json({ post });
