@@ -3,8 +3,8 @@ import { createPost, getPost, getPosts } from '../controllers/post';
 
 const router = express.Router();
 
-router.get('/', getPost);
-router.get('/:id', getPosts);
+router.get('/', getPosts);
+router.get('/:id', getPost);
 router.post('/', createPost);
 
 export default router;

@@ -1,16 +1,23 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
+import { getPosts } from '../api';
 import { ROUTES } from '../constants';
+import { Post } from '../types';
 
 const Posts = () => {
+  const [posts, setPosts] = useState<Post[]>([]);
   const logoURL = 'https://picsum.photos/50/50';
-  const posts = [
-    {
-      title: 'Sample post',
-      description: 'This is a sample post description',
-      thumbnailImage: 'https://picsum.photos/600/400',
-    },
-  ];
+
+  const getPostsFromAPI = async () => {
+    const postsFromAPI = await getPosts();
+
+    setPosts(postsFromAPI);
+  };
+
+  useEffect(() => {
+    getPostsFromAPI();
+  }, []);
 
   return (
     <div className="bg-gray-700 h-screen w-screen flex flex-col items-center p-6 overflow-y-auto overflow-x-hidden">

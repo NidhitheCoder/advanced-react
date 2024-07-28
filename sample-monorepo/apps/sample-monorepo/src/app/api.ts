@@ -1,6 +1,6 @@
 import axios from './axios';
-import { API_ENDPOINTS } from './constants';
-import { User } from './types';
+import { ACCESS_TOKEN_KEY, API_ENDPOINTS } from './constants';
+import { Post, User } from './types';
 
 const userRegister = async (user: User) =>
   await axios.post(API_ENDPOINTS.signup, user);
@@ -17,4 +17,15 @@ const userLogin = async (user: User) => {
   return data;
 };
 
-export { userRegister, getPingStatus, userLogin };
+const getPosts = async () => {
+  const authToken = sessionStorage.getItem(ACCESS_TOKEN_KEY);
+  const response = await axios.get(API_ENDPOINTS.posts, {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  });
+
+  return response.data as Post[];
+};
+
+export { userRegister, getPosts, getPingStatus, userLogin };

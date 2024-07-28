@@ -3,3 +3,10 @@ export interface User {
   password: string;
   email: string;
 }
+
+export interface Post {
+  title: string;
+  description: string;
+  author: string;
+  thumbnailImage?: string;
+}
