@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import Home from './pages/home';
 import Posts from './pages/posts';
-import Post from './pages/post';
+import SinglePost from './pages/SinglePost';
 import AuthComponent from './components/AuthComponent';
 import Dashboard from './pages/Dashboard';
 import { ROUTES } from './constants';
@@ -21,7 +21,7 @@ export function App() {
       />
       <Route
         path={ROUTES.singlePost}
-        element={<AuthComponent component={<Post />} />}
+        element={<AuthComponent component={<SinglePost />} />}
       />
       <Route
         path={ROUTES.notFound}

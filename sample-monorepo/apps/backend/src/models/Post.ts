@@ -19,6 +19,10 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide an author name'],
   },
+  createdBy: {
+    type: String,
+    required: [true, 'User details is missing'],
+  },
 });
 
 const Post = mongoose.model<PostDoc>('Post', PostSchema);

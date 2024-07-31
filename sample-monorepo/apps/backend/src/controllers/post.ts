@@ -50,7 +50,7 @@ const createPost = async (
   next: NextFunction
 ) => {
   try {
-    const newPost = { ...req.body, author: req.user.userId };
+    const newPost = { ...req.body, createdBy: req.user.userId };
     const post = await Post.create(newPost);
 
     res.status(StatusCodes.CREATED).json({ post });
