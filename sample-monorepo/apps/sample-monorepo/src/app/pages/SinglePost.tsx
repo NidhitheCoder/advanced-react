@@ -1,21 +1,26 @@
 import { useEffect, useState } from 'react';
 import { getPost } from '../api';
 import { Post } from '../types';
+import { useParams } from 'react-router-dom';
 
 const SinglePost = () => {
+  const { id: postID } = useParams();
   const [post, setPost] = useState<Post>();
 
   const getCurrentPost = async () => {
-    // TODO take id from the url
-    const currentPost = await getPost('122');
-    setPost(currentPost);
+    if (postID) {
+      const currentPost = await getPost(postID);
+      setPost(currentPost);
+    }
   };
 
   useEffect(() => {
     getCurrentPost();
   }, []);
 
-  if (!post) return null;
+  if (!post || !postID) {
+    return <div>No information available</div>;
+  }
 
   return (
     <div className="bg-gray-700 h-screen w-screen">

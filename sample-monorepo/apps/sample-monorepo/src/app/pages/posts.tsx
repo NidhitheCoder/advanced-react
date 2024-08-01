@@ -37,7 +37,7 @@ const Posts = () => {
         {posts?.map((post) => (
           <div
             key={post.title}
-            onClick={() => onPostClick(post.id)}
+            onClick={() => onPostClick(post._id)}
             className="bg-gray-600 h-96 rounded-md"
           >
             <img

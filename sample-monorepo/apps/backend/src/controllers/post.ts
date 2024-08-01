@@ -31,11 +31,11 @@ const getPost = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.body;
-    const post = await Post.findOne({ id, createdBy: req.user.userId });
+    const { id: _id } = req.params;
+    const post = await Post.findOne({ _id, createdBy: req.user.userId });
 
     if (!post) {
-      throw new BadRequestError(`No user found with id ${id}`);
+      throw new BadRequestError(`No user found with id ${_id}`);
     }
 
     res.status(StatusCodes.OK).json(post);
