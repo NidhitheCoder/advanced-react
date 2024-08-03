@@ -41,9 +41,9 @@ const Posts = () => {
             className="bg-gray-600 h-96 rounded-md"
           >
             <img
-              src={post.thumbnailImage}
+              src="https://picsum.photos/300"
               alt="post"
-              className="rounded-tl-md rounded-tr-md"
+              className="rounded-tl-md rounded-tr-md w-full"
             />
             <div className="p-4 text-white">
               <h1 className="font-bold text-gray-300">{post.title}</h1>
