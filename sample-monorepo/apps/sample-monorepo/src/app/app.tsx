@@ -5,6 +5,7 @@ import Posts from './pages/posts';
 import SinglePost from './pages/SinglePost';
 import AuthComponent from './components/AuthComponent';
 import Dashboard from './pages/Dashboard';
+import CreatePost from './pages/CreatePost';
 import { ROUTES } from './constants';
 
 export function App() {
@@ -18,6 +19,10 @@ export function App() {
       <Route
         path={ROUTES.posts}
         element={<AuthComponent component={<Posts />} />}
+      />
+      <Route
+        path={ROUTES.createPost}
+        element={<AuthComponent component={<CreatePost />} />}
       />
       <Route
         path={ROUTES.singlePost}

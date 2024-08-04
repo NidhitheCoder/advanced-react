@@ -9,7 +9,8 @@ const ROUTES = {
   home: '/',
   dashboard: '/dashboard',
   posts: '/posts',
-  singlePost: '/post/:id',
+  singlePost: '/posts/:id',
+  createPost: '/posts/create',
   notFound: '*',
 };
 
