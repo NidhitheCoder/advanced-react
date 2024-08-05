@@ -5,6 +5,7 @@ export interface User {
 }
 
 export interface Post {
+  _id: string,
   title: string;
   description: string;
   author: string;

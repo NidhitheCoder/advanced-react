@@ -28,4 +28,15 @@ const getPosts = async () => {
   return response.data as Post[];
 };
 
-export { userRegister, getPosts, getPingStatus, userLogin };
+const getPost = async (postID: string) => {
+  const authToken = sessionStorage.getItem(ACCESS_TOKEN_KEY);
+  const response = await axios.get(API_ENDPOINTS.post(postID), {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  });
+
+  return response.data as Post;
+};
+
+export { userRegister, getPost, getPosts, getPingStatus, userLogin };

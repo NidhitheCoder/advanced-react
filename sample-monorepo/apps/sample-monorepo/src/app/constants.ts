@@ -9,7 +9,8 @@ const ROUTES = {
   home: '/',
   dashboard: '/dashboard',
   posts: '/posts',
-  singlePost: '/post/:id',
+  singlePost: '/posts/:id',
+  createPost: '/posts/create',
   notFound: '*',
 };
 
@@ -18,6 +19,7 @@ const API_ENDPOINTS = {
   login: '/auth/login',
   ping: '/ping',
   posts: '/posts',
+  post: (id: string) => `/posts/${id}`,
 };
 
 const ACCESS_TOKEN_KEY = 'access_token';
