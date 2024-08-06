@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import Logo from '../components/Logo';
 import { getPosts } from '../api';
 import { ROUTES } from '../constants';
 import { Post } from '../types';
@@ -8,7 +9,6 @@ import { Post } from '../types';
 const Posts = () => {
   const navigate = useNavigate();
   const [posts, setPosts] = useState<Post[]>([]);
-  const logoURL = 'https://picsum.photos/50/50';
 
   const getPostsFromAPI = async () => {
     const postsFromAPI = await getPosts();
@@ -27,7 +27,7 @@ const Posts = () => {
   return (
     <div className="bg-gray-700 h-screen w-screen flex flex-col items-center p-6 overflow-y-auto overflow-x-hidden">
       <div className="w-full h-20 flex flex-row justify-between items-center pb-4">
-        <img src={logoURL} alt="Logo" />
+        <Logo />
         <h2 className="text-white text-3xl font-bold">Your posts</h2>
         <Link className="text-white" to={ROUTES.dashboard}>
           Back to Dashboard

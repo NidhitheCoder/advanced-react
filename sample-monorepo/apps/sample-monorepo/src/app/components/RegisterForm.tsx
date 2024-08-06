@@ -5,6 +5,7 @@ import { userRegister } from '../api';
 import { INITIAL_USER } from '../constants';
 import { User } from '../types';
 import Button from './Button';
+import Logo from './Logo';
 
 const RegisterForm = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const RegisterForm = () => {
 
   return (
     <div className="flex flex-col justify-center items-center w-full">
-      <h3 className="font-bold">Register</h3>
+      <Logo size="6" />
       <form
         className="flex flex-col justify-between items-center w-full"
         onSubmit={onRegister}
