@@ -1,5 +1,8 @@
 import { FormEvent } from 'react';
 import Button from '../components/Button';
+import Logo from '../components/Logo';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../constants';
 
 const CreatePost = () => {
   const onSubmitPost = (event: FormEvent<HTMLFormElement>) => {
@@ -8,7 +11,8 @@ const CreatePost = () => {
 
   return (
     <div className="p-10">
-      <h2 className="font-bold text-4xl py-4">Create post</h2>
+      <Logo />
+      <h2 className="font-bold text-4xl py-8">Create post</h2>
       <p className="font-extrabold py-2">You can create new posts here</p>
       <form
         action="post"
@@ -34,6 +38,11 @@ const CreatePost = () => {
         />
         <Button type="submit" label="Create Post" />
       </form>
+      <div className="py-10">
+        <Link to={ROUTES.dashboard} className="text-green-800">
+          Back to Dashboard
+        </Link>
+      </div>
     </div>
   );
 };

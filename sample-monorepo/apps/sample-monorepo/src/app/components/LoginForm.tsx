@@ -10,6 +10,7 @@ import {
 } from '../constants';
 import { User } from '../types';
 import Button from './Button';
+import Logo from './Logo';
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const LoginForm = () => {
 
   return (
     <div className="flex flex-col justify-center items-center w-full">
-      <h3 className="font-bold">Login</h3>
+      <Logo size="6" />
       <form
         action="post"
         className="flex flex-col justify-between items-center w-full"

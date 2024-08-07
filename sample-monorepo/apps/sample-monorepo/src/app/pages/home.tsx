@@ -5,6 +5,7 @@ import Button from '../components/Button';
 import CustomModal, { ModalPosition } from '../components/CustomModal';
 import TabCollection from '../components/TabCollection';
 import RegisterForm from '../components/RegisterForm';
+import Logo from '../components/Logo';
 import LoginForm from '../components/LoginForm';
 import { getPingStatus } from '../api';
 
@@ -20,7 +21,6 @@ const Home = () => {
   }, [searchParams]);
 
   const imageURL = 'https://picsum.photos/600/400';
-  const logoURL = 'https://picsum.photos/50/50';
 
   const tabItems = [
     { title: 'Login', component: <LoginForm /> },
@@ -51,7 +51,7 @@ const Home = () => {
     <div className="bg-gray-700 h-screen w-screen flex flex-col text-white overflow-y-auto overflow-x-hidden">
       {/* Navbar section */}
       <div className="h-20 bg-gray-600 border-b-[0.5px] border-solid border-gray-400 flex flex-row justify-between items-center px-4">
-        <img src={logoURL} alt="Logo" />
+        <Logo />
         <div className=" flex flex-col justify-center items-center">
           <h2 className="font-bold text-2xl p-1">Gallery</h2>
           <p className="mb-4 hidden sm:block">Share your posts with images</p>
