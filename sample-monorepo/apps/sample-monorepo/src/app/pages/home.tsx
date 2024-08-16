@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import Slider from 'react-slick';
 
 import Button from '../components/Button';
 import CustomModal, { ModalPosition } from '../components/CustomModal';
@@ -47,6 +48,14 @@ const Home = () => {
 
   const pingText = pingSuccess ? 'API is Active' : 'Check API';
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <div className="bg-gray-700 h-screen w-screen flex flex-col text-white overflow-y-auto overflow-x-hidden">
       {/* Navbar section */}
@@ -93,6 +102,26 @@ const Home = () => {
           Welcome to the sample app that helps to share your posts with friends.
         </p>
       </div>
+      <Slider {...settings}>
+        <div>
+          <h3>1</h3>
+        </div>
+        <div>
+          <h3>2</h3>
+        </div>
+        <div>
+          <h3>3</h3>
+        </div>
+        <div>
+          <h3>4</h3>
+        </div>
+        <div>
+          <h3>5</h3>
+        </div>
+        <div>
+          <h3>6</h3>
+        </div>
+      </Slider>
     </div>
   );
 };
